@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "group_by_album.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

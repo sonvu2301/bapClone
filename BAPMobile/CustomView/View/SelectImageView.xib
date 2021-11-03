@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectImageView" customModule="BAPMobile" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="CQO-Jr-emS" id="3pO-ZR-dKF"/>
+                <outlet property="collectionViewHeight" destination="DAC-9x-1fz" id="nd5-2H-gRW"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="chd-L9-FlU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-mJ-HaH">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Jr-emS">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="999" constant="60" id="DAC-9x-1fz"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7h-Wz-N57">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CQO-Jr-emS" secondAttribute="bottom" id="4Yv-YF-0W2"/>
+                        <constraint firstAttribute="trailing" secondItem="CQO-Jr-emS" secondAttribute="trailing" id="6gF-qS-7LP"/>
+                        <constraint firstItem="CQO-Jr-emS" firstAttribute="leading" secondItem="nvx-mJ-HaH" secondAttribute="leading" id="8Hp-yR-lik"/>
+                        <constraint firstItem="CQO-Jr-emS" firstAttribute="top" secondItem="nvx-mJ-HaH" secondAttribute="top" id="Nfo-3q-Mhe"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nvx-mJ-HaH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="AKH-Al-4wD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nvx-mJ-HaH" secondAttribute="bottom" id="IgY-Fo-4dz"/>
+                <constraint firstItem="nvx-mJ-HaH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZIc-ap-yYa"/>
+                <constraint firstItem="nvx-mJ-HaH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mWN-Yl-hRC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="179.71014492753625" y="-975.00000000000011"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

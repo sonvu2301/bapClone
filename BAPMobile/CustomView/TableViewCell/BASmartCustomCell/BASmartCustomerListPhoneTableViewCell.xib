@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BASmartCustomerListPhoneTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="BASmartCustomerListPhoneTableViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYx-0N-ent">
+                        <rect key="frame" x="10" y="10" width="80" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="3r8-UV-w1E"/>
+                            <constraint firstAttribute="height" constant="50" id="8DM-qf-cQn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCv-IX-Afh">
+                        <rect key="frame" x="95" y="7" width="2" height="56"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="idy-aa-0l3"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq2-CT-svI">
+                        <rect key="frame" x="132" y="10" width="178" height="50"/>
+                        <state key="normal" title="090202038">
+                            <color key="titleColor" red="0.1450980392" green="0.62745098040000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPhoneTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dkG-1E-51a"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I60-ZQ-fxL">
+                        <rect key="frame" x="0.0" y="68" width="320" height="2"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Ebj-op-rDT"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-4P-b8x">
+                        <rect key="frame" x="107" y="25" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="JgJ-mk-PvS"/>
+                            <constraint firstAttribute="width" secondItem="4ce-4P-b8x" secondAttribute="height" multiplier="1:1" id="uln-cG-jIu"/>
+                        </constraints>
+                        <state key="normal" image="ic_tel_01"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oq2-CT-svI" secondAttribute="bottom" constant="10" id="5Ku-Fp-NMO"/>
+                    <constraint firstAttribute="bottom" secondItem="I60-ZQ-fxL" secondAttribute="bottom" id="Erc-QV-PSV"/>
+                    <constraint firstAttribute="bottom" secondItem="GCv-IX-Afh" secondAttribute="bottom" constant="7" id="JmA-XW-Vna"/>
+                    <constraint firstItem="4ce-4P-b8x" firstAttribute="centerY" secondItem="oq2-CT-svI" secondAttribute="centerY" id="K6H-R3-MO9"/>
+                    <constraint firstItem="GCv-IX-Afh" firstAttribute="leading" secondItem="VYx-0N-ent" secondAttribute="trailing" constant="5" id="LW6-zJ-73V"/>
+                    <constraint firstItem="GCv-IX-Afh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Wc8-XM-9iH"/>
+                    <constraint firstItem="I60-ZQ-fxL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Y0N-yf-XkA"/>
+                    <constraint firstItem="VYx-0N-ent" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bvE-a1-825"/>
+                    <constraint firstItem="oq2-CT-svI" firstAttribute="leading" secondItem="4ce-4P-b8x" secondAttribute="trailing" constant="5" id="gjQ-j4-bCE"/>
+                    <constraint firstItem="4ce-4P-b8x" firstAttribute="leading" secondItem="GCv-IX-Afh" secondAttribute="trailing" constant="10" id="hGE-Nw-las"/>
+                    <constraint firstItem="VYx-0N-ent" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jwc-uv-45v"/>
+                    <constraint firstAttribute="trailing" secondItem="I60-ZQ-fxL" secondAttribute="trailing" id="jz0-vd-lcn"/>
+                    <constraint firstAttribute="trailing" secondItem="oq2-CT-svI" secondAttribute="trailing" constant="10" id="ojj-xf-fff"/>
+                    <constraint firstItem="oq2-CT-svI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vQE-XL-MxN"/>
+                    <constraint firstAttribute="bottom" secondItem="VYx-0N-ent" secondAttribute="bottom" constant="10" id="zjb-r3-O9g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonCallIcon" destination="4ce-4P-b8x" id="ueb-yf-B31"/>
+                <outlet property="buttonCallNumber" destination="oq2-CT-svI" id="v2q-HY-yba"/>
+                <outlet property="labelTitle" destination="VYx-0N-ent" id="Krn-3R-KLt"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="47.544642857142854"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_tel_01" width="256" height="256"/>
+    </resources>
+</document>

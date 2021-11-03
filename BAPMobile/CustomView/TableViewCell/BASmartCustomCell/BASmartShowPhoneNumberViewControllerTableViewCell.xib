@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BASmartShowPhoneNumberViewControllerTableViewCell" rowHeight="40" id="KGk-i7-Jjw" customClass="BASmartShowPhoneNumberViewControllerTableViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9E-jh-Sdj">
+                        <rect key="frame" x="30" y="6" width="140" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="yEb-3g-lfT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title=" 081990199512">
+                            <color key="titleColor" red="0.1450980392" green="0.62745098040000002" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPhoneTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O8a-Ji-Z1G"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="P9E-jh-Sdj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.05" id="81s-AN-UBG"/>
+                    <constraint firstItem="P9E-jh-Sdj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="LS3-z0-KoO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonPhone" destination="P9E-jh-Sdj" id="dC7-aS-KS2"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="32.142857142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

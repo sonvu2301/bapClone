@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BASmartCustomerTimelineSection" customModule="BAPMobile" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="yb9-XI-u7d"/>
+                <outlet property="labelTitle" destination="DZ8-vZ-Yfr" id="GDD-Nn-orq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_Label" translatesAutoresizingMaskIntoConstraints="NO" id="778-zE-mSD">
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="9V6-fv-643"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/01/1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-vZ-Yfr">
+                    <rect key="frame" x="10" y="0.0" width="150" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="1M7-nh-DGL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DZ8-vZ-Yfr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Th5-qA-bDj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DZ8-vZ-Yfr" secondAttribute="bottom" id="ZhZ-wa-7ml"/>
+                <constraint firstItem="778-zE-mSD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cB8-g9-HdE"/>
+                <constraint firstItem="DZ8-vZ-Yfr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nb9-ZU-GMU"/>
+                <constraint firstItem="778-zE-mSD" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rlJ-KP-M47"/>
+                <constraint firstItem="778-zE-mSD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yO8-LF-m08"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="-295.10869565217394"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Arrow_Label" width="282" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

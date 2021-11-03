@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BASmartAttachs" representedClassName="BASmartAttachs" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="BASmartVehicleImages" representedClassName="BASmartVehicleImages" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="creator" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isBefore" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="partner" optional="YES" attributeType="String"/>
+        <attribute name="plate" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <attribute name="xn" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="BASmartAttachs" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="BASmartVehicleImages" positionX="-63" positionY="9" width="128" height="178"/>
+    </elements>
+</model>
