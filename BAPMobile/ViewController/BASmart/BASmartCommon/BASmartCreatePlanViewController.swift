@@ -38,25 +38,26 @@ protocol BASmartSelectCustomerDelegate {
 
 class BASmartCreatePlanViewController: UIViewController {
 
+    @IBOutlet weak var viewTarget: BASmartCustomerListDropdownView!
+    
     @IBOutlet weak var buttonDate: UIButton!
     @IBOutlet weak var buttonRemoveDate: UIButton!
     @IBOutlet weak var buttonSelectCustomer: UIButton!
+    @IBOutlet weak var buttonSelectPurpose: UIButton!
     @IBOutlet weak var buttonSelectMap: UIButton!
     @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var buttonCancel: UIButton!
     
-    @IBOutlet weak var buttonPurpose1: UIButton!
-    @IBOutlet weak var buttonPurpose2: UIButton!
-    @IBOutlet weak var buttonPurpose3: UIButton!
-    @IBOutlet weak var buttonPurpose4: UIButton!
-    @IBOutlet weak var buttonPurpose5: UIButton!
-    @IBOutlet weak var buttonPurpose6: UIButton!
+    @IBOutlet weak var buttonFirstKind: UIButton!
+    @IBOutlet weak var buttonSecondKind: UIButton!
+    @IBOutlet weak var buttonThirdKind: UIButton!
     
     @IBOutlet weak var textfieldDate: UITextField!
     @IBOutlet weak var textfieldStart: UITextField!
     @IBOutlet weak var textfieldEnd: UITextField!
     
     @IBOutlet weak var labelCustomer: UILabel!
+    @IBOutlet weak var labelPurposes: UILabel!
     @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var textfieldDescription: UITextView!
     
@@ -68,7 +69,6 @@ class BASmartCreatePlanViewController: UIViewController {
     //Common
     let datePicker = UIDatePicker()
     var purposeList = BASmartCustomerCatalogDetail.shared.purpose
-    var purposeType = [PlanPurpose]()
     var purposeSelect = [Bool]()
     var selectedTextfield = UITextField()
     var location: [MapData]?
@@ -77,9 +77,11 @@ class BASmartCreatePlanViewController: UIViewController {
     var customer = BASmartCustomerListData()
     let locationManager = CLLocationManager()
     var current = MapLocation(lng: 0, lat: 0)
+    var pkind = 0
     var textViewPlaceholder = "Nhập thông tin kế hoạch"
     var name = ""
     var customerId = 0
+    var purposes = [BASmartIdInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +96,14 @@ class BASmartCreatePlanViewController: UIViewController {
     
     
     private func setupView() {
-        setupPurposeButton()
+        
+        let catalog = BASmartCustomerCatalogDetail.shared.rate.filter({$0.target == true})
+        viewTarget.setupView(title: "Mục tiêu",
+                             placeholder: "Chọn mục tiêu...",
+                             content: catalog,
+                             name: "",
+                             id: 0)
+        
         textfieldStart.delegate = self
         textfieldEnd.delegate = self
         textfieldDate.delegate = self
@@ -116,6 +125,14 @@ class BASmartCreatePlanViewController: UIViewController {
         buttonCancel.setViewCorner(radius: 5)
         buttonConfirm.setViewCorner(radius: 5)
         
+        let tapCustomer = UITapGestureRecognizer(target: self, action: #selector(openCustomer))
+        labelCustomer.addGestureRecognizer(tapCustomer)
+        labelCustomer.isUserInteractionEnabled = true
+        
+        let tapPurpose = UITapGestureRecognizer(target: self, action: #selector(openPurpose))
+        labelPurposes.addGestureRecognizer(tapPurpose)
+        labelPurposes.isUserInteractionEnabled = true
+        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openMap))
                             
@@ -134,15 +151,32 @@ class BASmartCreatePlanViewController: UIViewController {
             textfieldStart.text = Date().millisecToHourMinute(time: data.start ?? 0)
             textfieldEnd.text = Date().millisecToHourMinute(time: data.end ?? 0)
             labelCustomer.text = data.name
+            labelCustomer.textColor = .black
             labelAddress.text = data.address
             labelAddress.textColor = .black
-            labelCustomer.textColor = .black
+            viewTarget.setupButton(title: data.rate?.name ?? "")
+            
             if data.description != "" {
                 textfieldDescription.text = data.description
             } else {
                 textfieldDescription.text = textViewPlaceholder
                 textfieldDescription.textColor = UIColor.lightGray
             }
+            
+            var purposeString = ""
+            if (data.purpose?.count ?? 0) > 0 {
+                data.purpose?.forEach { (item) in
+                    purposeString += ( ( item.name ?? "" ) + ", " )
+                }
+            }
+            if purposeString.count > 0 {
+                purposeString = String(purposeString.dropLast())
+                purposeString = String(purposeString.dropLast())
+                labelPurposes.textColor = .black
+            }
+            
+            labelPurposes.text = purposeString
+            purposes = data.purpose?.map({BASmartIdInfo(id: $0.id)}) ?? [BASmartIdInfo]()
             
             let coord = MapLocation(lng: data.location?.lng ?? 0,
                                     lat: data.location?.lat ?? 0)
@@ -155,24 +189,7 @@ class BASmartCreatePlanViewController: UIViewController {
                               shape_id: 0)
             location = [loc]
             customerId = data.planId ?? 0
-            data.purpose?.forEach({ [weak self] (item) in
-                switch item.id {
-                case PlanPurpose.takeCare.id:
-                    self?.selectPurpose(type: 0)
-                case PlanPurpose.welcome.id:
-                    self?.selectPurpose(type: 1)
-                case PlanPurpose.transport.id:
-                    self?.selectPurpose(type: 2)
-                case PlanPurpose.userManual.id:
-                    self?.selectPurpose(type: 3)
-                case PlanPurpose.support.id:
-                    self?.selectPurpose(type: 4)
-                case PlanPurpose.recoverDebt.id:
-                    self?.selectPurpose(type: 5)
-                default:
-                    break
-                }
-            })
+            
         } else {
             textfieldDescription.text = textViewPlaceholder
             textfieldDescription.textColor = UIColor.lightGray
@@ -188,23 +205,13 @@ class BASmartCreatePlanViewController: UIViewController {
         
         textfieldDescription.selectedTextRange = textfieldDescription.textRange(from: textfieldDescription.beginningOfDocument, to: textfieldDescription.beginningOfDocument)
         textfieldDescription.delegate = self
-    }
-    
-    
-    private func setupPurposeButton() {
-        let image = UIImage(named: "ic_uncheck")?.withRenderingMode(.alwaysTemplate).resizeImage(targetSize: CGSize(width: 20, height: 20))
-        buttonPurpose1.setImage(image, for: .normal)
-        buttonPurpose2.setImage(image, for: .normal)
-        buttonPurpose3.setImage(image, for: .normal)
-        buttonPurpose4.setImage(image, for: .normal)
-        buttonPurpose5.setImage(image, for: .normal)
-        buttonPurpose6.setImage(image, for: .normal)
-        buttonPurpose1.tintColor = UIColor.black
-        buttonPurpose2.tintColor = UIColor.black
-        buttonPurpose3.tintColor = UIColor.black
-        buttonPurpose4.tintColor = UIColor.black
-        buttonPurpose5.tintColor = UIColor.black
-        buttonPurpose6.tintColor = UIColor.black
+        
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
+        
+        let image = UIImage(named: "ic_uncheck")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+        buttonFirstKind.setImage(image, for: .normal)
+        buttonSecondKind.setImage(image, for: .normal)
+        buttonThirdKind.setImage(image, for: .normal)
     }
     
     
@@ -215,12 +222,6 @@ class BASmartCreatePlanViewController: UIViewController {
         let locationParam = BASmartLocationParam(lng: coord?.lng ?? 0,
                                         lat: coord?.lat ?? 0,
                                         opt: 1)
-        
-        var purposeIds = [BASmartIdInfo]()
-        purposeType.forEach { (item) in
-            let purpose = BASmartIdInfo(id: item.id)
-            purposeIds.append(purpose)
-        }
         
         customerId = self.name == "" ? customer.object_id ?? 0 : customerId
         let description = textfieldDescription.text == textViewPlaceholder ? "" : textfieldDescription.text
@@ -233,7 +234,7 @@ class BASmartCreatePlanViewController: UIViewController {
                                            end: textfieldEnd.text?.secondFromString(),
                                            address: location?.first?.address,
                                            location: locationParam,
-                                           purpose: purposeIds,
+                                           purpose: purposes,
                                            description: description)
             
             Network.shared.BASmartUpdatePlan(param: param) { [weak self] (data) in
@@ -254,7 +255,7 @@ class BASmartCreatePlanViewController: UIViewController {
                                                end: textfieldEnd.text?.secondFromString(),
                                                address: location?.first?.address,
                                                location: locationParam,
-                                               purpose: purposeIds,
+                                               purpose: purposes,
                                                description: description)
             
             Network.shared.BASmartCreatePlan(param: param) { [weak self] (data) in
@@ -268,51 +269,6 @@ class BASmartCreatePlanViewController: UIViewController {
         }
     }
     
-    private func selectPurpose(type: Int) {
-        
-        let selectImage = UIImage(named: "ic_check")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
-        let unselectImage = UIImage(named: "ic_uncheck")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
-        let image = purposeSelect[type] == true ? unselectImage : selectImage
-        let color = purposeSelect[type] == true ? .black : UIColor().defaultColor()
-        
-        switch type {
-        case 0:
-            selectCheckbox(button: buttonPurpose1, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .takeCare, isAppend: !purposeSelect[type])
-        case 1:
-            selectCheckbox(button: buttonPurpose2, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .welcome, isAppend: !purposeSelect[type])
-        case 2:
-            selectCheckbox(button: buttonPurpose3, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .transport, isAppend: !purposeSelect[type])
-        case 3:
-            selectCheckbox(button: buttonPurpose4, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .userManual, isAppend: !purposeSelect[type])
-        case 4:
-            selectCheckbox(button: buttonPurpose5, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .support, isAppend: !purposeSelect[type])
-        case 5:
-            selectCheckbox(button: buttonPurpose6, image: image ?? UIImage(), color: color)
-            selectPurpose(type: .recoverDebt, isAppend: !purposeSelect[type])
-        default:
-            break
-        }
-        
-        purposeSelect[type] = !purposeSelect[type]
-    }
-    
-    private func selectCheckbox(button: UIButton, image: UIImage, color: UIColor) {
-        button.setImage(image, for: .normal)
-        button.tintColor = color
-    }
-    
-    private func selectPurpose(type: PlanPurpose, isAppend: Bool) {
-        if isAppend == true {
-            purposeType.append(type)
-        } else {
-            purposeType = purposeType.filter({$0 != type})
-        }
-    }
     
     private func getCurrentPlace() {
         let param = MapSelectParam(latstr: String(current.lat),
@@ -334,7 +290,42 @@ class BASmartCreatePlanViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    private func selectPKind(state: ScrollState) {
+        let imageUncheck = UIImage(named: "ic_uncheck")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+        let imageCheck = UIImage(named: "ic_check")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+        buttonFirstKind.setImage(imageUncheck, for: .normal)
+        buttonSecondKind.setImage(imageUncheck, for: .normal)
+        buttonThirdKind.setImage(imageUncheck, for: .normal)
+        switch state {
+        case .first:
+            buttonFirstKind.setImage(imageCheck, for: .normal)
+            pkind = ScrollState.first.pkind
+        case .second:
+            buttonSecondKind.setImage(imageCheck, for: .normal)
+            pkind = ScrollState.second.pkind
+        case .third:
+            buttonThirdKind.setImage(imageCheck, for: .normal)
+            pkind = ScrollState.third.pkind
+        }
+    }
 
+    @objc func openPurpose() {
+        let vc = UIStoryboard(name: "BASmart", bundle: nil).instantiateViewController(withIdentifier: "BASmartReasonViewController") as! BASmartReasonViewController
+        vc.delegate = self
+        vc.dataSelect = purposes
+        vc.type = .purpose
+        vc.isRate = true
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func openCustomer() {
+        let vc = UIStoryboard(name: "BASmart", bundle: nil).instantiateViewController(withIdentifier: "BASmartPlanSearchCustomerViewController") as! BASmartPlanSearchCustomerViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func openMap() {
         let vc = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         vc.delegate = self
@@ -396,9 +387,11 @@ class BASmartCreatePlanViewController: UIViewController {
     }
     
     @IBAction func buttonSelectCustomerTap(_ sender: Any) {
-        let vc = UIStoryboard(name: "BASmart", bundle: nil).instantiateViewController(withIdentifier: "BASmartPlanSearchCustomerViewController") as! BASmartPlanSearchCustomerViewController
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
+        openCustomer()
+    }
+    
+    @IBAction func buttonSelectPurposeTap(_ sender: Any) {
+        openPurpose()
     }
     
     @IBAction func buttonOpenMapTap(_ sender: Any) {
@@ -414,28 +407,16 @@ class BASmartCreatePlanViewController: UIViewController {
         planAction()
     }
     
-    @IBAction func buttonPurpose1Tap(_ sender: Any) {
-        selectPurpose(type: 0)
+    @IBAction func buttonFirstKindTap(_ sender: Any) {
+        selectPKind(state: .first)
     }
     
-    @IBAction func buttonPurpose2Tap(_ sender: Any) {
-        selectPurpose(type: 1)
+    @IBAction func buttonSecondKindTap(_ sender: Any) {
+        selectPKind(state: .second)
     }
     
-    @IBAction func buttonPurpose3Tap(_ sender: Any) {
-        selectPurpose(type: 2)
-    }
-    
-    @IBAction func buttonPurpose4Tap(_ sender: Any) {
-        selectPurpose(type: 3)
-    }
-    
-    @IBAction func buttonPurpose5Tap(_ sender: Any) {
-        selectPurpose(type: 4)
-    }
-    
-    @IBAction func buttonPurpose6Tap(_ sender: Any) {
-        selectPurpose(type: 5)
+    @IBAction func buttonThirdKindTap(_ sender: Any) {
+        selectPKind(state: .third)
     }
     
 }
@@ -521,5 +502,22 @@ extension BASmartCreatePlanViewController: CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         current.lat = locValue.latitude
         current.lng = locValue.longitude
+    }
+}
+
+extension BASmartCreatePlanViewController: GetReasonListDelegate {
+    func selectList(type: SelectMultiCatalogType, data: [BASmartIdInfo], name: String) {
+        purposes = data
+        labelPurposes.text = name
+        
+        if name.count > 0 {
+            labelPurposes.textColor = .black
+        } else {
+            labelPurposes.textColor = .lightGray
+        }
+    }
+    
+    func showRate(isShow: Bool) {
+        viewTarget.dropDownStatus(isShow: isShow)
     }
 }

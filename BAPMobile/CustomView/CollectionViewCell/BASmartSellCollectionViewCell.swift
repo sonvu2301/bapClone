@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BASmartSellCollectionViewCell: UICollectionViewCell {
 
@@ -22,6 +23,25 @@ class BASmartSellCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         image.image = UIImage()
+    }
+    
+    
+    func setupData(imageUrl: String, isSquare: Bool) {
+        guard let url = URL.init(string: imageUrl) else { return }
+        let resource = ImageResource(downloadURL: url)
+        KingfisherManager.shared.retrieveImage(with: resource) { [weak self] (result) in
+            switch result {
+            case .success(let value):
+                if isSquare {
+                    self?.image.image = value.image.cropToSquare()
+                } else {
+                    self?.image.image = value.image
+                }
+                
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
 
 }

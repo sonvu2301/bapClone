@@ -79,12 +79,11 @@ extension BASmartRequestOpenViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
                                         title: "Favourite") { [weak self] (action, view, completionHandler) in
-                                            self?.handleMarkAsFavourite()
-                                            completionHandler(true)
+            self?.handleMarkAsFavourite(state: false, id: self?.data[indexPath.row].requestId ?? 0)
+            completionHandler(true)
         }
-        action.backgroundColor = UIColor(patternImage: UIImage(named: "duyet")?.resizeImage(targetSize: CGSize(width: 15, height: 15)) ?? UIImage())
-        action.title = "Favorite"
-//        action.backgroundColor = .systemBlue
+        action.image = UIImage(named: "reject")
+        action.backgroundColor = UIColor(hexString: "e53a30")
         let x = UISwipeActionsConfiguration(actions: [action])
         return x
     }
@@ -92,17 +91,36 @@ extension BASmartRequestOpenViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal,
                                         title: "Favourite") { [weak self] (action, view, completionHandler) in
-                                            self?.handleMarkAsFavourite()
-                                            completionHandler(true)
+            self?.handleMarkAsFavourite(state: true, id: self?.data[indexPath.row].requestId ?? 0)
+            completionHandler(true)
         }
-        action.image = UIImage(named: "icon_camera")?.resizeImage(targetSize: CGSize(width: 15, height: 15))
-        action.backgroundColor = .systemBlue
+        action.image = UIImage(named: "confirm")
+        action.backgroundColor = UIColor(hexString: "62d995")
         let x = UISwipeActionsConfiguration(actions: [action])
         return x
         
     }
     
-    func handleMarkAsFavourite() {
+    private func handleMarkAsFavourite(state: Bool, id: Int) {
         
+        let loc = self.getCurrentLocation()
+        let location = BASmartLocationParam(lng: loc.lng,
+                                            lat: loc.lat,
+                                            opt: 0)
+        
+        let param = BASmartRequestReopenConfirmParam(id: id,
+                                                     location: location,
+                                                     state: state)
+        
+        
+        Network.shared.BASmartRequestReopenConfirm(param: param, id: 1) { [weak self] (data) in
+            if data?.error_code == 0 {
+                let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Đồng ý", style: .cancel))
+                
+                self?.present(alert, animated: true, completion: nil)
+            }
+            
+        }
     }
 }

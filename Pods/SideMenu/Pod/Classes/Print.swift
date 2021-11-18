@@ -37,15 +37,15 @@ internal enum Print: String { case
 private extension Print {
 
     static func warning(_ message: String, required: Bool = false) {
-//        let message = "SideMenu Warning: \(message)"
-//
-//        if required {
-//            print(message)
-//            return
-//        }
-//        #if !STFU_SIDEMENU
-//        print(message)
-//        #endif
+        let message = "SideMenu Warning: \(message)"
+
+        if required {
+            print(message)
+            return
+        }
+        #if !STFU_SIDEMENU
+        print(message)
+        #endif
     }
 
 }

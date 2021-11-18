@@ -207,7 +207,7 @@ open class DKImagePickerController: DKUINavigationController, DKImageBaseManager
             let rootVC = self.makeRootVC()
             rootVC.imagePickerController = self
             self.rootVC = rootVC
-
+            
             self.UIDelegate.prepareLayout(self, vc: rootVC)
             self.updateCancelButtonForVC(rootVC)
             self.setViewControllers([rootVC], animated: false)
@@ -221,12 +221,7 @@ open class DKImagePickerController: DKUINavigationController, DKImageBaseManager
             self.preferredContentSize = CGSize(width: 680, height: 600)
         }
         
-        
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         self.rootVC?.navigationItem.hidesBackButton = true
-        self.rootVC?.navigationController?.navigationBar.barTintColor = UIColor(red: 37/255, green: 160/255, blue: 217/255, alpha: 1)
-        self.rootVC?.navigationController?.navigationBar.titleTextAttributes = textAttributes
-        self.rootVC?.navigationController?.navigationBar.tintColor = .white
         
         return {}
     }()
@@ -399,9 +394,9 @@ open class DKImagePickerController: DKUINavigationController, DKImageBaseManager
     
     private func didCancelCamera() {
         self.dismissCamera()
-//        if self.isInlineCamera {
-//            self.dismiss()
-//        }
+        if self.isInlineCamera {
+            self.dismiss()
+        }
     }
     
     private func showCamera() {

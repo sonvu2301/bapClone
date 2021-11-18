@@ -11,7 +11,7 @@ protocol SelectFeatureDelegate {
     func selectedFeature(index: IndexPath, id: Int, state: Bool)
 }
 
-class BASmartCustomerThirdSellFlowViewController: UIViewController {
+class BASmartCustomerThirdSellFlowViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     

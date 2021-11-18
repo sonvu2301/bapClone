@@ -349,3 +349,35 @@ struct BASmartVehicleSearchInfo: Codable {
         case state = "state"
     }
 }
+
+
+struct BASmartInventoryList: Codable {
+    var state: Bool?
+    var errorCode: Int?
+    var data: BASmartInventoryListData?
+    
+    enum CodingKeys: String, CodingKey {
+        case state = "state"
+        case errorCode = "errorcode"
+        case data = "data"
+    }
+}
+
+struct BASmartInventoryListData: Codable {
+    var stock: ContactBranch?
+    var commodity: [BASmartInventoryCommodity]?
+}
+
+struct BASmartInventoryCommodity: Codable {
+    var objectId: Int?
+    var name: String?
+    var quantity:Int?
+    var imei: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case objectId = "objectid"
+        case name = "name"
+        case quantity = "quantity"
+        case imei = "imeiflag"
+    }
+}

@@ -14,6 +14,7 @@ class BASmartPlanListCellTableViewCell: UITableViewCell {
     @IBOutlet weak var boundView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var viewCreator: UIView!
+    @IBOutlet weak var viewTarget: UIView!
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -24,6 +25,7 @@ class BASmartPlanListCellTableViewCell: UITableViewCell {
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var labelState: UILabel!
     @IBOutlet weak var labelCreatorName: UILabel!
+    @IBOutlet weak var labelTarget: UILabel!
     
     @IBOutlet weak var buttonMenu: UIButton!
     @IBOutlet weak var buttonPhone: UIButton!
@@ -85,6 +87,12 @@ class BASmartPlanListCellTableViewCell: UITableViewCell {
         labelAddress.text = address
         labelDescription.text = description
         labelState.text = state
+        labelTarget.text = data?.rate?.name
+        if (data?.rate?.name?.count ?? 0) > 0 {
+            labelTarget.text = data?.rate?.name
+        } else {
+            viewTarget.isHidden = true
+        }
         var purposeString = ""
         if purpose.count > 0 {
             purpose.forEach { (item) in

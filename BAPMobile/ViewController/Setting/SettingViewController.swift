@@ -20,6 +20,7 @@ class SettingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         title = "CẤU HÌNH HỆ THỐNG"
+        tableView.reloadData()
     }
     
     private func setupView() {
@@ -37,9 +38,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
+        let isBiomestric = UserDefaults.standard.bool(forKey: "Biomestric")
         switch indexPath.row {
         case 0:
-            cell.setupView(status: "Bật", title: "Đăng nhập sinh trắc học", icon: "")
+            let status = isBiomestric ? "Bật" : "Tắt"
+            cell.setupView(status: status, title: "Đăng nhập sinh trắc học", icon: "")
         case 1:
             cell.setupView(status: "", title: "Thay đổi mật khẩu", icon: "")
         default:

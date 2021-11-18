@@ -10,17 +10,12 @@ import UIKit
 
 open class DropDownCell: UITableViewCell {
 		
-    @IBOutlet weak var optionLabel: UILabel!
-    
+	//UI
+	@IBOutlet open weak var optionLabel: UILabel!
+	
 	var selectedBackgroundColor: UIColor?
     var highlightTextColor: UIColor?
     var normalTextColor: UIColor?
-    
-    func setupData(title: String, image: UIImage) {
-        optionLabel.text = title
-        optionLabel.numberOfLines = 0
-        optionLabel.lineBreakMode = .byWordWrapping
-    }
 
 }
 

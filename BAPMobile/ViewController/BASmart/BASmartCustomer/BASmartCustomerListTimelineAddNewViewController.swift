@@ -25,7 +25,7 @@ struct BASmartCustomerDiary: Codable {
     }
 }
 
-class BASmartCustomerListTimelineAddNewViewController: UIViewController {
+class BASmartCustomerListTimelineAddNewViewController: BaseViewController {
 
     @IBOutlet weak var buttonPassive: UIButton!
     @IBOutlet weak var buttonActive: UIButton!

@@ -41,7 +41,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor().defaultColor()
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
         
         //setup data source for dropdown
         let catalog = BASmartCustomerCatalogDetail.shared

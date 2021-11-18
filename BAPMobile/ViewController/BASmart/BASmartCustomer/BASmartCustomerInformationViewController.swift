@@ -119,8 +119,10 @@ class BASmartCustomerInformationViewController: BaseViewController {
         
         vc2.customerId = data.general_info?.object_id ?? 0
         vc3.customerId = data.general_info?.object_id ?? 0
+        vc4.customerId = data.general_info?.object_id ?? 0
         vc2.objectId = objectId
         vc3.objectId = objectId
+        vc4.objectId = objectId
         
         vc1.objectId = objectId
         vc1.delegate = self
@@ -128,6 +130,7 @@ class BASmartCustomerInformationViewController: BaseViewController {
         
         vc2.kindId = kind
         vc3.kindId = kind
+        vc4.kindId = kind
         
         vc1.phoneKindId = phoneKindId
         
@@ -283,11 +286,7 @@ extension BASmartCustomerInformationViewController: UIScrollViewDelegate {
 extension BASmartCustomerInformationViewController: BASmartCustomerMainMenuActionDelegate {
     func mainMenuAction(type: BASmartMenuAction) {
         switch type {
-        case .none:
-            break
-        case .edit:
-            break
-        case .delete:
+        case .none, .edit, .delete, .diary:
             break
         case .checkin:
             checkin()
@@ -306,10 +305,22 @@ extension BASmartCustomerInformationViewController: BASmartCustomerMainMenuActio
             let vc = UIStoryboard(name: "BASmart", bundle: nil).instantiateViewController(withIdentifier: "BASmartCustomerListTimelineViewController") as! BASmartCustomerListTimelineViewController
             vc.objectId = objectId
             navigationController?.pushViewController(vc, animated: true)
-        case .diary:
-            break
         case .tranfer:
-            break
+            let popoverContent = (storyboard?.instantiateViewController(withIdentifier: "BASmartSearchEmployeeViewController") ?? UIViewController()) as! BASmartSearchEmployeeViewController
+            let nav = UINavigationController(rootViewController: popoverContent)
+            nav.modalPresentationStyle = .popover
+            let popover = nav.popoverPresentationController
+            popoverContent.preferredContentSize = CGSize(width: view.frame.width - 20, height: 800)
+            popoverContent.blurDelegate = self
+            popoverContent.finishDelegate = self
+            popoverContent.objectId = objectId
+            popover?.delegate = self
+            popover?.sourceView = self.view
+            popover?.sourceRect = CGRect(x: 10, y: 400, width: 0, height: 0)
+            popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue:0)
+            
+            showBlurBackground()
+            self.present(nav, animated: true, completion: nil)
         }
         
     }

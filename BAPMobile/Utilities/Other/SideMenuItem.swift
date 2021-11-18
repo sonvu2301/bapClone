@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum SideMenuItem {
-    case blank, main, customer_list, plan, call_data, statistical_report, move_schedule, reopen_request, end_day, back, form, customer_data, request_new
+    case blank, main, customer_list, plan, call_data, statistical_report, move_schedule, reopen_request, end_day, back, form, customer_data, request_new, inventory
     var vc: UIViewController {
         switch self {
         case .main:
@@ -26,6 +26,9 @@ enum SideMenuItem {
             return vc
         case .form:
             let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartWarrantyListViewController") as! BASmartWarrantyListViewController
+            return vc
+        case .inventory:
+            let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartInventoryViewController") as! BASmartInventoryViewController
             return vc
         case .blank, .statistical_report, .move_schedule, .end_day, .back, .customer_data, .request_new:
             return UIViewController()
@@ -80,6 +83,8 @@ class SideMenuItems: NSObject {
                 self?.list.append(.form)
             case 40:
                 self?.list.append(.request_new)
+            case 65:
+                self?.list.append(.inventory)
             default:
                 self?.list.append(.blank)
             }

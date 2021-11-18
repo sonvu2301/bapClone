@@ -76,8 +76,8 @@ extension NSBezierPath {
 
 extension KFCrossPlatformImage {
     // macOS does not support scale. This is just for code compatibility across platforms.
-    convenience init?(dayData: Data, scale: CGFloat) {
-        self.init(dayData: dayData)
+    convenience init?(data: Data, scale: CGFloat) {
+        self.init(data: data)
     }
 }
 #endif

@@ -70,7 +70,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch menuItems[indexPath.row] {
-        case .main, .customer_list, .plan, .call_data, .reopen_request, .form:
+        case .main, .customer_list, .plan, .call_data, .reopen_request, .form, .inventory:
             self.navigationController?.pushViewController(menuItems[indexPath.row].vc, animated: true)
         case .blank, .statistical_report, .move_schedule, .customer_data, .request_new:
             break

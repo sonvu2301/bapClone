@@ -7,18 +7,13 @@
 
 import UIKit
 
-protocol RateDelegate {
-    func showReason(isShow: Bool)
-}
-
 protocol GetReasonListDelegate {
-    func reasonList(reason: [BASmartIdInfo], name: String)
-    func projectList(project: [BASmartIdInfo], name: String)
+    func selectList(type: SelectMultiCatalogType, data: [BASmartIdInfo], name: String)
+    func showRate(isShow: Bool)
 }
 
 class BASmartCheckOutWorkingViewController: BaseViewController {
 
-    
     @IBOutlet weak var viewEvaluate: BASmartCustomerListDropdownView!
     @IBOutlet weak var viewResult: BASmartCustomerListDefaultCellView!
     @IBOutlet weak var viewVehicleCount: BASmartCustomerListDefaultCellView!
@@ -409,14 +404,20 @@ extension BASmartCheckOutWorkingViewController: RateDelegate {
 }
 
 extension BASmartCheckOutWorkingViewController: GetReasonListDelegate {
-    func projectList(project: [BASmartIdInfo], name: String) {
-        labelProject.text = name
-        projects = project
+    func showRate(isShow: Bool) {
+        
     }
     
-    
-    func reasonList(reason: [BASmartIdInfo], name: String) {
-        labelReason.text = name
-        reasons = reason
+    func selectList(type: SelectMultiCatalogType, data: [BASmartIdInfo], name: String) {
+        switch type {
+        case .reason:
+            labelReason.text = name
+            reasons = data
+        case .project:
+            labelProject.text = name
+            projects = data
+        case .purpose:
+            break
+        }
     }
 }

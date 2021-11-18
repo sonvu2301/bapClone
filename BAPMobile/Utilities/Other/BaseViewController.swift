@@ -43,6 +43,7 @@ class BaseViewController: UIViewController, UIPopoverPresentationControllerDeleg
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor().defaultColor()
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
 
         let yourBackImage = UIImage(named: "ic_back")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
         self.navigationController?.navigationBar.backIndicatorImage = yourBackImage

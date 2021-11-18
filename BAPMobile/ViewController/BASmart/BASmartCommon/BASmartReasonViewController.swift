@@ -8,7 +8,7 @@
 import UIKit
 
 enum SelectMultiCatalogType {
-    case reason, project
+    case reason, project, purpose
 }
 
 class BASmartReasonViewController: BaseViewController {
@@ -24,6 +24,7 @@ class BASmartReasonViewController: BaseViewController {
     var data = [BASmartCustomerCatalogItems]()
     var dataSelect = [BASmartIdInfo]()
     var type = SelectMultiCatalogType.reason
+    var isRate = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,8 @@ class BASmartReasonViewController: BaseViewController {
             data = BASmartCustomerCatalogDetail.shared.reason
         case .project:
             data = BASmartCustomerCatalogDetail.shared.project
+        case .purpose:
+            data = BASmartCustomerCatalogDetail.shared.purpose
         }
         
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -77,13 +80,11 @@ class BASmartReasonViewController: BaseViewController {
         
         names = String(names.dropLast())
         names = String(names.dropLast())
-        switch type {
-        case .reason:
-            delegate?.reasonList(reason: dataSelect, name: names)
-        case .project:
-            delegate?.projectList(project: dataSelect, name: names)
+        delegate?.selectList(type: type, data: dataSelect, name: names)
+        if isRate {
+            let showCondition = dataSelect.filter({$0.id == 2}).count == 0 ? false : true
+            delegate?.showRate(isShow: showCondition)
         }
-        
         navigationController?.popViewController(animated: true)
     }
     

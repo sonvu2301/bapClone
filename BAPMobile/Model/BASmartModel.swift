@@ -338,6 +338,8 @@ struct BASmartCustomerCatalog: Codable {
     }
 }
 
+
+
 struct BASmartApproachParam: Codable {
     var customerId: Int?
     var objectId: Int?
@@ -415,6 +417,54 @@ struct BASmartApproachResultData: Codable {
     }
 }
 
+struct BASmartCustomerCreateApproachParam: Codable {
+    var customerId: Int?
+//    var planId: Int?
+    var pkind: Int?
+    var start: Int?
+    var total: Int?
+    var project: [BASmartIdInfo]?
+    var rate: Int?
+    var reason: [BASmartIdInfo]?
+    var ability: Int?
+    var result: String?
+    var vehicleCount: Int?
+    var expect: Int?
+    var scheme: String?
+    var price: Int?
+    var transport: Int?
+    var next: Int?
+    var department: Int?
+    var location: BASmartLocationParam?
+    var purpose: [BASmartIdInfo]?
+    var photo: [BASmartDailyWorkingPhotolist]?
+    var ignore: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case customerId = "customerid"
+//        case planId = "planid"
+        case pkind = "pkindid"
+        case start = "starttime"
+        case total = "totaltime"
+        case project = "projectlist"
+        case rate = "rateid"
+        case reason = "reasonlist"
+        case ability = "abilityid"
+        case result = "resultstr"
+        case vehicleCount = "vehiclecount"
+        case expect = "expectedtime"
+        case scheme = "schemestr"
+        case price = "pricevalue"
+        case transport = "transportid"
+        case next = "nexttime"
+        case department = "departmentid"
+        case location = "location"
+        case purpose = "purposelist"
+        case photo = "photolist"
+        case ignore = "ignoreflag"
+    }
+}
+
 
 struct BASmartCustomerCatalogData: Codable {
     var customer_kind: [BASmartCustomerCatalogItems]?
@@ -474,6 +524,7 @@ struct BASmartCustomerCatalogItems: Codable {
     var id: Int?
     var ri: Int?
     var name: String?
+    var target: Bool?
 }
 
 struct BASmartCustomerCatalogItemsDetail: Codable {
@@ -504,6 +555,7 @@ struct BASmartCustomerDetailApproachList: Codable {
     var transport: BASmartDetailInfo?
     var photo: [BASmartImageLink]?
     var opinion: [BASmartCustomerOpinion]?
+    var icon: String?
     
     enum CodingKeys: String, CodingKey {
         case objectId = "objectid"
@@ -526,6 +578,7 @@ struct BASmartCustomerDetailApproachList: Codable {
         case transport = "transportinfo"
         case photo = "photolist"
         case opinion = "opinionlist"
+        case icon = "iconsrc"
     }
 }
 
@@ -913,8 +966,17 @@ struct BASmartRequestReopenParam: Codable {
     var location: BASmartLocationParam
 }
 
-
-
+struct BASmartRequestReopenConfirmParam: Codable {
+    var id: Int
+    var location: BASmartLocationParam
+    var state: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "requestid"
+        case location = "location"
+        case state = "state"
+    }
+}
 
 
 //MARK: BASmart Customer
@@ -1057,6 +1119,7 @@ struct BASmartPlanListData: Codable {
     var phone: String?
     var location: BASmartLocationParam?
     var purpose: [BASmartDetailInfo]?
+    var rate: BASmartDetailInfo?
     var creatorInfo: BASmartContactInfo?
     var description: String?
     var menuAction: [BASmartDetailMenuDetail]?
@@ -1073,6 +1136,7 @@ struct BASmartPlanListData: Codable {
         case phone = "phone"
         case location = "location"
         case purpose = "purposelist"
+        case rate = "rateinfo"
         case creatorInfo = "creatorinfo"
         case description = "description"
         case menuAction = "menuaction"

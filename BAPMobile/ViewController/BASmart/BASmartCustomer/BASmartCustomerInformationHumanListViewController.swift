@@ -163,6 +163,7 @@ extension BASmartCustomerInformationHumanListViewController: BASmartHumanListDel
             Network.shared.BASmartDeleteHuman(customerId: self?.customerId ?? 0, objectId: objectId) { [weak self] (data) in
                 if data?.error_code != 0 && data?.error_code != nil {
                     self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")
+                    self?.hideBlurBackground()
                 } else {
                     self?.reloadData()
                 }

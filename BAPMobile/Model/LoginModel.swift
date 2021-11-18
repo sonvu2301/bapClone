@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct LoginParam: Codable {
+    var user: String?
+    var pass: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case user = "username"
+        case pass = "password"
+    }
+}
+
 struct LoginModel: Codable {
     var error_code: Int
     var message: String?

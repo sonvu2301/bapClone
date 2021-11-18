@@ -44,6 +44,7 @@ class BASmartCustomerCreateViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor().defaultColor()
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
         
         buttonCancel.layer.borderWidth = 1
         buttonCancel.layer.borderColor = UIColor(hexString: "B4B4B4", alpha: 0.5).cgColor

@@ -39,6 +39,7 @@ class BASmartCustomerInformationAddCompetitorViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor().defaultColor()
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
         
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor().defaultColor().cgColor

@@ -48,9 +48,7 @@ class Network: NSObject {
     }
 
     
-    func login(userName: String, pass: String, completion: @escaping(LoginModel?) -> Void) {
-        let param = ["username": userName,
-                     "password": pass ]
+    func login(param: LoginParam, completion: @escaping(LoginModel?) -> Void) {
         let headers: HTTPHeaders = ["keys": key,
                                     "clientid": "\(UserManager.shared.clientId)"]
         
@@ -325,6 +323,28 @@ extension Network {
         }
     }
     
+    func BASmartRequestReopenConfirm(param: BASmartRequestReopenConfirmParam, id: Int, completion: @escaping (BasicModel?) -> Void) {
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_request_reopen_confirm, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.error_code != 0 {
+                    Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
     func BASmartDailyWorkingPhoto(param: BASmartDailyWorkingParam, completion: @escaping (BASmartCheckin?) -> Void) {
         let headers = self.getHeaders()
         
@@ -416,6 +436,30 @@ extension Network {
         }
     }
     
+    func BASmartTransferCustomer(id: Int, seller: String, completion: @escaping (BasicModel?) -> Void) {
+        let param = ["objectid": "\(id)",
+                     "sellerstr": seller]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_transfer_customer, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.error_code != 0 {
+                    Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
     func BASmartAuthenCustomer(id: Int, completion: @escaping (BasicModel?) -> Void) {
         let headers = self.getHeaders()
         let param = ["id": id]
@@ -443,6 +487,52 @@ extension Network {
         let headers = self.getHeaders()
         
         AF.request(NetworkConstants.basmart_approach , method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.error_code != 0 {
+                    Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func BASmartDeleteApproach(customerId: Int, objectId: Int, completion: @escaping (BasicModel?) -> Void) {
+        let param = ["customerid": "\(customerId)",
+                     "objectid": "\(objectId)"]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_approach_delete , method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.error_code != 0 {
+                    Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func BASmartCreateApproach(param: BASmartCustomerCreateApproachParam, completion: @escaping (BasicModel?) -> Void) {
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_approach_create , method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
             do {
                 guard let json = response.data else {
                     print(response.error as Any)
@@ -1135,6 +1225,27 @@ extension Network {
         }
     }
     
+    func BASmartGetSeller(search: String, completion: @escaping (BASmartUtilitySupport?) -> Void) {
+        
+        let param = ["searchstr": search]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_list_seller, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BASmartUtilitySupport.self, from: json)
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
     //MARK: Call data
     func BASmartCallList(day: Int, completion: @escaping ([BASmartCallData]?) -> Void) {
         let param = ["dayindex": day]
@@ -1161,7 +1272,7 @@ extension Network {
     
     
     
-    //Technical
+    //MARK: Technical
     func BASmartTechnicalListTask(param: BASmartLocationParam, completion: @escaping (BASmartTechnicalTask?) -> Void) {
         let headers = self.getHeaders()
         
@@ -1330,6 +1441,32 @@ extension Network {
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
                 if data.error_code != 0 && data.error_code != nil {
                     Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    
+    //MARK: Inventory
+    func BASmartGetInventoryList(date: Int, completion: @escaping (BASmartInventoryList?) -> Void) {
+        
+        let param = ["dateindex": "\(date)"]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_inventory_list, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BASmartInventoryList.self, from: json)
+                if data.errorCode != 0 && data.errorCode != nil {
+                    Toast(text: "\(data.errorCode ?? 0)", duration: Delay.long).show()
                 }
                 completion(data)
             } catch {

@@ -108,6 +108,10 @@ struct NetworkConstants {
         return baseTestBASmartMngURL + "basmart/timekepping/open/request"
     }
     
+    static var basmart_request_reopen_confirm: String {
+        return baseTestBASmartMngURL + "basmart/timekepping/open/confirm"
+    }
+    
     static var basmart_dailyworking_photo: String {
         return baseTestBASmartMngURL + "basmart/dailyworking/photo"
     }
@@ -168,6 +172,10 @@ struct NetworkConstants {
         return baseTestBASmartMngURL + "basmart/customer/gallery"
     }
     
+    static var basmart_transfer_customer: String {
+        return baseTestBASmartMngURL + "basmart/customer/transfer"
+    }
+    
     static var basmart_add_human: String {
         return baseTestBASmartMngURL + "basmart/customer/human/create"
     }
@@ -190,6 +198,14 @@ struct NetworkConstants {
 
     static var basmart_delete_competitor: String {
         return baseTestBASmartMngURL + "basmart/customer/competitor/delete"
+    }
+    
+    static var basmart_approach_delete: String {
+        return baseTestBASmartMngURL + "basmart/customer/approach/delete"
+    }
+    
+    static var basmart_approach_create: String {
+        return baseTestBASmartMngURL + "basmart/customer/approach/create"
     }
     
     static var basmart_result_approach: String {
@@ -260,6 +276,10 @@ struct NetworkConstants {
         return baseTestInstallMngURL + "task/install/create/bacam"
     }
     
+    static var basmart_list_seller: String {
+        return baseTestBASmartMngURL + "basmart/datautility/seller"
+    }
+    
     //MARK: Warranty
     static var basmart_technical_task_list: String {
         return baseTestBASmartMngURL + "basmart/technical/task/manager"
@@ -293,6 +313,10 @@ struct NetworkConstants {
         return baseTestBASmartMngURL + "basmart/technical/task/transfer"
     }
     
+    //MARK: Inventory
+    static var basmart_inventory_list: String {
+        return baseTestStockURL + "report/stock/inventory/list"
+    }
     
     //MARK: Vehicle Infomation
     

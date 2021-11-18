@@ -247,8 +247,9 @@ extension AllMainMenuViewController: UICollectionViewDelegate, UICollectionViewD
         let index = indexPath.section != 0 ? indexPath.section * 2 + indexPath.row  : indexPath.row
         cell.imageView.image = menuList[index].image
         cell.titleLabel.text = menuList[index].name
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 0.5
+        if indexPath.row == 1 {
+            cell.imageSeperateLine.image = UIImage(named: "flat_list_horizontal_left")?.withHorizontallyFlippedOrientation()
+        }
         return cell
     }
     

@@ -9,6 +9,17 @@ import UIKit
 
 enum ScrollState {
     case first, second, third
+    
+    var pkind: Int {
+        switch self {
+        case .first:
+            return 1
+        case .second:
+            return 2
+        case .third:
+            return 3
+        }
+    }
 }
 
 protocol BASmartGetPhoneNumberDelegate {

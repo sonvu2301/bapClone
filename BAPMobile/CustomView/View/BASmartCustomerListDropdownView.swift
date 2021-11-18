@@ -8,6 +8,10 @@
 import UIKit
 import DropDown
 
+protocol RateDelegate {
+    func showReason(isShow: Bool)
+}
+
 class BASmartCustomerListDropdownView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -20,6 +24,7 @@ class BASmartCustomerListDropdownView: UIView {
     var rateCondition = [String]()
     var listId = [BASmartIdInfo]()
     var id = 0
+    var placeholder = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +50,7 @@ class BASmartCustomerListDropdownView: UIView {
         labelTitle.text = title
         dropDown.dataSource = content.map({($0.name ?? "")})
         self.content = content
+        self.placeholder = placeholder
         buttonDropdown.setTitle(placeholder, for: .normal)
         
         //Add all item that rate > 0
@@ -63,6 +69,17 @@ class BASmartCustomerListDropdownView: UIView {
         buttonDropdown.setTitleColor(.black, for: .normal)
         let id = content.filter({$0.name == title}).map({$0.id}).first
         self.id = (id ?? 0) ?? 0
+    }
+    
+    func dropDownStatus(isShow: Bool) {
+        buttonDropdown.backgroundColor = isShow == true ? .white : UIColor(hexString: "DCDCDC")
+        buttonDropdown.isUserInteractionEnabled = isShow
+        
+        if !isShow {
+            content = [BASmartCustomerCatalogItems]()
+            buttonDropdown.setTitle(placeholder, for: .normal)
+            buttonDropdown.setTitleColor(.gray, for: .normal)
+        }
     }
     
     @IBAction func buttonDropDownTap(_ sender: Any) {

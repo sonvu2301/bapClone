@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BASmartCheckoutViewController: UIViewController {
+class BASmartCheckoutViewController: BaseViewController {
 
     @IBOutlet weak var buttoncancel: UIButton!
     @IBOutlet weak var buttonAccept: UIButton!

@@ -33,7 +33,7 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor().defaultColor()
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
+        navigationController?.navigationBar.backgroundColor = UIColor().defaultColor()
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -45,7 +45,12 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
         blurView.backgroundColor = .black
         blurView.alpha = 0.5
         blurView.frame = view.bounds
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.setStatusBar(backgroundColor: UIColor().defaultColor())
+        }
     }
+    
     
     private func requestPhoto() {
         let photos = PHPhotoLibrary.authorizationStatus()

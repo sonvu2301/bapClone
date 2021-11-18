@@ -53,13 +53,16 @@
                                             <constraint firstAttribute="height" constant="20" id="mZQ-eY-8tY"/>
                                         </constraints>
                                         <state key="normal" image="filter_icon_header"/>
+                                        <connections>
+                                            <action selector="buttonMenuTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qOA-nS-30y"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-Kw-HMi">
                                         <rect key="frame" x="142" y="5" width="200" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="uvv-zh-nD4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -386,13 +389,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hg8-sw-VtX">
-                                <rect key="frame" x="0.0" y="600" width="420" height="108"/>
+                                <rect key="frame" x="0.0" y="600" width="420" height="186"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="248" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="7VN-Me-BoS" customClass="BASmartCustomerListDefaultCellView" customModule="BAPMobile" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="420" height="58"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQf-ko-X5D">
-                                                <rect key="frame" x="10" y="10" width="400" height="38"/>
+                                                <rect key="frame" x="10" y="10" width="400" height="116"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -409,7 +412,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxI-Qg-rjA">
-                                        <rect key="frame" x="0.0" y="58" width="420" height="50"/>
+                                        <rect key="frame" x="0.0" y="136" width="420" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-as-9Iu">
                                                 <rect key="frame" x="10" y="2" width="400" height="46"/>
@@ -433,7 +436,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="xOT-cD-m6D">
-                                <rect key="frame" x="0.0" y="708" width="420" height="228"/>
+                                <rect key="frame" x="0.0" y="786" width="420" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Hình ảnh tiếp xúc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-9G-oAi">
                                         <rect key="frame" x="10" y="10" width="400" height="20"/>
@@ -444,21 +447,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-w4-sl7" customClass="SelectImageView" customModule="BAPMobile" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="40" width="400" height="186"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-eC-uyx">
+                                        <rect key="frame" x="10" y="40" width="400" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XPT-g3-I83">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="SCP-w4-sl7" firstAttribute="leading" secondItem="xOT-cD-m6D" secondAttribute="leading" constant="10" id="KWm-wh-gvD"/>
-                                    <constraint firstItem="SCP-w4-sl7" firstAttribute="top" secondItem="Tay-9G-oAi" secondAttribute="bottom" constant="10" id="MMI-IT-Y4X"/>
+                                    <constraint firstItem="dRr-eC-uyx" firstAttribute="top" secondItem="Tay-9G-oAi" secondAttribute="bottom" constant="10" id="48F-5b-oYh"/>
                                     <constraint firstAttribute="trailing" secondItem="Tay-9G-oAi" secondAttribute="trailing" constant="10" id="OBa-gA-StE"/>
+                                    <constraint firstAttribute="bottom" secondItem="dRr-eC-uyx" secondAttribute="bottom" constant="10" id="Wc8-zj-v3i"/>
+                                    <constraint firstItem="dRr-eC-uyx" firstAttribute="leading" secondItem="xOT-cD-m6D" secondAttribute="leading" constant="10" id="afa-Lg-WlZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dRr-eC-uyx" secondAttribute="trailing" constant="10" id="gTS-q7-Sem"/>
                                     <constraint firstItem="Tay-9G-oAi" firstAttribute="top" secondItem="xOT-cD-m6D" secondAttribute="top" constant="10" id="i6D-cO-GOp"/>
-                                    <constraint firstAttribute="trailing" secondItem="SCP-w4-sl7" secondAttribute="trailing" constant="10" id="miz-fT-d0w"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="nTQ-3o-V4E"/>
+                                    <constraint firstAttribute="height" priority="999" constant="150" id="nTQ-3o-V4E"/>
                                     <constraint firstItem="Tay-9G-oAi" firstAttribute="leading" secondItem="xOT-cD-m6D" secondAttribute="leading" constant="10" id="rXJ-8s-YF2"/>
-                                    <constraint firstAttribute="bottom" secondItem="SCP-w4-sl7" secondAttribute="bottom" constant="2" id="wJD-Ka-vu9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -527,6 +536,8 @@
                 <outlet property="boundView" destination="vaG-WB-Zqy" id="Dqm-g8-JXy"/>
                 <outlet property="buttonAddress" destination="QYL-BO-m1w" id="XXd-5J-1nt"/>
                 <outlet property="buttonMenu" destination="rEp-0J-uR3" id="ZHF-rr-5XS"/>
+                <outlet property="collectionHeight" destination="nTQ-3o-V4E" id="ukX-Mr-dwR"/>
+                <outlet property="collectionView" destination="dRr-eC-uyx" id="o2s-Af-Y1o"/>
                 <outlet property="iconImage" destination="OcI-a0-9Ei" id="9m0-ce-pPa"/>
                 <outlet property="labelOpinion" destination="Zfq-as-9Iu" id="wVM-LC-OGx"/>
                 <outlet property="labelPrice" destination="gzH-8o-g3N" id="eL7-p0-9hS"/>
@@ -543,7 +554,6 @@
                 <outlet property="viewReason" destination="Lbv-E7-MXe" id="XpA-0G-vKs"/>
                 <outlet property="viewResult" destination="eZ8-BP-FW8" id="jae-jq-xHa"/>
                 <outlet property="viewSale" destination="fQp-M5-LRc" id="8G3-PT-F1S"/>
-                <outlet property="viewSelectImage" destination="SCP-w4-sl7" id="Qyn-Hr-z9o"/>
                 <outlet property="viewSuggestion" destination="7VN-Me-BoS" id="7ru-yZ-d6b"/>
                 <outlet property="viewTime" destination="zrW-CQ-hXg" id="aDc-JY-SJR"/>
             </connections>
