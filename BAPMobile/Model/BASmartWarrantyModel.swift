@@ -381,3 +381,56 @@ struct BASmartInventoryCommodity: Codable {
         case imei = "imeiflag"
     }
 }
+
+
+struct BASmartInventoryDetail: Codable {
+    var state: Bool?
+    var errorCode: Int?
+    var data: BASmartInventoryDetailData?
+    
+    enum CodingKeys: String, CodingKey {
+        case state = "state"
+        case errorCode = "errorcode"
+        case data = "data"
+    }
+}
+
+struct BASmartInventoryDetailData: Codable {
+    var viewAll: Bool?
+    var imei: [BASmartInventoryDetailImei]?
+    
+    enum CodingKeys: String, CodingKey {
+        case viewAll = "viewall"
+        case imei = "imeilist"
+    }
+}
+
+struct BASmartInventoryDetailImei: Codable {
+    var id: Int?
+    var kind: String?
+    var imei: String?
+    var time: Int?
+    var state: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "resourceid"
+        case kind = "kindstr"
+        case imei = "imeinumber"
+        case time = "timeindex"
+        case state = "state"
+    }
+}
+
+struct BASmartInventoryStatusParam: Codable {
+    var id: Int?
+    var state: Bool?
+    var type: Int?
+    var reason: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "resourceid"
+        case type = "typeid"
+        case reason = "reason"
+        case state = "state"
+    }
+}

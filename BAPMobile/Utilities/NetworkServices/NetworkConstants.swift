@@ -318,6 +318,14 @@ struct NetworkConstants {
         return baseTestStockURL + "report/stock/inventory/list"
     }
     
+    static var basmart_inventory_detail: String {
+        return baseTestStockURL + "report/stock/inventory/detail"
+    }
+    
+    static var basmart_inventory_state: String {
+        return baseTestStockURL + "report/stock/inventory/state"
+    }
+    
     //MARK: Vehicle Infomation
     
     static var vehicle_search: String {

@@ -180,12 +180,15 @@ class AllMainMenuViewController: UIViewController {
     var data: [MenuList]?
     var menuList = [MenuType]()
     
+    @IBOutlet weak var imageSeperate: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addListMenu()
         menuCollectionView.reloadData()
+        
+        
         // Do any additional setup after loading the view.
     }
     

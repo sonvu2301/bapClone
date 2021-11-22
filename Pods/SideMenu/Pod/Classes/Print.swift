@@ -22,15 +22,15 @@ internal enum Print: String { case
     }
 
     static func warning(_ print: Print, arguments: CVarArg..., required: Bool = false) {
-        warning(String(format: print.rawValue, arguments: arguments), required: required)
+//        warning(String(format: print.rawValue, arguments: arguments), required: required)
     }
 
     static func warning(_ print: Print, arguments: PropertyName..., required: Bool = false) {
-        warning(String(format: print.rawValue, arguments: arguments.map { $0.rawValue }), required: required)
+//        warning(String(format: print.rawValue, arguments: arguments.map { $0.rawValue }), required: required)
     }
 
     static func warning(_ print: Print, required: Bool = false) {
-        warning(print.rawValue, required: required)
+//        warning(print.rawValue, required: required)
     }
 }
 

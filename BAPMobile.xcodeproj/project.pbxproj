@@ -38,6 +38,8 @@
 		CF0884E5259C314700DE4FB7 /* BASmartScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0884E3259C314700DE4FB7 /* BASmartScheduleTableViewCell.xib */; };
 		CF0884E9259C3B8800DE4FB7 /* BASmartWarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0884E7259C3B8800DE4FB7 /* BASmartWarningTableViewCell.swift */; };
 		CF0884EA259C3B8800DE4FB7 /* BASmartWarningTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0884E8259C3B8800DE4FB7 /* BASmartWarningTableViewCell.xib */; };
+		CF0AA7E32746601000548E98 /* BASmartInventoryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0AA7E12746601000548E98 /* BASmartInventoryDetailTableViewCell.swift */; };
+		CF0AA7E42746601000548E98 /* BASmartInventoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0AA7E22746601000548E98 /* BASmartInventoryDetailTableViewCell.xib */; };
 		CF15331725DCF803004667D8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF15331625DCF803004667D8 /* Map.storyboard */; };
 		CF15331B25DCF84A004667D8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF15331A25DCF84A004667D8 /* MapViewController.swift */; };
 		CF22724425AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22724225AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.swift */; };
@@ -276,6 +278,8 @@
 		CF0884E3259C314700DE4FB7 /* BASmartScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartScheduleTableViewCell.xib; sourceTree = "<group>"; };
 		CF0884E7259C3B8800DE4FB7 /* BASmartWarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartWarningTableViewCell.swift; sourceTree = "<group>"; };
 		CF0884E8259C3B8800DE4FB7 /* BASmartWarningTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartWarningTableViewCell.xib; sourceTree = "<group>"; };
+		CF0AA7E12746601000548E98 /* BASmartInventoryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartInventoryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		CF0AA7E22746601000548E98 /* BASmartInventoryDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartInventoryDetailTableViewCell.xib; sourceTree = "<group>"; };
 		CF15331625DCF803004667D8 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		CF15331A25DCF84A004667D8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CF22724225AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerDetailDefaultTableViewCell.swift; sourceTree = "<group>"; };
@@ -637,6 +641,8 @@
 				CF52C9B8273E4E5F00B43C01 /* BASmartSearchEmployeeTableViewCell.xib */,
 				CFCDE49F2744BF7B00922331 /* BASmartInventoryListTableViewCell.swift */,
 				CFCDE4A02744BF7B00922331 /* BASmartInventoryListTableViewCell.xib */,
+				CF0AA7E12746601000548E98 /* BASmartInventoryDetailTableViewCell.swift */,
+				CF0AA7E22746601000548E98 /* BASmartInventoryDetailTableViewCell.xib */,
 			);
 			path = BASmartCustomCell;
 			sourceTree = "<group>";
@@ -1105,6 +1111,7 @@
 				CFF2614926C5CCB30006DF35 /* Vehicle.storyboard in Resources */,
 				CFF2617226EF644D0006DF35 /* YearScrollCell.xib in Resources */,
 				CFA1C9852604779E007DAC38 /* BASmartCallHistoryTableViewCell.xib in Resources */,
+				CF0AA7E42746601000548E98 /* BASmartInventoryDetailTableViewCell.xib in Resources */,
 				CFFE826A25BAAB1B00B45958 /* BASmartCustomListGalleryCollectionViewCell.xib in Resources */,
 				CF7AD5FF25C3F90E00E5BA25 /* BASmartCustomerTimelineSection.xib in Resources */,
 				CF042ADA26396BA200A7EDDA /* BASmartCustomerSellOptionTableViewCell.xib in Resources */,
@@ -1315,6 +1322,7 @@
 				CF6D14FD257A0ACD00D27BD1 /* MainMenuViewController.swift in Sources */,
 				CF910F2B267756E200046221 /* SelectImageCollectionViewCell.swift in Sources */,
 				CF4C27CF2727B683008268C8 /* BASmartCustomerInformationAddHumanTypeViewController.swift in Sources */,
+				CF0AA7E32746601000548E98 /* BASmartInventoryDetailTableViewCell.swift in Sources */,
 				CFA1A9A425AD4E4700D4C093 /* SideMenuItem.swift in Sources */,
 				CF042ACF2632C16B00A7EDDA /* BASmartSelectComboTableViewCell.swift in Sources */,
 				CF5AB1AD25F89AB200B1A9E3 /* BASmartPlanListCellTableViewCell.swift in Sources */,

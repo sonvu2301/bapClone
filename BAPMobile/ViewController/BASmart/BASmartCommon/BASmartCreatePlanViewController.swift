@@ -218,6 +218,7 @@ class BASmartCreatePlanViewController: UIViewController {
     private func planAction() {
         var sourceId = name == "" ? String(BASmartPlanKind.plan.id) : String(BASmartPlanKind.customer.id)
         sourceId = isEdit == true ? "" : sourceId
+        
         let coord = location?.first?.coords?.first
         let locationParam = BASmartLocationParam(lng: coord?.lng ?? 0,
                                         lat: coord?.lat ?? 0,

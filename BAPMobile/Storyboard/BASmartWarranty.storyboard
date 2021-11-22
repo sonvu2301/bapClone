@@ -359,6 +359,85 @@
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="1722.554347826087"/>
         </scene>
+        <!--Smart Inventory Detail View Controller-->
+        <scene sceneID="GWn-cR-tDl">
+            <objects>
+                <viewController storyboardIdentifier="BASmartInventoryDetailViewController" id="FeX-Ll-vgm" customClass="BASmartInventoryDetailViewController" customModule="BAPMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XBf-WH-tiA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cft-fk-NKX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3X-ZA-DDq">
+                                        <rect key="frame" x="10" y="11.666666666666664" width="394" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKY-hh-ldI">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="NvG-B7-5k6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pKY-hh-ldI" firstAttribute="leading" secondItem="cft-fk-NKX" secondAttribute="leading" id="5Uw-H7-qbh"/>
+                                    <constraint firstAttribute="trailing" secondItem="pKY-hh-ldI" secondAttribute="trailing" id="88l-gJ-IdA"/>
+                                    <constraint firstAttribute="height" constant="40" id="F3o-r8-r0i"/>
+                                    <constraint firstItem="e3X-ZA-DDq" firstAttribute="leading" secondItem="cft-fk-NKX" secondAttribute="leading" constant="10" id="XMr-Fa-cst"/>
+                                    <constraint firstItem="e3X-ZA-DDq" firstAttribute="centerY" secondItem="cft-fk-NKX" secondAttribute="centerY" id="lgP-fv-qAd"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3X-ZA-DDq" secondAttribute="trailing" constant="10" id="qSO-hv-8K8"/>
+                                    <constraint firstAttribute="bottom" secondItem="pKY-hh-ldI" secondAttribute="bottom" id="xOi-4q-yhn"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9zA-68-VnL">
+                                <rect key="frame" x="0.0" y="40" width="414" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPU-Fa-nsQ">
+                                <rect key="frame" x="10" y="676" width="394" height="40"/>
+                                <color key="backgroundColor" red="0.031372549019607843" green="0.39215686274509803" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="R1K-0e-I0i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="LẤY CẢ IMEI ĐÃ ĐÁNH DẤU TRIỂN KHAI"/>
+                                <connections>
+                                    <action selector="buttonGetImeiTap:" destination="FeX-Ll-vgm" eventType="touchUpInside" id="ChR-64-C3z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xn4-xJ-tc7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cft-fk-NKX" secondAttribute="trailing" id="IHT-ux-aph"/>
+                            <constraint firstItem="cft-fk-NKX" firstAttribute="leading" secondItem="xn4-xJ-tc7" secondAttribute="leading" id="KSC-XI-JQ3"/>
+                            <constraint firstItem="cft-fk-NKX" firstAttribute="top" secondItem="xn4-xJ-tc7" secondAttribute="top" id="UOW-bp-duP"/>
+                            <constraint firstItem="xn4-xJ-tc7" firstAttribute="bottom" secondItem="9zA-68-VnL" secondAttribute="bottom" id="Xu3-GN-5TL"/>
+                            <constraint firstItem="xn4-xJ-tc7" firstAttribute="bottom" secondItem="dPU-Fa-nsQ" secondAttribute="bottom" constant="20" id="ZCW-gz-HNa"/>
+                            <constraint firstItem="dPU-Fa-nsQ" firstAttribute="leading" secondItem="xn4-xJ-tc7" secondAttribute="leading" constant="10" id="dGh-fM-56w"/>
+                            <constraint firstItem="xn4-xJ-tc7" firstAttribute="trailing" secondItem="9zA-68-VnL" secondAttribute="trailing" id="ff0-Qc-5nb"/>
+                            <constraint firstItem="xn4-xJ-tc7" firstAttribute="trailing" secondItem="dPU-Fa-nsQ" secondAttribute="trailing" constant="10" id="pVk-Zy-GhY"/>
+                            <constraint firstItem="9zA-68-VnL" firstAttribute="top" secondItem="cft-fk-NKX" secondAttribute="bottom" id="rgx-H8-MGZ"/>
+                            <constraint firstItem="9zA-68-VnL" firstAttribute="leading" secondItem="xn4-xJ-tc7" secondAttribute="leading" id="sVr-Ji-zXc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonGetImei" destination="dPU-Fa-nsQ" id="aKl-8l-jme"/>
+                        <outlet property="labelName" destination="e3X-ZA-DDq" id="09R-re-0qb"/>
+                        <outlet property="tableView" destination="9zA-68-VnL" id="KLq-ga-Gga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUl-Gh-PCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="1723"/>
+        </scene>
         <!--Smart Vehicle Preview Image View Controller-->
         <scene sceneID="AHA-HY-b8o">
             <objects>

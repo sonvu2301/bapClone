@@ -1475,6 +1475,54 @@ extension Network {
             }
         }
     }
+    
+    func BASmartGetInventoryDetail(id: Int, viewAll: Bool, completion: @escaping (BASmartInventoryDetail?) -> Void) {
+        
+        let param = ["objectid": "\(id)",
+                     "viewall": "\(viewAll)"]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_inventory_detail, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BASmartInventoryDetail.self, from: json)
+                if data.errorCode != 0 && data.errorCode != nil {
+                    Toast(text: "\(data.errorCode ?? 0)", duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func BASmartInventoriStatus(param: BASmartInventoryStatusParam, completion: @escaping (BasicModel?) -> Void) {
+        
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_inventory_state, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.error_code != 0 && data.error_code != nil {
+                    Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
 }
 
 

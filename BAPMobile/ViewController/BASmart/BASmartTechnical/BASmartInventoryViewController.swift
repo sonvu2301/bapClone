@@ -131,10 +131,11 @@ extension BASmartInventoryViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellData = filterData[indexPath.row]
         if cellData.imei ?? false {
-//            let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartInventoryDetailViewController") as! BASmartInventoryDetailViewController
-//            vc.objectId = cellData.objectId ?? 0
+            let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartInventoryDetailViewController") as! BASmartInventoryDetailViewController
+            vc.objectId = cellData.objectId ?? 0
+            vc.name = cellData.name ?? ""
             
-//            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         tableView.deselectRow(at: indexPath, animated: false)
