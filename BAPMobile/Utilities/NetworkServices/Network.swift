@@ -90,7 +90,7 @@ class Network: NSObject {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -189,7 +189,7 @@ class Network: NSObject {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -312,7 +312,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -334,7 +334,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -403,7 +403,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -425,7 +425,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -449,7 +449,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -472,7 +472,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -494,7 +494,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -518,7 +518,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -540,7 +540,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -632,7 +632,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -738,7 +738,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -802,7 +802,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -849,7 +849,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -872,7 +872,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -895,7 +895,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -990,7 +990,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data.state ?? false)
@@ -1059,7 +1059,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1081,7 +1081,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1104,7 +1104,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 {
+                if data.errorCode != 0 {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1373,7 +1373,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1395,7 +1395,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1417,7 +1417,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1439,7 +1439,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1513,8 +1513,81 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    
+    //MARK: Warehous
+    func BASmartWarehouseCustomerList(completion: @escaping (BASmartWarehouseCustomer?) -> Void) {
+        
+        let param = [""]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_warehouse_customer_list, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BASmartWarehouseCustomer.self, from: json)
+                if data.errorCode != 0 && data.errorCode != nil {
+                    Toast(text: "\(data.errorCode ?? 0)", duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func BASmartWarehouseCreateCustomer(param: BASmartWarehouseCreateCustomerParam, completion: @escaping (BasicModel?) -> Void) {
+        
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_warehouse_add_customer, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BasicModel.self, from: json)
+                if data.errorCode != 0 && data.errorCode != nil {
+                    Toast(text: "\(data.errorCode ?? 0)", duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func BASmartGetWarehouseCatalog(completion: @escaping (BASmartWarehouseCatalog?) -> Void) {
+        
+        let param = [""]
+        let headers = self.getHeaders()
+        
+        AF.request(NetworkConstants.basmart_warehouse_customer_catalog, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(BASmartWarehouseCatalog.self, from: json)
+                if data.errorCode != 0 && data.errorCode != nil {
+                    Toast(text: "\(data.errorCode ?? 0)", duration: Delay.long).show()
                 }
                 completion(data)
             } catch {
@@ -1561,7 +1634,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: data.message, duration: Delay.long).show()
                 }
                 completion(data)
@@ -1605,7 +1678,7 @@ extension Network {
                     return
                 }
                 let data = try JSONDecoder().decode(BasicModel.self, from: json)
-                if data.error_code != 0 && data.error_code != nil {
+                if data.errorCode != 0 && data.errorCode != nil {
                     Toast(text: String(data.message ?? ""), duration: Delay.long).show()
                 }
                 completion(data)

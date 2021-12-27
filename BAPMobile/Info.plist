@@ -25,7 +25,7 @@
 		<string>tel</string>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
-        <string>viber</string>
+		<string>viber</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -80,5 +80,7 @@
 			<string></string>
 		</dict>
 	</array>
+	<key>NSFaceIDUsageDescription</key>
+	<string>YES</string>
 </dict>
 </plist>

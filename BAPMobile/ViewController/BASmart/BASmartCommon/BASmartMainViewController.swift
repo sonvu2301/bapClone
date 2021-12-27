@@ -447,7 +447,7 @@ class BASmartMainViewController: BaseSideMenuViewController {
         let param = BASmartRequestReopenParam(reason: textViewReopen.text, location: BASmartLocationParam(lng: locValue.longitude, lat: locValue.latitude, opt: 1))
         
         Network.shared.BASmartRequestReopen(param: param) { [weak self] (data) in
-            if data?.error_code != 0 {
+            if data?.errorCode != 0 {
                 self?.presentBasicAlert(title: "", message: data?.message ?? "", buttonTittle: "Đồng ý")
             } else {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)

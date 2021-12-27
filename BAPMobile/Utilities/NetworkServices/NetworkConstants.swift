@@ -326,6 +326,20 @@ struct NetworkConstants {
         return baseTestStockURL + "report/stock/inventory/state"
     }
     
+    //MARK: Ware House
+    static var basmart_warehouse_customer_list: String {
+        return baseTestBASmartMngURL + "basmart/warehouse/customer/list"
+    }
+    
+    static var basmart_warehouse_add_customer: String {
+        return baseTestBASmartMngURL + "basmart/warehouse/customer/create"
+    }
+    
+    static var basmart_warehouse_customer_catalog: String {
+        return baseTestBASmartMngURL + "basmart/warehouse/customer/catalog"
+    }
+ 
+    
     //MARK: Vehicle Infomation
     
     static var vehicle_search: String {

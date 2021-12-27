@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,24 +31,38 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Av-cc-l4Y">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="7et-I2-4EU"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4mt-km-DS9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ChC-Um-TmM"/>
+                    <constraint firstAttribute="bottom" secondItem="3Av-cc-l4Y" secondAttribute="bottom" id="DlW-Ta-GZm"/>
+                    <constraint firstAttribute="trailing" secondItem="3Av-cc-l4Y" secondAttribute="trailing" id="H6c-Fg-0UJ"/>
                     <constraint firstItem="4mt-km-DS9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TuY-N1-y3h"/>
                     <constraint firstItem="TvH-mF-exG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="p2M-ve-Pji"/>
                     <constraint firstAttribute="trailing" secondItem="TvH-mF-exG" secondAttribute="trailing" constant="10" id="w1R-tV-B4i"/>
                     <constraint firstItem="TvH-mF-exG" firstAttribute="leading" secondItem="4mt-km-DS9" secondAttribute="trailing" constant="20" id="xpg-a9-VVd"/>
+                    <constraint firstItem="3Av-cc-l4Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yGS-oO-ivF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="checkBoxImage" destination="4mt-km-DS9" id="VQp-Ga-Q9U"/>
                 <outlet property="labelContent" destination="TvH-mF-exG" id="dvn-cd-3h7"/>
+                <outlet property="viewSeperate" destination="3Av-cc-l4Y" id="lHx-Zt-NhT"/>
             </connections>
-            <point key="canvasLocation" x="133" y="46"/>
+            <point key="canvasLocation" x="131.8840579710145" y="45.535714285714285"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="ic_uncheck" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

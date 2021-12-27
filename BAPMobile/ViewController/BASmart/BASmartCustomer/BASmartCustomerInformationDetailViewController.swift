@@ -90,7 +90,7 @@ class BASmartCustomerInformationDetailViewController: BaseViewController {
     
     private func deleteCustomer() {
         Network.shared.BASmartDeleteCustomer(objectId: objectId) { [weak self] (data) in
-            if data?.error_code != 0 {
+            if data?.errorCode != 0 {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Đồng ý", style: .cancel, handler: { (action) in

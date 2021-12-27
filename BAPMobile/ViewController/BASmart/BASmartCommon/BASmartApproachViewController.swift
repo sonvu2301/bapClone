@@ -151,7 +151,7 @@ class BASmartApproachViewController: BaseViewController {
         
         
         Network.shared.BASmartDailyWorkingCheckin(param: param) { [weak self] (data) in
-            if data?.error_code != 0 && data?.error_code != nil {
+            if data?.errorCode != 0 && data?.errorCode != nil {
                 self?.endCheckingError(message: data?.message ?? "")
             } else {
                 self?.endChecking()
@@ -176,7 +176,7 @@ class BASmartApproachViewController: BaseViewController {
                                                 end: textFieldEndTime.text?.secondFromString())
         
         Network.shared.BASmartCustomerDailyWorkingCheckin(param: param) { [weak self] (data) in
-            if data?.error_code != 0 && data?.error_code != nil {
+            if data?.errorCode != 0 && data?.errorCode != nil {
                 self?.endCheckingError(message: data?.message ?? "")
             } else {
                 self?.endChecking()

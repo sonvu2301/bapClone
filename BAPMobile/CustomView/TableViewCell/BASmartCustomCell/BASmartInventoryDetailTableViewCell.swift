@@ -29,6 +29,22 @@ class BASmartInventoryDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        labelSerial.text = ""
+        labelKind.text = ""
+        labelDate.text = ""
+        viewSerial.backgroundColor = UIColor(hexString: "F0F0F0")
+        labelSerial.textColor = .black
+        labelImei.textColor = UIColor(hexString: "F0F0F0")
+        
+        let attr = NSMutableAttributedString(attributedString: (labelImei?.attributedText)!)
+        let originalRange = NSMakeRange(0, attr.length)
+        attr.setAttributes([:], range: originalRange)
+        labelImei?.attributedText = attr
+        labelImei?.attributedText = NSMutableAttributedString(string: "", attributes: [:])
+        labelImei?.text = ""
+    }
+    
     func setupData(data: BASmartInventoryDetailImei, index: Int) {
         self.data = data
         let state = data.state
@@ -36,7 +52,6 @@ class BASmartInventoryDetailTableViewCell: UITableViewCell {
         labelSerial.text = "\(index + 1)"
         labelKind.text = data.kind
         labelDate.text = Date().millisecToDate(time: data.time ?? 0)
-        labelImei.text = data.imei
         
         let trueStateColor = UIColor(hexString: "F0F0F0")
         let falseStateColor = UIColor(hexString: "b82424")
@@ -44,8 +59,11 @@ class BASmartInventoryDetailTableViewCell: UITableViewCell {
         viewSerial.backgroundColor = state == true ? trueStateColor : falseStateColor
         labelSerial.textColor = state == true ? .black : .white
         labelImei.textColor = state == true ? .black : falseStateColor
+
         if !(state ?? false) {
-            labelImei.attributedText = labelImei.text?.strikeThrough()
+            labelImei.attributedText = data.imei?.strikeThrough()
+        } else {
+            labelImei.attributedText = data.imei?.removeStrikeThrough()
         }
     }
     

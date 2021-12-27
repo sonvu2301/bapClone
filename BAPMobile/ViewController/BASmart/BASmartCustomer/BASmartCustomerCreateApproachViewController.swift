@@ -195,7 +195,7 @@ class BASmartCustomerCreateApproachViewController: BaseViewController {
             ignore: false)
         
         Network.shared.BASmartCreateApproach(param: param) { [weak self] data in
-            if data?.error_code != 0 {
+            if data?.errorCode != 0 {
                 self?.presentBasicAlert(title: "Lỗi", message: data?.message ?? "", buttonTittle: "Đồng ý")
             } else {
                 

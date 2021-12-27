@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol BASmartSellerPickDelegate {
+    func selectEmployee(data: BASmartUtilitySupportData)
+}
+
 class BASmartSearchEmployeeViewController: BaseViewController {
 
     @IBOutlet weak var viewSearchBound: UIView!
+    @IBOutlet weak var viewCancel: UIView!
     
     @IBOutlet weak var textFieldSearch: UITextField!
     
     @IBOutlet weak var buttonSearch: UIButton!
+    @IBOutlet weak var buttonCancel: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +27,8 @@ class BASmartSearchEmployeeViewController: BaseViewController {
     var blurDelegate: BlurViewDelegate?
     var finishDelegate: BASmartDoneCreateDelegate?
     var objectId = 0
+    var isAddCustomer = false
+    var delegate: BASmartSellerPickDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +54,13 @@ class BASmartSearchEmployeeViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         
         searchSeller(searchStr: "")
+        
+        if isAddCustomer {
+            viewCancel.isHidden = false
+            buttonCancel.layer.borderColor = UIColor.lightGray.cgColor
+            buttonCancel.layer.borderWidth
+             = 1
+        }
     }
     
     private func searchSeller(searchStr: String) {
@@ -57,7 +72,7 @@ class BASmartSearchEmployeeViewController: BaseViewController {
     
     private func transferCustomer(seller: String) {
         Network.shared.BASmartTransferCustomer(id: objectId, seller: seller) { [weak self] data in
-            if data?.error_code == 0 {
+            if data?.errorCode == 0 {
                 self?.dismiss(animated: true, completion: nil)
             }
         }
@@ -65,6 +80,10 @@ class BASmartSearchEmployeeViewController: BaseViewController {
     
     @IBAction func buttonSearchTap(_ sender: Any) {
         searchSeller(searchStr: textFieldSearch.text ?? "")
+    }
+    
+    @IBAction func buttonCancelTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -82,12 +101,17 @@ extension BASmartSearchEmployeeViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Xác nhận", message: "Chuyển", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Bỏ qua", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Xác nhận", style: .default, handler: { [weak self] action in
-            self?.transferCustomer(seller: self?.data[indexPath.row].userName ?? "")
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        if isAddCustomer {
+            delegate?.selectEmployee(data: data[indexPath.row])
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let alert = UIAlertController(title: "Xác nhận", message: "Chuyển", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Bỏ qua", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Xác nhận", style: .default, handler: { [weak self] action in
+                self?.transferCustomer(seller: self?.data[indexPath.row].userName ?? "")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

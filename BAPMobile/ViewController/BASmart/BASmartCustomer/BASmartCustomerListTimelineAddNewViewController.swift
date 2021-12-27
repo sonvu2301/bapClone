@@ -126,7 +126,7 @@ class BASmartCustomerListTimelineAddNewViewController: BaseViewController {
                                          phone: viewPhone.textView.text ?? "",
                                          description: description ?? "")
         Network.shared.BASmartAddCustomerTimeline(param: param) { [weak self] (data) in
-            if data?.error_code != 0 {
+            if data?.errorCode != 0 {
                 self?.presentBasicAlert(title: "Lỗi", message: data?.message ?? "", buttonTittle: "Đồng ý")
             } else {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)

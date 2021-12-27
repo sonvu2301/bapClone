@@ -15,10 +15,13 @@ class CheckboxTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkBoxImage: UIImageView!
     @IBOutlet weak var labelContent: UILabel!
+    @IBOutlet weak var viewSeperate: UIView!
     
     var delegate: CheckboxStateDelegate?
     var isCheck = false
+    var isWarehouse = false
     var item = BASmartCustomerCatalogItems()
+    var itemWarehouse = BASmartDetailInfo()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +41,18 @@ class CheckboxTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCellWarehouse(isCheck: Bool, item: BASmartDetailInfo) {
+        let checkImg = UIImage(named: "ic_check")
+        let uncheckImg = UIImage(named: "ic_uncheck")
+        
+        checkBoxImage.image = isCheck == true ? checkImg : uncheckImg
+        labelContent.text = item.name
+        self.isCheck = isCheck
+        self.itemWarehouse = item
+        isWarehouse = true
+        viewSeperate.drawDottedLine(view: viewSeperate)
+    }
+    
     func setupCell(isCheck: Bool, item: BASmartCustomerCatalogItems) {
         let checkImg = UIImage(named: "ic_check")
         let uncheckImg = UIImage(named: "ic_uncheck")
@@ -54,7 +69,8 @@ class CheckboxTableViewCell: UITableViewCell {
         let uncheckImg = UIImage(named: "ic_uncheck")
         
         checkBoxImage.image = isCheck == true ? checkImg : uncheckImg
-        delegate?.checkbox(isCheck: isCheck, id: item.id ?? 0)
+        let id = isWarehouse == true ? itemWarehouse.id : item.id
+        delegate?.checkbox(isCheck: isCheck, id: id ?? 0)
     }
     
 }

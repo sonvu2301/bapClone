@@ -84,8 +84,8 @@
                                     <constraint firstAttribute="height" constant="1" id="oFW-fH-Ahs"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-zD-baT">
-                                <rect key="frame" x="5" y="142" width="75" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-zD-baT">
+                                <rect key="frame" x="0.0" y="142" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="2yD-sH-A8o"/>
                                 </constraints>
@@ -179,8 +179,8 @@
                             <constraint firstItem="v8W-8H-yz7" firstAttribute="centerY" secondItem="hjc-L9-7gl" secondAttribute="centerY" id="htd-bI-VWt"/>
                             <constraint firstItem="5HW-8U-0fs" firstAttribute="leading" secondItem="Ia9-5L-18y" secondAttribute="leading" constant="5" id="huu-Zq-0nn"/>
                             <constraint firstItem="3Qi-Dk-VfR" firstAttribute="centerY" secondItem="5HW-8U-0fs" secondAttribute="centerY" id="ixu-uf-s2x"/>
-                            <constraint firstItem="Hzb-zD-baT" firstAttribute="leading" secondItem="Ia9-5L-18y" secondAttribute="leading" constant="5" id="mHO-MK-12b"/>
-                            <constraint firstItem="tZb-4d-Ak3" firstAttribute="leading" secondItem="Hzb-zD-baT" secondAttribute="trailing" constant="15" id="mgn-bJ-gsZ"/>
+                            <constraint firstItem="Hzb-zD-baT" firstAttribute="leading" secondItem="Ia9-5L-18y" secondAttribute="leading" id="mHO-MK-12b"/>
+                            <constraint firstItem="tZb-4d-Ak3" firstAttribute="leading" secondItem="Hzb-zD-baT" secondAttribute="trailing" constant="20" id="mgn-bJ-gsZ"/>
                             <constraint firstAttribute="trailing" secondItem="1Kz-kI-sOH" secondAttribute="trailing" constant="10" id="qbl-Jk-bKx"/>
                             <constraint firstItem="hjc-L9-7gl" firstAttribute="top" secondItem="5Mu-Kz-GT0" secondAttribute="bottom" constant="10" id="ryy-5Q-bl0"/>
                             <constraint firstAttribute="trailing" secondItem="v8W-8H-yz7" secondAttribute="trailing" constant="10" id="tKW-gr-OKM"/>

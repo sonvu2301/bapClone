@@ -119,8 +119,6 @@ class BASmartCustomerMainSellFlowViewController: BaseViewController {
         vc1.tableView.reloadData()
         
         vc2.data = detail
-        vc2.systemDropdownData = detail.system ?? [BASmartComboSaleModel]()
-        vc2.modelDropdownData = detail.model ?? [BASmartComboSaleModel]()
         vc2.vtype = detail.vtype ?? [BASmartComboSaleModel]()
         vc2.appendState()
         vc2.selectModelDelegate = self
@@ -335,6 +333,40 @@ extension BASmartCustomerMainSellFlowViewController: SelectFeatureComboDelegate 
 
 extension BASmartCustomerMainSellFlowViewController: CreateOrderDelegate {
     func createOrder() {
+        let vc1 = self.children[0] as! BASmartCustomerFirstSellFlowViewController
+        let vc2 = self.children[1] as! BASmartCustomerSecondSellFlowViewController
+        let vc3 = self.children[2] as! BASmartCustomerThirdSellFlowViewController
+        let vc4 = self.children[3] as! BASmartCustomerFourthSellFlowViewController
         
+        let detailOrder = vc1.tableData.map({BASmartDetailOrder(objectid: $0.object,
+                                                      norm: $0.norm,
+                                                      price: $0.price,
+                                                      month: $0.month,
+                                                      date: $0.date)})
+        
+//        let param = BASmartCreateOrderParam(
+//            customerId: objectId,
+//            comboId: kind,
+//            detail: detailOrder,
+//            vat: vc1.checkboxVAT,
+//            exchange: Int(vc1.textFieldChange.text ?? "0"),
+//            systemId: vc2.viewSystem.id,
+//            modelId: vc2.viewModel.id,
+//            vType: vc2.vtype.map({BASmartVtype(id: $0.id)}),
+//            feature: vc3.listFeature.map({BASmartVtype(id: $0)}),
+//            paymentId: vc4.,
+//            receiverId: <#T##Int?#>,
+//            deployId: <#T##Int?#>,
+//            customer: <#T##[BASmartComboSaleCustomerDetail]?#>,
+//            contactName: <#T##String?#>,
+//            contactPhone: <#T##String?#>,
+//            reportName: <#T##String?#>,
+//            reportPhone: <#T##String?#>,
+//            deployTime: <#T##Int?#>,
+//            address: <#T##String?#>,
+//            location: <#T##BASmartLocationParam?#>,
+//            content: <#T##String?#>,
+//            fileAttach: <#T##[BASmartImageAttach]?#>
+//        )
     }
 }

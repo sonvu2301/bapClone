@@ -25,6 +25,7 @@ struct BASmartTechnicalData: Codable {
     var location: BASmartLocationParam?
     var partner: BASmartCustomerPartnerInfo?
     var seller: BASmartContactInfo?
+    var vehicleCount: Int?
     
     enum CodingKeys: String, CodingKey {
         case task = "taskinfo"
@@ -36,6 +37,7 @@ struct BASmartTechnicalData: Codable {
         case location = "location"
         case partner = "partnerinfo"
         case seller = "sellerinfo"
+        case vehicleCount = "vehiclecount"
     }
     
 }
@@ -93,6 +95,11 @@ struct BASmartTechnicalDetailTaskData: Codable {
     var vehicle: [BASmartVehicle]?
     var mstate: [BASmartDetailInfo]?
     var permission: BASmartPermission?
+    var button: BASmartTechnicalButtonStyle?
+    var commodity: [BASmartCommodity]?
+    var feature: [BASmartFeature]?
+    var menu: [BASmartMenuActionModel]?
+    var tab: [BASmartMenuActionModel]?
     
     enum CodingKeys: String, CodingKey {
         case file = "fileattach"
@@ -100,7 +107,37 @@ struct BASmartTechnicalDetailTaskData: Codable {
         case vehicle = "vehiclelist"
         case mstate = "mstatelist"
         case permission = "permission"
+        case button = "buttonstyle"
+        case commodity = "commoditylist"
+        case feature = "featurelist"
+        case menu = "menuaction"
+        case tab = "tabaction"
     }
+}
+
+struct BASmartTechnicalButtonStyle: Codable {
+    var bcolor: String?
+    var fcolor: String?
+    var quote: String?
+    var text: String?
+}
+
+struct BASmartCommodity: Codable {
+    var name: String?
+    var quantity: Int?
+}
+
+struct BASmartFeature: Codable {
+    var id: Int?
+    var name: String?
+    var state: Bool?
+    var group: String?
+}
+
+struct BASmartMenuActionModel: Codable {
+    var icon: String?
+    var id: Int?
+    var name: String?
 }
 
 struct BASmartFileAttach: Codable {
@@ -434,3 +471,145 @@ struct BASmartInventoryStatusParam: Codable {
         case state = "state"
     }
 }
+
+
+struct BASmartWarehouseCustomer: Codable {
+    var state: Bool?
+    var errorCode: Int?
+    var data: [BASmartWarehouseCustomerData]?
+    
+    enum CodingKeys: String, CodingKey {
+        case state = "state"
+        case errorCode = "errorcode"
+        case data = "data"
+    }
+}
+
+struct BASmartWarehouseCustomerData: Codable {
+    var objectId: Int?
+    var kind: BASmartDetailInfo?
+    var project: BASmartDetailInfo?
+    var source: String?
+    var kh: String?
+    var name: String?
+    var phone: String?
+    var scale: BASmartDetailInfo?
+    var model: BASmartDetailInfo?
+    var rate: String?
+    var address: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case objectId = "objectid"
+        case kind = "kindinfo"
+        case project = "projectinfo"
+        case source = "sourcestr"
+        case kh = "khcode"
+        case name = "name"
+        case phone = "phone"
+        case scale = "scaleinfo"
+        case model = "modelinfo"
+        case rate = "ratestr"
+        case address = "address"
+    }
+}
+
+struct BASmartWarehouseCatalog: Codable {
+    var state: Bool?
+    var errorCode: Int?
+    var data: BASmartWarehouseCatalogData?
+    
+    enum CodingKeys: String, CodingKey {
+        case state = "state"
+        case errorCode = "errorcode"
+        case data = "data"
+    }
+}
+
+struct BASmartWarehouseCatalogData: Codable {
+    var project: [BASmartDetailInfo]?
+    var ckind: [BASmartDetailInfo]?
+    var type: [BASmartDetailInfo]?
+    var model: [BASmartDetailInfo]?
+    var scale: [BASmartDetailInfo]?
+    var branch: [BASmartDetailInfo]?
+    var approachProject: [BASmartDetailInfo]?
+    var pkind: [BASmartDetailInfo]?
+    var rate: [BASmartDetailInfo]?
+    
+    enum CodingKeys: String, CodingKey {
+        case project = "projectlist"
+        case ckind = "ckindlist"
+        case type = "ctypelist"
+        case model = "modellist"
+        case scale = "scalelist"
+        case branch = "branchlist"
+        case approachProject = "aprprjlist"
+        case pkind = "pkindlist"
+        case rate = "aratelist"
+    }
+}
+
+struct BASmartWarehouseCreateCustomerParam: Codable {
+    var general: BASmartWarehouseCreateGeneral?
+    var approach: BASmartWarehouseCreateApproach?
+}
+
+struct BASmartWarehouseCreateGeneral: Codable {
+    var kind: BASmartIdInfo?
+    var type: BASmartIdInfo?
+    var project: BASmartIdInfo?
+    var source: BASmartSourceName?
+    var name: String?
+    var phone: String?
+    var contact: String?
+    var scale: BASmartIdInfo?
+    var model: BASmartIdInfo?
+    var address: String?
+    var location: BASmartLocationParam?
+    var branch: BASmartIdInfo?
+    
+    enum CodingKeys: String, CodingKey {
+        case kind = "kindinfo"
+        case type = "typeinfo"
+        case project = "projectinfo"
+        case source = "sourceinfo"
+        case name = "name"
+        case phone = "phone"
+        case contact = "contact"
+        case scale = "scaleinfo"
+        case model = "modelinfo"
+        case address = "address"
+        case location = "location"
+        case branch = "branchinfo"
+    }
+}
+
+struct BASmartWarehouseCreateApproach: Codable {
+    var ignore: Bool?
+    var kind: Int?
+    var project: [BASmartIdInfo]?
+    var rate: Int?
+    var result: String?
+    var vehicleCount: Int?
+    var expected: Int?
+    var scheme: String?
+    var next: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case ignore = "ignoreflag"
+        case kind = "pkindid"
+        case project = "projectlist"
+        case rate = "rateid"
+        case result = "resultstr"
+        case vehicleCount = "vehiclecount"
+        case expected = "expectedtime"
+        case scheme = "schemestr"
+        case next = "nexttime"
+    }
+    
+}
+
+struct BASmartSourceName: Codable {
+    var name: String?
+}
+

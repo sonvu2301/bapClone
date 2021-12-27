@@ -132,7 +132,7 @@ class UserViewController: BaseViewController, AVCaptureMetadataOutputObjectsDele
         alert.addAction(UIAlertAction(title: "Từ chối", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Đồng ý", style: .default, handler: { [weak self] (action) in
             Network.shared.logout { [weak self] (data) in
-                if data?.error_code == 0 {
+                if data?.errorCode == 0 {
                     self?.delegate?.backToLogin()
                 } else {
                     self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")

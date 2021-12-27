@@ -46,6 +46,9 @@ class MainTabBarController: UITabBarController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 
         viewControllers = [nav1, nav2, nav3]
+        self.tabBar.isTranslucent = false
+        self.tabBar.backgroundColor = .white
+        self.tabBar.barTintColor = .white
         setupMiddleButton()
     }
     

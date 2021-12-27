@@ -205,7 +205,14 @@ class BASmartCustomerInformationAddHumanBaseViewController: BaseViewController {
 }
 
 extension BASmartCustomerInformationAddHumanBaseViewController: UIScrollViewDelegate {
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        switch scrollView.currentPage {
+        case 1:
+            scrollMenu(state: .first)
+        case 2:
+            scrollMenu(state: .second)
+        default:
+            break
+        }
     }
 }

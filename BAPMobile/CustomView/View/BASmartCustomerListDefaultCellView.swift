@@ -70,10 +70,10 @@ extension BASmartCustomerListDefaultCellView: UITextFieldDelegate {
             let currentText:String = textField.text!
             let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
             
-            if updatedText.count != 10 || updatedText.first != "0" {
-                textField.textColor = .red
-            } else {
+            if updatedText.count >= 10 && updatedText.count <= 11 && updatedText.first == "0" {
                 textField.textColor = .black
+            } else {
+                textField.textColor = .red
             }
             
         }

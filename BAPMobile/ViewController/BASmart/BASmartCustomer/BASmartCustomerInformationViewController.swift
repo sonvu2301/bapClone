@@ -80,6 +80,7 @@ class BASmartCustomerInformationViewController: BaseViewController {
         viewSell.layoutIfNeeded()
         scrollView.contentSize = CGSize(width: view.frame.width * 4, height: 0)
         scrollView.delegate = self
+        scrollView.isPagingEnabled = true
         lastContentOffset = view.frame.width
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -280,7 +281,7 @@ extension BASmartCustomerInformationViewController: UIScrollViewDelegate {
                 scrollToView(scrollTo: .competitor)
             }
         }
-    }    
+    }
 }
 
 extension BASmartCustomerInformationViewController: BASmartCustomerMainMenuActionDelegate {

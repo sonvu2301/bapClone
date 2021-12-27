@@ -16,7 +16,9 @@ class BASmartInventoryDetailViewController: BaseViewController {
     @IBOutlet weak var buttonGetImei: UIButton!
     
     var objectId = 0
+    var idChance = 0
     var name = ""
+    var viewAll = false
     var data = BASmartInventoryDetailData()
     
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class BASmartInventoryDetailViewController: BaseViewController {
         tableView.rowHeight = 50
         
         labelName.text = name
-        getData(viewAll: false)
+        getData(viewAll: viewAll)
         buttonGetImei.setViewCorner(radius: 5)
     }
     
@@ -54,19 +56,11 @@ class BASmartInventoryDetailViewController: BaseViewController {
         }
     }
     
-    private func imeiState(id: Int, state: Bool) {
-        
-        let param = BASmartInventoryStatusParam(id: id,
-                                                state: state,
-                                                type: 0,
-                                                reason: "")
-        Network.shared.BASmartInventoriStatus(param: param) { [weak self] data in
-            self?.getData(viewAll: true)
-        }
-    }
+
     
     @IBAction func buttonGetImeiTap(_ sender: Any) {
         getData(viewAll: true)
+        viewAll = true
     }
     
 }
@@ -78,6 +72,8 @@ extension BASmartInventoryDetailViewController: UITableViewDelegate, UITableView
         let dataParse = data.imei?[index] ?? BASmartInventoryDetailImei()
         if indexPath.row % 2 == 0 {
             cell.contentView.backgroundColor = UIColor(hexString: "EDFFFF")
+        } else {
+            cell.contentView.backgroundColor = .white
         }
         cell.setupData(data: dataParse, index: index)
         
@@ -95,16 +91,60 @@ extension BASmartInventoryDetailViewController: UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let state = data.imei?[indexPath.row].state
+        idChance = data.imei?[indexPath.row].id ?? 0
         let action = UIContextualAction(style: .normal,
-                                        title: "Favourite") { [weak self] (action, view, completionHandler) in
-            
-            self?.imeiState(id: self?.data.imei?[indexPath.row].id ?? 0,
-                            state: state ?? false)
+                                        title: "") { [weak self] (action, view, completionHandler) in
+            switch state {
+            case true:
+                self?.openAlertDelete(imei: self?.data.imei?[indexPath.row].imei ?? "")
+            case false:
+                self?.openAlertConfirm(imei: self?.data.imei?[indexPath.row].imei ?? "")
+            default:
+                break
+            }
         }
         
         action.image = state == true ? UIImage(named: "delete_cell") : UIImage(named: "add_cell")
         action.backgroundColor = state == true ? UIColor(hexString: "fe0000") : UIColor(hexString: "008000")
         let x = UISwipeActionsConfiguration(actions: [action])
         return x
+    }
+    
+    private func openAlertConfirm(imei: String) {
+        let alert = UIStoryboard(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "AlertConfirmViewController") as! AlertConfirmViewController
+        alert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        alert.contentString = "Bạn có chắc chắn muốn lấy lại \nIMEI \(imei) đã đánh dấu triển khai không?"
+        self.present(alert, animated: true, completion: nil)
+        alert.delegate = self
+    }
+    
+    private func openAlertDelete(imei: String) {
+        let alert = UIStoryboard(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "AlertDenyViewController") as! AlertDenyViewController
+        alert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        alert.contentString = "Bạn có chắc chắn muốn đánh dấu \nIMEI \(imei) không?"
+        self.present(alert, animated: true, completion: nil)
+        alert.delegate = self
+    }
+}
+
+extension BASmartInventoryDetailViewController: AlertActionDelegate {
+    func confirm(kind: Int, message: String) {
+        imeiState(id: idChance, state: true, reason: message, type: kind)
+    }
+    
+    func delete(kind: Int, message: String) {
+        imeiState(id: idChance, state: false, reason: message, type: kind)
+    }
+    
+    private func imeiState(id: Int, state: Bool, reason: String, type: Int) {
+        let param = BASmartInventoryStatusParam(id: id,
+                                                state: state,
+                                                type: type,
+                                                reason: reason)
+        Network.shared.BASmartInventoriStatus(param: param) { [weak self] data in
+            self?.getData(viewAll: self?.viewAll ?? false)
+        }
     }
 }

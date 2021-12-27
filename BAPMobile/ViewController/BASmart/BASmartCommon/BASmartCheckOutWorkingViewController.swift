@@ -255,7 +255,7 @@ class BASmartCheckOutWorkingViewController: BaseViewController {
         }
         
         Network.shared.BASmartDailyWorkingCheckout(param: param) { [weak self] (data) in
-            if data?.error_code != 0 && data?.error_code != nil {
+            if data?.errorCode != 0 && data?.errorCode != nil {
                 self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")
             } else {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)

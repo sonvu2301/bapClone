@@ -100,7 +100,7 @@ extension BASmartRequestOpenViewController: UITableViewDelegate, UITableViewData
         
         
         Network.shared.BASmartRequestReopenConfirm(param: param, id: 1) { [weak self] (data) in
-            if data?.error_code == 0 {
+            if data?.errorCode == 0 {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Đồng ý", style: .cancel))
                 

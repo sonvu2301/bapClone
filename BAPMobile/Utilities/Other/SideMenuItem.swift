@@ -30,7 +30,10 @@ enum SideMenuItem {
         case .inventory:
             let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartInventoryViewController") as! BASmartInventoryViewController
             return vc
-        case .blank, .statistical_report, .move_schedule, .end_day, .back, .customer_data, .request_new:
+        case .customer_data:
+            let vc = UIStoryboard(name: "BASmartWarranty", bundle: nil).instantiateViewController(withIdentifier: "BASmartWarehouseCustomerListViewController") as! BASmartWarehouseCustomerListViewController
+            return vc
+        case .blank, .statistical_report, .move_schedule, .end_day, .back, .request_new:
             return UIViewController()
         case .reopen_request:
             let vc = UIStoryboard(name: "BASmart", bundle: nil).instantiateViewController(withIdentifier: "BASmartRequestOpenViewController") as! BASmartRequestOpenViewController

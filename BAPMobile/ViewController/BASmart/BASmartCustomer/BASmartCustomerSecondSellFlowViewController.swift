@@ -14,9 +14,14 @@ protocol SelectVtypeStateDelegate {
 
 
 class BASmartCustomerSecondSellFlowViewController: BaseViewController {
-
-    @IBOutlet weak var buttonDropdownSystem: UIButton!
-    @IBOutlet weak var buttonDropdownFigure: UIButton!
+    
+    @IBOutlet weak var viewSystem: BASmartCustomerListDropdownView!
+    @IBOutlet weak var viewModel: BASmartCustomerListDropdownView!
+    @IBOutlet weak var viewReceiver: BASmartCustomerListDropdownView!
+    
+    @IBOutlet weak var seperateView: UIView!
+    @IBOutlet weak var textFieldUser: UITextField!
+    @IBOutlet weak var textFieldPass: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,47 +51,40 @@ class BASmartCustomerSecondSellFlowViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
         
-        buttonDropdownSystem.setViewCorner(radius: 5)
-        buttonDropdownSystem.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        buttonDropdownSystem.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        buttonDropdownFigure.setViewCorner(radius: 5)
-        buttonDropdownFigure.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        buttonDropdownFigure.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        seperateView.drawDottedLine(view: seperateView)
         
-    }
-    
-    private func setupDropdown(dropDown: DropDown, dataSource: [BASmartComboSaleModel], button: UIButton) {
-        dropDown.anchorView = button
-        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-        dropDown.dataSource = dataSource.map({$0.name ?? ""})
-        dropDown.direction = .any
+        viewSystem.changeSeperateLine()
+        viewModel.changeSeperateLine()
+        viewReceiver.changeSeperateLine()
+        
+        viewModel.selectComboDelegate = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.viewSystem.setupView(title: "Hệ thống",
+                                 placeholder: "Chọn hệ thống...",
+                                       content: self?.data.system?.map({BASmartCustomerCatalogItems(id: $0.id, ri: 0, name: $0.name, target: $0.state)}) ?? [BASmartCustomerCatalogItems](),
+                                 name: "",
+                                 id: 0)
+            
+            self?.viewModel.setupView(title: "Mô hình",
+                                placeholder: "Chọn mô hình...",
+                                      content: self?.data.model?.map({BASmartCustomerCatalogItems(id: $0.id, ri: 0, name: $0.name, target: $0.state)}) ?? [BASmartCustomerCatalogItems](),
+                                name: "",
+                                id: 0)
+            
+            self?.viewReceiver.setupView(title: "Đại lý",
+                                   placeholder: "Chọn đại lý...",
+                                         content: self?.data.receiver?.map({BASmartCustomerCatalogItems(id: $0.id, ri: 0, name: $0.name, target: $0.state)}) ?? [BASmartCustomerCatalogItems](),
+                                   name: "",
+                                   id: 0)
+            
+        }
     }
     
     func appendState() {
         vtype.forEach { [weak self] (item) in
             self?.states.append(false)
         }
-    }
-    
-    @IBAction func buttonDropdownSystemTap(_ sender: Any) {
-        setupDropdown(dropDown: systemDropDown,
-                      dataSource: systemDropdownData,
-                      button: buttonDropdownSystem)
-        systemDropDown.selectionAction = { [weak self] (index: Int, item: String) in
-            self?.buttonDropdownSystem.setTitle("  " + item, for: .normal)
-        }
-        systemDropDown.show()
-    }
-    
-    @IBAction func buttonDropDownModelTap(_ sender: Any) {
-        setupDropdown(dropDown: modelDropDown,
-                      dataSource: modelDropdownData,
-                      button: buttonDropdownFigure)
-        modelDropDown.selectionAction = { [weak self] (index: Int, item: String) in
-            self?.buttonDropdownFigure.setTitle("  " + item, for: .normal)
-            self?.selectModelDelegate?.selectedFeature(model: self?.modelDropdownData[index].id ?? 0)
-        }
-        modelDropDown.show()
     }
     
 }
@@ -123,5 +121,11 @@ extension BASmartCustomerSecondSellFlowViewController: UITableViewDelegate, UITa
 extension BASmartCustomerSecondSellFlowViewController: SelectVtypeStateDelegate {
     func selectVtype(isSelected: Bool, index: Int) {
         states[index] = isSelected
+    }
+}
+
+extension BASmartCustomerSecondSellFlowViewController: SelectFeatureComboDelegate {
+    func selectedFeature(model: Int) {
+        selectModelDelegate?.selectedFeature(model: model)
     }
 }

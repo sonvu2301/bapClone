@@ -17,10 +17,12 @@ class BASmartCustomerListDropdownView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var buttonDropdown: UIButton!
+    @IBOutlet weak var viewSeperate: UIView!
     
     let dropDown = DropDown()
     var content = [BASmartCustomerCatalogItems]()
     var showReasonDelegate: RateDelegate?
+    var selectComboDelegate: SelectFeatureComboDelegate?
     var rateCondition = [String]()
     var listId = [BASmartIdInfo]()
     var id = 0
@@ -82,6 +84,11 @@ class BASmartCustomerListDropdownView: UIView {
         }
     }
     
+    func changeSeperateLine() {
+        viewSeperate.drawDottedLine(view: viewSeperate)
+        viewSeperate.backgroundColor = .white
+    }
+    
     @IBAction func buttonDropDownTap(_ sender: Any) {
         dropDown.show()
         dropDown.selectionAction = { [weak self] (index: Int, item: String) in
@@ -92,7 +99,8 @@ class BASmartCustomerListDropdownView: UIView {
             let id = self?.content.filter({$0.name == item}).map({$0.id}).first
             self?.id = (id ?? 0) ?? 0
             self?.listId = [BASmartIdInfo]()
-            self?.listId.append(BASmartIdInfo(id: self?.id)) 
+            self?.listId.append(BASmartIdInfo(id: self?.id))
+            self?.selectComboDelegate?.selectedFeature(model: self?.id ?? 0)
         }
     }
 }

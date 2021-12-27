@@ -36,6 +36,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        scrollMenu(isScrollToFavorite: false, scrollView: mainScrollView)
         super.viewWillAppear(animated)
     }
 
@@ -93,30 +94,30 @@ extension MainMenuViewController: UIScrollViewDelegate {
         mainScrollView.addSubview(vc2.view)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let width = view.frame.width
-        let contentOffset = scrollView.contentOffset.x
-        if scrollView == mainScrollView {
-            if lastContentOffset == width && contentOffset < (lastContentOffset - 100) {
-                scrollMenu(isScrollToFavorite: true, scrollView: scrollView)
-            } else if lastContentOffset == 0 && contentOffset > 100 {
-                scrollMenu(isScrollToFavorite: false, scrollView: scrollView)
-            }
-        }
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let width = view.frame.width
-        if scrollView == mainScrollView {
-            if lastContentOffset == width && scrollView.contentOffset.x > (lastContentOffset - 100) {
-                scrollMenu(isScrollToFavorite: false, scrollView: scrollView)
-            } else if lastContentOffset == 0 && scrollView.contentOffset.x < 100 {
-                scrollMenu(isScrollToFavorite: true, scrollView: scrollView)
-            }
-        } else if scrollView == slideImage {
-            imageIndex = slideImage.indexPathsForVisibleItems[0].row
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let width = view.frame.width
+//        let contentOffset = scrollView.contentOffset.x
+//        if scrollView == mainScrollView {
+//            if lastContentOffset == width && contentOffset < (lastContentOffset - 100) {
+//                scrollMenu(isScrollToFavorite: true, scrollView: scrollView)
+//            } else if lastContentOffset == 0 && contentOffset > 100 {
+//                scrollMenu(isScrollToFavorite: false, scrollView: scrollView)
+//            }
+//        }
+//    }
+//    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        let width = view.frame.width
+//        if scrollView == mainScrollView {
+//            if lastContentOffset == width && scrollView.contentOffset.x > (lastContentOffset - 100) {
+//                scrollMenu(isScrollToFavorite: false, scrollView: scrollView)
+//            } else if lastContentOffset == 0 && scrollView.contentOffset.x < 100 {
+//                scrollMenu(isScrollToFavorite: true, scrollView: scrollView)
+//            }
+//        } else if scrollView == slideImage {
+//            imageIndex = slideImage.indexPathsForVisibleItems[0].row
+//        }
+//    }
     
     private func scrollMenu(isScrollToFavorite: Bool, scrollView: UIScrollView) {
         if isScrollToFavorite {

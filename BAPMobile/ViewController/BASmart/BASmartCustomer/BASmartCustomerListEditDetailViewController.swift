@@ -314,7 +314,7 @@ class BASmartCustomerListEditDetailViewController: BaseViewController {
         
         
         Network.shared.BASmartUpdateCustomer(param: param) { [weak self] (data) in
-            if data?.error_code != 0 {
+            if data?.errorCode != 0 {
                 self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")
             } else {
                 let alert = UIAlertController(title: "Thành công", message: "", preferredStyle: .alert)

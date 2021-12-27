@@ -105,7 +105,7 @@ class BASmartWarrantySearchVehicleViewController: BaseViewController {
                                                        location: locationParam)
         
         Network.shared.BASmartTechnicalVehicleAction(param: param) { [weak self] (data) in
-            if data?.error_code != 0 && data?.error_code != nil {
+            if data?.errorCode != 0 && data?.errorCode != nil {
                 self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")
             } else {
                 self?.finishDelegate?.finishCreate()

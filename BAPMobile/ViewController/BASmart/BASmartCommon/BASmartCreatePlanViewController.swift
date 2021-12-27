@@ -239,7 +239,7 @@ class BASmartCreatePlanViewController: UIViewController {
                                            description: description)
             
             Network.shared.BASmartUpdatePlan(param: param) { [weak self] (data) in
-                if data?.error_code == 0 {
+                if data?.errorCode == 0 {
                     self?.showSuccessAlert()
                     self?.finishDelegate?.finishCreate()
                 } else {
@@ -260,7 +260,7 @@ class BASmartCreatePlanViewController: UIViewController {
                                                description: description)
             
             Network.shared.BASmartCreatePlan(param: param) { [weak self] (data) in
-                if data?.error_code == 0 {
+                if data?.errorCode == 0 {
                     self?.showSuccessAlert()
                     self?.finishDelegate?.finishCreate()
                 } else {

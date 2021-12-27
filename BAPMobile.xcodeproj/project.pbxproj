@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42F05C1F0E6AE876C5094AEE /* Pods_BAPMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91546524E2D05790BB3815D /* Pods_BAPMobile.framework */; };
+		CF00E9C32769C25100CE8EBC /* BASmartWarehouseCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00E9C22769C25100CE8EBC /* BASmartWarehouseCatalogViewController.swift */; };
 		CF042AB22611B35200A7EDDA /* BASmartCreatePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF042AB12611B35200A7EDDA /* BASmartCreatePlanViewController.swift */; };
 		CF042AB926253DDA00A7EDDA /* BASmartCustomerMainSellFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF042AB826253DDA00A7EDDA /* BASmartCustomerMainSellFlowViewController.swift */; };
 		CF042ABD26253DEE00A7EDDA /* BASmartCustomerFirstSellFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF042ABC26253DEE00A7EDDA /* BASmartCustomerFirstSellFlowViewController.swift */; };
@@ -110,6 +111,11 @@
 		CF65FDE5273B588200183CBA /* BASmartCustomerCreateApproachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65FDE4273B588200183CBA /* BASmartCustomerCreateApproachViewController.swift */; };
 		CF65FDE7273B648200183CBA /* ListCheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF65FDE6273B648200183CBA /* ListCheckboxView.xib */; };
 		CF65FDE9273B649D00183CBA /* ListCheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65FDE8273B649D00183CBA /* ListCheckboxView.swift */; };
+		CF67493C2761E4D00077D544 /* BASmartSearchSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67493B2761E4D00077D544 /* BASmartSearchSellerViewController.swift */; };
+		CF69035E2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69035D2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift */; };
+		CF6903602758B70A007AC1EA /* BASmartCustomerListCatalogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69035F2758B70A007AC1EA /* BASmartCustomerListCatalogView.xib */; };
+		CF6903622759DA46007AC1EA /* BASmartCustomerListAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6903612759DA46007AC1EA /* BASmartCustomerListAddressView.swift */; };
+		CF6903642759DA4F007AC1EA /* BASmartCustomerListAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6903632759DA4F007AC1EA /* BASmartCustomerListAddressView.xib */; };
 		CF6D14CD2579F22300D27BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6D14CC2579F22300D27BD1 /* AppDelegate.swift */; };
 		CF6D14D12579F22300D27BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6D14D02579F22300D27BD1 /* ViewController.swift */; };
 		CF6D14D42579F22300D27BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6D14D22579F22300D27BD1 /* Main.storyboard */; };
@@ -161,6 +167,12 @@
 		CF7AD61525C92F9400E5BA25 /* BASmartCustomerListCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF7AD61425C92F9400E5BA25 /* BASmartCustomerListCalendarView.xib */; };
 		CF7AD61C25C934B300E5BA25 /* BASmartCustomerInformationAddHumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AD61B25C934B300E5BA25 /* BASmartCustomerInformationAddHumanViewController.swift */; };
 		CF7AD62F25CA82AA00E5BA25 /* BASmartCustomerInformationAddCompetitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7AD62E25CA82AA00E5BA25 /* BASmartCustomerInformationAddCompetitorViewController.swift */; };
+		CF894F912755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF894F902755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift */; };
+		CF894F942755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF894F922755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.swift */; };
+		CF894F952755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF894F932755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib */; };
+		CF894F9727562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF894F9627562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift */; };
+		CF894F9927563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF894F9827563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift */; };
+		CF894F9B27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF894F9A27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift */; };
 		CF910F2426773ED900046221 /* SelectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF910F2326773ED900046221 /* SelectImageView.swift */; };
 		CF910F2726773EE900046221 /* SelectImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF910F2626773EE900046221 /* SelectImageView.xib */; };
 		CF910F2B267756E200046221 /* SelectImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF910F29267756E200046221 /* SelectImageCollectionViewCell.swift */; };
@@ -198,6 +210,9 @@
 		CFC346C5268B095400A0A6B2 /* BASmartWarrantyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC346C4268B095400A0A6B2 /* BASmartWarrantyModel.swift */; };
 		CFCDE4A12744BF7B00922331 /* BASmartInventoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCDE49F2744BF7B00922331 /* BASmartInventoryListTableViewCell.swift */; };
 		CFCDE4A22744BF7B00922331 /* BASmartInventoryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFCDE4A02744BF7B00922331 /* BASmartInventoryListTableViewCell.xib */; };
+		CFD0B3D0274E1B1C00589882 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD0B3CF274E1B1C00589882 /* Alert.storyboard */; };
+		CFD0B3D3274F4A4A00589882 /* AlertConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0B3D2274F4A4A00589882 /* AlertConfirmViewController.swift */; };
+		CFD0B3D5274F4A5A00589882 /* AlertDenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0B3D4274F4A5A00589882 /* AlertDenyViewController.swift */; };
 		CFD802582592EEC6001CEAE2 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD802572592EEC6001CEAE2 /* BasicModel.swift */; };
 		CFD8026225935365001CEAE2 /* BASmart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD8026125935365001CEAE2 /* BASmart.storyboard */; };
 		CFD80265259425BD001CEAE2 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD80264259425BD001CEAE2 /* SideMenuViewController.swift */; };
@@ -248,6 +263,7 @@
 /* Begin PBXFileReference section */
 		57654941A9C375CFFBDF2556 /* Pods-BAPMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAPMobile.release.xcconfig"; path = "Target Support Files/Pods-BAPMobile/Pods-BAPMobile.release.xcconfig"; sourceTree = "<group>"; };
 		C7BEEFA180A87A41ACF7BFB9 /* Pods-BAPMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAPMobile.debug.xcconfig"; path = "Target Support Files/Pods-BAPMobile/Pods-BAPMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		CF00E9C22769C25100CE8EBC /* BASmartWarehouseCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartWarehouseCatalogViewController.swift; sourceTree = "<group>"; };
 		CF042AB12611B35200A7EDDA /* BASmartCreatePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCreatePlanViewController.swift; sourceTree = "<group>"; };
 		CF042AB826253DDA00A7EDDA /* BASmartCustomerMainSellFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerMainSellFlowViewController.swift; sourceTree = "<group>"; };
 		CF042ABC26253DEE00A7EDDA /* BASmartCustomerFirstSellFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerFirstSellFlowViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +366,11 @@
 		CF65FDE4273B588200183CBA /* BASmartCustomerCreateApproachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerCreateApproachViewController.swift; sourceTree = "<group>"; };
 		CF65FDE6273B648200183CBA /* ListCheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCheckboxView.xib; sourceTree = "<group>"; };
 		CF65FDE8273B649D00183CBA /* ListCheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCheckboxView.swift; sourceTree = "<group>"; };
+		CF67493B2761E4D00077D544 /* BASmartSearchSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartSearchSellerViewController.swift; sourceTree = "<group>"; };
+		CF69035D2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerListCatalogView.swift; sourceTree = "<group>"; };
+		CF69035F2758B70A007AC1EA /* BASmartCustomerListCatalogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerListCatalogView.xib; sourceTree = "<group>"; };
+		CF6903612759DA46007AC1EA /* BASmartCustomerListAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerListAddressView.swift; sourceTree = "<group>"; };
+		CF6903632759DA4F007AC1EA /* BASmartCustomerListAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerListAddressView.xib; sourceTree = "<group>"; };
 		CF6D14C92579F22300D27BD1 /* BAPMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAPMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6D14CC2579F22300D27BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF6D14D02579F22300D27BD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +424,12 @@
 		CF7AD61425C92F9400E5BA25 /* BASmartCustomerListCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerListCalendarView.xib; sourceTree = "<group>"; };
 		CF7AD61B25C934B300E5BA25 /* BASmartCustomerInformationAddHumanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerInformationAddHumanViewController.swift; sourceTree = "<group>"; };
 		CF7AD62E25CA82AA00E5BA25 /* BASmartCustomerInformationAddCompetitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerInformationAddCompetitorViewController.swift; sourceTree = "<group>"; };
+		CF894F902755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartWarehouseCustomerListViewController.swift; sourceTree = "<group>"; };
+		CF894F922755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartWarehouseCustomerListTableViewCell.swift; sourceTree = "<group>"; };
+		CF894F932755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartWarehouseCustomerListTableViewCell.xib; sourceTree = "<group>"; };
+		CF894F9627562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartAddCustomerWarehouseViewController.swift; sourceTree = "<group>"; };
+		CF894F9827563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartAddCustomerWarehouseFirstFlowViewController.swift; sourceTree = "<group>"; };
+		CF894F9A27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartAddCustomerWarehouseSecondFlowViewController.swift; sourceTree = "<group>"; };
 		CF910F2326773ED900046221 /* SelectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageView.swift; sourceTree = "<group>"; };
 		CF910F2626773EE900046221 /* SelectImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectImageView.xib; sourceTree = "<group>"; };
 		CF910F29267756E200046221 /* SelectImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +467,9 @@
 		CFC346C4268B095400A0A6B2 /* BASmartWarrantyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartWarrantyModel.swift; sourceTree = "<group>"; };
 		CFCDE49F2744BF7B00922331 /* BASmartInventoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartInventoryListTableViewCell.swift; sourceTree = "<group>"; };
 		CFCDE4A02744BF7B00922331 /* BASmartInventoryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartInventoryListTableViewCell.xib; sourceTree = "<group>"; };
+		CFD0B3CF274E1B1C00589882 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		CFD0B3D2274F4A4A00589882 /* AlertConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfirmViewController.swift; sourceTree = "<group>"; };
+		CFD0B3D4274F4A5A00589882 /* AlertDenyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDenyViewController.swift; sourceTree = "<group>"; };
 		CFD802572592EEC6001CEAE2 /* BasicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
 		CFD8026125935365001CEAE2 /* BASmart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BASmart.storyboard; sourceTree = "<group>"; };
 		CFD80264259425BD001CEAE2 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -643,6 +673,8 @@
 				CFCDE4A02744BF7B00922331 /* BASmartInventoryListTableViewCell.xib */,
 				CF0AA7E12746601000548E98 /* BASmartInventoryDetailTableViewCell.swift */,
 				CF0AA7E22746601000548E98 /* BASmartInventoryDetailTableViewCell.xib */,
+				CF894F922755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.swift */,
+				CF894F932755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib */,
 			);
 			path = BASmartCustomCell;
 			sourceTree = "<group>";
@@ -706,10 +738,14 @@
 				CFFE823825B01A6800B45958 /* BASmartCustomerListDefaultCellView.xib */,
 				CF7AD60A25C9295200E5BA25 /* BASmartCustomerListDropdownView.swift */,
 				CF7AD60D25C9295E00E5BA25 /* BASmartCustomerListDropdownView.xib */,
-				CF7AD5FB25C3F8FC00E5BA25 /* BASmartCustomerTimelineSection.swift */,
-				CF7AD5FE25C3F90E00E5BA25 /* BASmartCustomerTimelineSection.xib */,
+				CF69035D2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift */,
+				CF69035F2758B70A007AC1EA /* BASmartCustomerListCatalogView.xib */,
+				CF6903612759DA46007AC1EA /* BASmartCustomerListAddressView.swift */,
+				CF6903632759DA4F007AC1EA /* BASmartCustomerListAddressView.xib */,
 				CF7AD61025C92F8900E5BA25 /* BASmartCustomerListCalendarView.swift */,
 				CF7AD61425C92F9400E5BA25 /* BASmartCustomerListCalendarView.xib */,
+				CF7AD5FB25C3F8FC00E5BA25 /* BASmartCustomerTimelineSection.swift */,
+				CF7AD5FE25C3F90E00E5BA25 /* BASmartCustomerTimelineSection.xib */,
 				CF2A64EA2666121A00D52675 /* DropDownSearchTextFieldView.swift */,
 				CF2A64ED2666123300D52675 /* DropDownSearchTextFieldView.xib */,
 				CF910F2326773ED900046221 /* SelectImageView.swift */,
@@ -777,6 +813,7 @@
 		CF2A64A92656746A00D52675 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CFD0B3D1274F4A1600589882 /* Alert */,
 				CF4C28082733C739008268C8 /* Common */,
 				CF5E7582258A100100B73479 /* Login */,
 				CF6D14F52579F93500D27BD1 /* TabBarController */,
@@ -935,6 +972,7 @@
 				CF735E3F268081E9001AEDFF /* BASmartWarranty.storyboard */,
 				CF15331625DCF803004667D8 /* Map.storyboard */,
 				CFF2614826C5CCB30006DF35 /* Vehicle.storyboard */,
+				CFD0B3CF274E1B1C00589882 /* Alert.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -976,6 +1014,12 @@
 				CFE3629826AF5B72005E3FEB /* BASmartWarrantySavedImagesViewController.swift */,
 				CFE61BDD2743C27A00640A56 /* BASmartInventoryViewController.swift */,
 				CFE61BDF2743C28C00640A56 /* BASmartInventoryDetailViewController.swift */,
+				CF894F902755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift */,
+				CF894F9627562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift */,
+				CF894F9827563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift */,
+				CF894F9A27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift */,
+				CF00E9C22769C25100CE8EBC /* BASmartWarehouseCatalogViewController.swift */,
+				CF67493B2761E4D00077D544 /* BASmartSearchSellerViewController.swift */,
 			);
 			path = BASmartTechnical;
 			sourceTree = "<group>";
@@ -1005,6 +1049,15 @@
 				CFBC349E2692EB9C00C396F1 /* CoreDataService.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CFD0B3D1274F4A1600589882 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				CFD0B3D2274F4A4A00589882 /* AlertConfirmViewController.swift */,
+				CFD0B3D4274F4A5A00589882 /* AlertDenyViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		CFD8026025934EC3001CEAE2 /* BASmart */ = {
@@ -1099,6 +1152,7 @@
 				CF95307D258747F90018B94F /* ContactTableViewCell.xib in Resources */,
 				CF0884D4259B134C00DE4FB7 /* BASmartMainSmallCustomView.xib in Resources */,
 				CFD8026D25943B36001CEAE2 /* SideMenuTableViewCell.xib in Resources */,
+				CFD0B3D0274E1B1C00589882 /* Alert.storyboard in Resources */,
 				CF735E5C2681F6A5001AEDFF /* BASmartTechnicalCarListTableViewCell.xib in Resources */,
 				CF4C27DE27300015008268C8 /* SettingTableViewCell.xib in Resources */,
 				CF735E40268081E9001AEDFF /* BASmartWarranty.storyboard in Resources */,
@@ -1127,8 +1181,10 @@
 				CF5E758E258C448500B73479 /* CustomerList.storyboard in Resources */,
 				CF4C27C5271EBB1A008268C8 /* BASmartSelectCustomerModelTableViewCell.xib in Resources */,
 				CF042AED2643D2DB00A7EDDA /* BASmartComboFeatureTableViewCell.xib in Resources */,
+				CF6903642759DA4F007AC1EA /* BASmartCustomerListAddressView.xib in Resources */,
 				CF910F2726773EE900046221 /* SelectImageView.xib in Resources */,
 				CF042ADF263A9BD200A7EDDA /* BASmartSelectVTypeTableViewCell.xib in Resources */,
+				CF894F952755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib in Resources */,
 				CFFE823325B0198900B45958 /* BASmartCustomerListHumanTableViewCell.xib in Resources */,
 				CF5AB19B25EDEFCB00B1A9E3 /* DateScrollCell.xib in Resources */,
 				CF6D14D62579F22600D27BD1 /* Assets.xcassets in Resources */,
@@ -1157,6 +1213,7 @@
 				CFA1A9A125A4198100D4C093 /* BASmartCustomerListContentTableViewCell.xib in Resources */,
 				CF0884E5259C314700DE4FB7 /* BASmartScheduleTableViewCell.xib in Resources */,
 				CF2A64E82664C91300D52675 /* DropdownSearchHistoryTableViewCell.xib in Resources */,
+				CF6903602758B70A007AC1EA /* BASmartCustomerListCatalogView.xib in Resources */,
 				CF2A64F92668BCF300D52675 /* BASmartSupporterListTableViewCell.xib in Resources */,
 				CFF2617F26F3360D0006DF35 /* SalaryInfoTableViewCell.xib in Resources */,
 			);
@@ -1243,6 +1300,7 @@
 				CFAF6A9A26982CC600E92E90 /* BASmartVehiclePreviewImageViewController.swift in Sources */,
 				CF042AE22640F12100A7EDDA /* BASmartSuggestCheckinViewController.swift in Sources */,
 				CF65FDE22739308700183CBA /* CheckboxTableViewCell.swift in Sources */,
+				CF894F912755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift in Sources */,
 				CFFE823D25B1A38E00B45958 /* BASmartCustomerListCompetitorTableViewCell.swift in Sources */,
 				CF042ACA26268D1200A7EDDA /* BASmartCustomerSellFirstFlowTableViewCell.swift in Sources */,
 				CF65FDE5273B588200183CBA /* BASmartCustomerCreateApproachViewController.swift in Sources */,
@@ -1280,13 +1338,16 @@
 				CF2A64972654FB3B00D52675 /* BASmartCheckoutViewController.swift in Sources */,
 				CF042AC026253DFE00A7EDDA /* BASmartCustomerSecondSellFlowViewController.swift in Sources */,
 				CFC346B72689BBE200A0A6B2 /* BASmartPreviewImageViewController.swift in Sources */,
+				CF6903622759DA46007AC1EA /* BASmartCustomerListAddressView.swift in Sources */,
 				CFA1C98D26084636007DAC38 /* BASmartRequestOpenViewController.swift in Sources */,
 				CF735E3B267C9B29001AEDFF /* BASmartReasonViewController.swift in Sources */,
+				CF69035E2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift in Sources */,
 				CF5AB17F25EDCA0400B1A9E3 /* BASmartPlanViewController.swift in Sources */,
 				CFA1A9B425AD823B00D4C093 /* BASmartCustomerInformationApproachViewController.swift in Sources */,
 				CF15331B25DCF84A004667D8 /* MapViewController.swift in Sources */,
 				CF2A64B62657A16800D52675 /* InfoModel.swift in Sources */,
 				CF2A64DF265F724E00D52675 /* NumberExtension.swift in Sources */,
+				CFD0B3D5274F4A5A00589882 /* AlertDenyViewController.swift in Sources */,
 				CF042AC626253E2F00A7EDDA /* BASmartCustomerFourthSellFlowViewController.swift in Sources */,
 				CF7AD60725C7EC3A00E5BA25 /* BASmartCustomerCatalog.swift in Sources */,
 				CF042AC326253E0D00A7EDDA /* BASmartCustomerThirdSellFlowViewController.swift in Sources */,
@@ -1295,6 +1356,7 @@
 				CFF261B1270705D20006DF35 /* SalaryDetailViewController.swift in Sources */,
 				CF9530802587714D0018B94F /* BaseViewController.swift in Sources */,
 				CF4439392685B18F00B97434 /* BASmartVehicleTableViewCell.swift in Sources */,
+				CF894F9727562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift in Sources */,
 				CF4C27C4271EBB1A008268C8 /* BASmartSelectCustomerModelTableViewCell.swift in Sources */,
 				CF910F2426773ED900046221 /* SelectImageView.swift in Sources */,
 				CF5E75792589C99900B73479 /* LoginModel.swift in Sources */,
@@ -1304,7 +1366,9 @@
 				CF7AD61C25C934B300E5BA25 /* BASmartCustomerInformationAddHumanViewController.swift in Sources */,
 				CFFE825F25B912E000B45958 /* BASmartCustomerListMenuActionTableViewCell.swift in Sources */,
 				CF042AEC2643D2DB00A7EDDA /* BASmartComboFeatureTableViewCell.swift in Sources */,
+				CF894F942755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.swift in Sources */,
 				CF22724425AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.swift in Sources */,
+				CF894F9B27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift in Sources */,
 				CF65FDE9273B649D00183CBA /* ListCheckboxView.swift in Sources */,
 				CF735E5B2681F6A5001AEDFF /* BASmartTechnicalCarListTableViewCell.swift in Sources */,
 				CFE61BE02743C28C00640A56 /* BASmartInventoryDetailViewController.swift in Sources */,
@@ -1315,6 +1379,7 @@
 				CF042ADE263A9BD200A7EDDA /* BASmartSelectVTypeTableViewCell.swift in Sources */,
 				CFBC349F2692EB9C00C396F1 /* CoreDataService.swift in Sources */,
 				CFF2616526D86DF20006DF35 /* ContactModel.swift in Sources */,
+				CFD0B3D3274F4A4A00589882 /* AlertConfirmViewController.swift in Sources */,
 				CF7AD60325C79AC800E5BA25 /* TableView.swift in Sources */,
 				CF735E4E2681C25E001AEDFF /* BASmartWarrantyRequestViewController.swift in Sources */,
 				CFFE829625BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift in Sources */,
@@ -1324,6 +1389,7 @@
 				CF4C27CF2727B683008268C8 /* BASmartCustomerInformationAddHumanTypeViewController.swift in Sources */,
 				CF0AA7E32746601000548E98 /* BASmartInventoryDetailTableViewCell.swift in Sources */,
 				CFA1A9A425AD4E4700D4C093 /* SideMenuItem.swift in Sources */,
+				CF67493C2761E4D00077D544 /* BASmartSearchSellerViewController.swift in Sources */,
 				CF042ACF2632C16B00A7EDDA /* BASmartSelectComboTableViewCell.swift in Sources */,
 				CF5AB1AD25F89AB200B1A9E3 /* BASmartPlanListCellTableViewCell.swift in Sources */,
 				CF042AE52641010B00A7EDDA /* BASmartSuggestPlanViewController.swift in Sources */,
@@ -1389,10 +1455,12 @@
 				CFD802A02594A63D001CEAE2 /* BaseSideMenuViewController.swift in Sources */,
 				CF042AB22611B35200A7EDDA /* BASmartCreatePlanViewController.swift in Sources */,
 				CF4439352685960D00B97434 /* BASmartWarrantySearchVehicleViewController.swift in Sources */,
+				CF00E9C32769C25100CE8EBC /* BASmartWarehouseCatalogViewController.swift in Sources */,
 				CFD802582592EEC6001CEAE2 /* BasicModel.swift in Sources */,
 				CF2A64F82668BCF300D52675 /* BASmartSupporterListTableViewCell.swift in Sources */,
 				CF2A64F42668B9DF00D52675 /* BASmartSupporterListViewController.swift in Sources */,
 				CF042AB926253DDA00A7EDDA /* BASmartCustomerMainSellFlowViewController.swift in Sources */,
+				CF894F9927563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift in Sources */,
 				CF735E512681C570001AEDFF /* BASmartWarrantyCarListViewController.swift in Sources */,
 				CF735E572681C58F001AEDFF /* BASmartWarrantyAttachViewController.swift in Sources */,
 				CFFE825725B910E500B45958 /* BASmartCustomerListMenuActionViewController.swift in Sources */,

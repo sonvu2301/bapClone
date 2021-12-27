@@ -142,7 +142,7 @@ class BASmartWarrantySavedImagesViewController: BaseViewController {
             let index = attachs.firstIndex(of: item)
             
             Network.shared.BASmartUploadFileAttach(param: param) { [weak self] (data) in
-                if data?.error_code == 0 {
+                if data?.errorCode == 0 {
                     self?.loadingCell[index ?? 0] = false
                     self?.collectionView.reloadData()
                 }
@@ -177,7 +177,7 @@ class BASmartWarrantySavedImagesViewController: BaseViewController {
                                                               image: imageStr)
                     
                     Network.shared.VehicleAddPhoto(param: paramUpload) { [weak self] (data) in
-                        if data?.error_code == 0 {
+                        if data?.errorCode == 0 {
                             self?.loadingCell[index] = false
                             self?.collectionView.reloadData()
                             semaphore.signal()

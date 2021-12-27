@@ -161,7 +161,7 @@ extension BASmartCustomerInformationHumanListViewController: BASmartHumanListDel
         alert.addAction(UIAlertAction(title: "Xác nhận", style: .default, handler: { [weak self] (action) in
             self?.showBlurBackground()
             Network.shared.BASmartDeleteHuman(customerId: self?.customerId ?? 0, objectId: objectId) { [weak self] (data) in
-                if data?.error_code != 0 && data?.error_code != nil {
+                if data?.errorCode != 0 && data?.errorCode != nil {
                     self?.presentBasicAlert(title: data?.message ?? "", message: "", buttonTittle: "Đồng ý")
                     self?.hideBlurBackground()
                 } else {

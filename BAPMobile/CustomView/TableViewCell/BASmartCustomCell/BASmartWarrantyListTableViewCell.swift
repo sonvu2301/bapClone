@@ -14,6 +14,7 @@ class BASmartWarrantyListTableViewCell: UITableViewCell {
     @IBOutlet weak var boundView: UIView!
     @IBOutlet weak var viewTitleBackground: UIView!
     @IBOutlet weak var viewEmployee: UIView!
+    @IBOutlet weak var viewAccount: UIView!
     
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelXNCode: UILabel!
@@ -23,6 +24,8 @@ class BASmartWarrantyListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelAddress: UILabel!
     @IBOutlet weak var labelEmployee: UILabel!
     @IBOutlet weak var labelPartner: UILabel!
+    @IBOutlet weak var labelVehicleCount: UILabel!
+    @IBOutlet weak var labelAccount: UILabel!
     
     @IBOutlet weak var buttonCodePhoneNumber: UIButton!
     @IBOutlet weak var buttonContactPhoneNumber: UIButton!
@@ -58,6 +61,10 @@ class BASmartWarrantyListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        viewAccount.isHidden = true
+    }
+    
     func setupData(data: BASmartTechnicalData) {
         self.data = data
         labelTitle.textColor = UIColor(hexString: data.task?.fcolor ?? "")
@@ -70,6 +77,8 @@ class BASmartWarrantyListTableViewCell: UITableViewCell {
         labelEmployee.text = data.seller?.name
         labelPartner.text = data.partner?.code
         labelPartner.textColor = UIColor(hexString: data.partner?.fcolor ?? "")
+        labelAccount.text = data.account
+        labelVehicleCount.text = String(data.vehicleCount ?? 0)
         
         buttonCodePhoneNumber.setTitle(data.customer?.phone ?? "", for: .normal)
         buttonContactPhoneNumber.setTitle(data.contact?.mobile ?? "", for: .normal)
@@ -100,6 +109,8 @@ class BASmartWarrantyListTableViewCell: UITableViewCell {
         codePhone = Int(data.customer?.phone ?? "0") ?? 0
         contactPhone = Int(data.contact?.mobile ?? "0") ?? 0
         employeePhone = Int(data.seller?.mobile ?? "0") ?? 0
+        
+        viewAccount.isHidden = (data.account?.count ?? 0) < 1 ? true : false
     }
     
     @IBAction func buttonCodePhoneNumberTap(_ sender: Any) {

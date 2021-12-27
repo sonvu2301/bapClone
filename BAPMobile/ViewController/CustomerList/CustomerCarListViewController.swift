@@ -115,7 +115,7 @@ class CustomerCarListViewController: BaseViewController {
             //Check is valid day from text field
             if day > 0 {
                 Network.shared.createVGSTask(day: Int(textField.text ?? "") ?? 0, vehicleIds: vehicleIds) { [weak self] (isDone) in
-                    if isDone?.error_code == 0 {
+                    if isDone?.errorCode == 0 {
                         self?.getData()
                         self?.vehicleIds = [Int]()
                     }

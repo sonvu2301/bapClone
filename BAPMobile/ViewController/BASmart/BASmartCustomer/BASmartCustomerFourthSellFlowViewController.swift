@@ -54,6 +54,7 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
     var unselectedImage = UIImage()
     var location: [MapData]?
     var delegate: CreateOrderDelegate?
+    var paymentId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +100,7 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
         textFieldActDate.delegate = self
         textFieldExpiredDate.delegate = self
         
-        textFieldExpiredDate.text = Date().millisecToDate(time: Int(Date().timeIntervalSince1970))
+        textFieldExpiredDate.text = Date().millisecToDate(time: Int(Date().timeIntervalSince1970))  
         textFieldActTime.text = Date().getHourMinute(time: Int(Date().timeIntervalSince1970))
         
         viewCustomerID.isHidden = true
