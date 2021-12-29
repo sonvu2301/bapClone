@@ -274,7 +274,7 @@ extension BaseSideMenuViewController {
         SideMenuManager.default.leftMenuNavigationController = leftMenu
         
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController?.navigationBar ?? UINavigationBar())
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController?.view ?? UINavigationBar())
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController?.navigationBar ?? UINavigationBar(), forMenu: .left)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "list")?.resizeImage(targetSize: CGSize(width: 15, height: 15)), style: .plain, target: self, action: #selector(openSideMenu))
         NotificationCenter.default.addObserver(self, selector: #selector(close), name: NSNotification.Name(rawValue: "CloseBASmart"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(checkoutBASmart), name: NSNotification.Name(rawValue: "CheckoutBASmart"), object: nil)
