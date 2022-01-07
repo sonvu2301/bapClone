@@ -166,6 +166,14 @@ extension String {
         return Int(date?.timeIntervalSince1970 ?? 0) + TimeZone.vn.number
     }
     
+    func stringHourToIntDate() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm dd/MM/yyyy"
+        let date = dateFormatter.date(from: self)
+        
+        return Int(date?.timeIntervalSince1970 ?? 0) + TimeZone.vn.number
+    }
+    
     func secondFromString() -> Int {
         let components: Array = self.components(separatedBy: ":")
         let hours = Int(components[0]) ?? 0
