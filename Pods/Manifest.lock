@@ -65,6 +65,7 @@ PODS:
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
+  - ReachabilitySwift (5.0.0)
   - SDWebImage (5.10.2):
     - SDWebImage/Core (= 5.10.2)
   - SDWebImage/Core (5.10.2)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - GoogleMaps (= 4.1.0)
   - GooglePlaces (= 4.1.0)
   - Kingfisher (~> 5.15)
+  - ReachabilitySwift
   - SideMenu
   - Toaster
 
@@ -97,6 +99,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - Kingfisher
+    - ReachabilitySwift
     - SDWebImage
     - SideMenu
     - SwiftyGif
@@ -114,11 +117,12 @@ SPEC CHECKSUMS:
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   GooglePlaces: a058b776259c13e1323c9ff135549cb1b13ad8e7
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: 08f5b5e1dc46660f307359947d6f75de875be42c
+PODFILE CHECKSUM: 1dbc62cfa5262a8d101a0fe28fc937aa0871d396
 
 COCOAPODS: 1.11.2

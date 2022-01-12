@@ -231,19 +231,14 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
     @objc func checkoutBASmart() {
         let storyBoard = UIStoryboard(name: "BASmart", bundle: nil)
         let popoverContent = storyBoard.instantiateViewController(withIdentifier: "BASmartCheckoutViewController") as! BASmartCheckoutViewController
-        let nav = UINavigationController(rootViewController: popoverContent)
-        nav.modalPresentationStyle = .popover
-        let popover = nav.popoverPresentationController
-        popoverContent.preferredContentSize = CGSize(width: 300, height: 150)
+        popoverContent.modalPresentationStyle = .overCurrentContext
+        
         popoverContent.location = MapLocation(lng: locValue.longitude, lat: locValue.latitude)
         popoverContent.delegate = self
-        popover?.sourceView = self.view
-        popover?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY,width: 0,height: 0)
-        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue:0)
-        popover?.delegate = self
+        
         showBlurBackground()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            self?.present(nav, animated: true, completion: nil)
+            self?.present(popoverContent, animated: false, completion: nil)
         }
     }
     

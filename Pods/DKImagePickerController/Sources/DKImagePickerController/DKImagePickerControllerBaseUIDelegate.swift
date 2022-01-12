@@ -104,7 +104,7 @@ open class DKImagePickerControllerBaseUIDelegate: NSObject, DKImagePickerControl
     open func createDoneButtonIfNeeded() -> UIButton {
         if self.doneButton == nil {
             let button = UIButton(type: UIButton.ButtonType.custom)
-            button.setTitleColor(UINavigationBar.appearance().tintColor ?? self.imagePickerController.navigationBar.tintColor, for: .normal)
+            button.setTitleColor(.white, for: .normal)
             self.updateDoneButtonTitle(button)
             self.doneButton = button
         }
@@ -132,7 +132,7 @@ open class DKImagePickerControllerBaseUIDelegate: NSObject, DKImagePickerControl
             if #available(iOS 13, *) {
                 defaultColor = UIColor.label
             }
-            button.setTitleColor(globalTitleColor ?? defaultColor, for: .normal)
+            button.setTitleColor(.white, for: .normal)
             button.titleLabel!.font = globalTitleFont ?? UIFont.boldSystemFont(ofSize: 18.0)
 
             self.selectGroupButton = button

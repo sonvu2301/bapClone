@@ -295,7 +295,7 @@ extension BASmartCustomerCreateApproachViewController: UpdateImageDelegate {
     
     func addImage() {
         let pickerController = DKImagePickerController()
-        pickerController.modalPresentationStyle = .fullScreen
+        pickerController.modalPresentationStyle = .overFullScreen
         pickerController.view.tintColor = UIColor().defaultColor()
         pickerController.didSelectAssets = { [weak self] (assets: [DKAsset]) in
             assets.forEach { (item) in

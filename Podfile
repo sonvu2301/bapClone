@@ -16,4 +16,5 @@ target 'BAPMobile' do
     pod 'DropDown'
     pod 'Toaster'
     pod 'DKImagePickerController'
+    pod 'ReachabilitySwift'
 end

@@ -9,7 +9,22 @@ import Foundation
 import Alamofire
 import Toaster
 import UIKit
+import Reachability
 
+enum NetworkStatus: Int {
+    case possible, outOfRange, onlyInternalNetwork
+    
+    var errorString: String {
+        switch self {
+        case .possible:
+            return ""
+        case .outOfRange:
+            return "Quá thời gian kết nối"
+        case .onlyInternalNetwork:
+            return "Không có kết nối internet"
+        }
+    }
+}
 
 class Network: NSObject {
     static let shared = Network()
@@ -17,6 +32,23 @@ class Network: NSObject {
     let keyMap = "kikgKfi1Md0uKgCJ42P7r8aI"
     let encoder = JSONParameterEncoder.default
     
+    //Check network
+    class var networkStatus: NetworkStatus {
+        do {
+            if (try Reachability(hostname: "www.google.com")).connection != .unavailable {
+                return .possible
+            }
+            if (try Reachability()).connection != .unavailable {
+                return .onlyInternalNetwork
+            }
+        } catch {
+        }
+        return .outOfRange
+    }
+    
+    var networkStatus: NetworkStatus {
+        return Network.networkStatus
+    }
     
     //MARK: Login request
     func clientReq(completion: @escaping(Bool) -> Void) {
@@ -226,12 +258,12 @@ extension Network {
         }
     }
     
-    func BASmartTimeChecking(state: Int, lat: Double, long: Double, opt: Int, completion: @escaping (BASmartCheckinAction?) -> Void) {
+    func BASmartTimeChecking(lat: Double, long: Double, opt: Int, completion: @escaping (BASmartCheckinAction?) -> Void) {
         let headers = self.getHeaders()
         let a = 105.21235413
         let b = 21.21453697
         let locationParam = BASmartLocationParam(lng: a, lat: b, opt: opt)
-        let param = BASmartCheckingParam(state: state, location: locationParam)
+        let param = BASmartCheckingParam(state: 1, location: locationParam)
         
         AF.request(NetworkConstants.basmart_checking_action, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
             do {
@@ -254,9 +286,7 @@ extension Network {
     
     func BASmartCheckout(lat: Double, long: Double, opt: Int, completion: @escaping (BASmartCheckoutModel?) -> Void) {
         let headers = self.getHeaders()
-        let a = 105.21235413
-        let b = 21.21453697
-        let locationParam = BASmartLocationParam(lng: a, lat: b, opt: opt)
+        let locationParam = BASmartLocationParam(lng: lat, lat: long, opt: opt)
         let param = BASmartCheckingParam(state: 7, location: locationParam)
         
         AF.request(NetworkConstants.basmart_checking_action, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in

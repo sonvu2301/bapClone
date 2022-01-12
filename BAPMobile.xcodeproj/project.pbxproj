@@ -196,6 +196,8 @@
 		CFA1C989260836BC007DAC38 /* BASmartRequestOpenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA1C987260836BC007DAC38 /* BASmartRequestOpenTableViewCell.swift */; };
 		CFA1C98A260836BC007DAC38 /* BASmartRequestOpenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA1C988260836BC007DAC38 /* BASmartRequestOpenTableViewCell.xib */; };
 		CFA1C98D26084636007DAC38 /* BASmartRequestOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA1C98C26084636007DAC38 /* BASmartRequestOpenViewController.swift */; };
+		CFACCEDD278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACCEDC278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift */; };
+		CFACCEDF278EB9B2007DCA29 /* BASmartCustomerListTextviewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFACCEDE278EB9B2007DCA29 /* BASmartCustomerListTextviewCellView.xib */; };
 		CFAF6A962695A73700E92E90 /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6A952695A73700E92E90 /* VehicleModel.swift */; };
 		CFAF6A9A26982CC600E92E90 /* BASmartVehiclePreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6A9926982CC600E92E90 /* BASmartVehiclePreviewImageViewController.swift */; };
 		CFAF6A9D26982CFC00E92E90 /* BASmartVehiclePreviewImageFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6A9C26982CFC00E92E90 /* BASmartVehiclePreviewImageFirstViewController.swift */; };
@@ -453,6 +455,8 @@
 		CFA1C987260836BC007DAC38 /* BASmartRequestOpenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartRequestOpenTableViewCell.swift; sourceTree = "<group>"; };
 		CFA1C988260836BC007DAC38 /* BASmartRequestOpenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartRequestOpenTableViewCell.xib; sourceTree = "<group>"; };
 		CFA1C98C26084636007DAC38 /* BASmartRequestOpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartRequestOpenViewController.swift; sourceTree = "<group>"; };
+		CFACCEDC278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerListTextviewCellView.swift; sourceTree = "<group>"; };
+		CFACCEDE278EB9B2007DCA29 /* BASmartCustomerListTextviewCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerListTextviewCellView.xib; sourceTree = "<group>"; };
 		CFAF6A952695A73700E92E90 /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		CFAF6A9926982CC600E92E90 /* BASmartVehiclePreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartVehiclePreviewImageViewController.swift; sourceTree = "<group>"; };
 		CFAF6A9C26982CFC00E92E90 /* BASmartVehiclePreviewImageFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartVehiclePreviewImageFirstViewController.swift; sourceTree = "<group>"; };
@@ -736,6 +740,8 @@
 				CF0884D3259B134C00DE4FB7 /* BASmartMainSmallCustomView.xib */,
 				CFFE823525B01A5C00B45958 /* BASmartCustomerListDefaultCellView.swift */,
 				CFFE823825B01A6800B45958 /* BASmartCustomerListDefaultCellView.xib */,
+				CFACCEDC278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift */,
+				CFACCEDE278EB9B2007DCA29 /* BASmartCustomerListTextviewCellView.xib */,
 				CF7AD60A25C9295200E5BA25 /* BASmartCustomerListDropdownView.swift */,
 				CF7AD60D25C9295E00E5BA25 /* BASmartCustomerListDropdownView.xib */,
 				CF69035D2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift */,
@@ -1154,6 +1160,7 @@
 				CFD8026D25943B36001CEAE2 /* SideMenuTableViewCell.xib in Resources */,
 				CFD0B3D0274E1B1C00589882 /* Alert.storyboard in Resources */,
 				CF735E5C2681F6A5001AEDFF /* BASmartTechnicalCarListTableViewCell.xib in Resources */,
+				CFACCEDF278EB9B2007DCA29 /* BASmartCustomerListTextviewCellView.xib in Resources */,
 				CF4C27DE27300015008268C8 /* SettingTableViewCell.xib in Resources */,
 				CF735E40268081E9001AEDFF /* BASmartWarranty.storyboard in Resources */,
 				CFE7C62F26539EA5005A2BBD /* BASmartShowPhoneNumberViewControllerTableViewCell.xib in Resources */,
@@ -1342,6 +1349,7 @@
 				CFA1C98D26084636007DAC38 /* BASmartRequestOpenViewController.swift in Sources */,
 				CF735E3B267C9B29001AEDFF /* BASmartReasonViewController.swift in Sources */,
 				CF69035E2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift in Sources */,
+				CFACCEDD278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift in Sources */,
 				CF5AB17F25EDCA0400B1A9E3 /* BASmartPlanViewController.swift in Sources */,
 				CFA1A9B425AD823B00D4C093 /* BASmartCustomerInformationApproachViewController.swift in Sources */,
 				CF15331B25DCF84A004667D8 /* MapViewController.swift in Sources */,
