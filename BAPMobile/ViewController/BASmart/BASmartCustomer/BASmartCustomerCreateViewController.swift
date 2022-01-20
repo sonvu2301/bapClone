@@ -25,6 +25,7 @@ class BASmartCustomerCreateViewController: UIViewController {
     
     var location: BASmartLocationParam?
     var delegate: BlurViewDelegate?
+    var finishDelegate: BASmartDoneCreateDelegate?
     var descriptionPlaceholder = "Nhập thông tin ghi chú khách hàng..."
     var addressPlaceholder = "Nhập địa chỉ"
     var locationManager = CLLocationManager()
@@ -103,6 +104,7 @@ class BASmartCustomerCreateViewController: UIViewController {
         textViewAddress.isUserInteractionEnabled = false
         
         getLocationPermission()
+        hideKeyboardWhenTappedAround()
         
         getCurrentPlace()
     }
@@ -127,6 +129,16 @@ class BASmartCustomerCreateViewController: UIViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func buttonMapTap(_ sender: Any) {
@@ -177,6 +189,7 @@ class BASmartCustomerCreateViewController: UIViewController {
     
     private func sendRequest() {
         delegate?.hideBlur()
+        finishDelegate?.finishCreate()
         dismiss(animated: true, completion: nil)
     }
 }

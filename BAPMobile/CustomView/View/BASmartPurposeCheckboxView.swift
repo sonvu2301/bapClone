@@ -15,11 +15,14 @@ class BASmartPurposeCheckboxView: UIView {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
-    let catalog = BASmartCustomerCatalogDetail.shared.purpose
+    var catalog = [BASmartCustomerCatalogItems]()
     var data = [BASmartCustomerCatalogItems]()
     var delegate: PurposeCheckboxDelegate?
+    var isMulti = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +43,24 @@ class BASmartPurposeCheckboxView: UIView {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "CheckboxTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckboxTableViewCell")
-        tableView.rowHeight = 30
+        tableView.contentInsetAdjustmentBehavior = .never
+        let height = tableView.contentSize.height
+        tableHeight.constant = height
+        self.layoutIfNeeded()
+    }
+    
+    func resetView() {
+        let height = tableView.contentSize.height
+        tableHeight.constant = height
+        self.layoutIfNeeded()
+    }
+    
+    func setupView(catalog: [BASmartCustomerCatalogItems], title: String, isMultiSelect: Bool) {
+        self.catalog = catalog
+        tableView.reloadData()
+        labelTitle.text = title
+        self.isMulti = isMultiSelect
+        resetView()
     }
 
 }
@@ -67,7 +87,13 @@ extension BASmartPurposeCheckboxView: CheckboxStateDelegate {
     func checkbox(isCheck: Bool, id: Int) {
         guard let item = catalog.filter({$0.id == id}).first else { return }
         if isCheck {
-            data.append(item)
+            if isMulti {
+                data.append(item)
+            } else {
+                data.removeAll()
+                data.append(item)
+                tableView.reloadData()
+            }
         } else {
             data.removeAll(where: {$0.id == id})
         }

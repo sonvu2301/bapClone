@@ -40,6 +40,7 @@ class BASmartCustomerListTextviewCellView: UIView {
         textView.textColor = .lightGray
         textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         textView.delegate = self
+        textView.centerVertically()
     }
     
     func setupView(name: String, placeHolder: String, content: String) {
@@ -54,6 +55,7 @@ class BASmartCustomerListTextviewCellView: UIView {
 extension BASmartCustomerListTextviewCellView: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        textView.centerVertically()
 
         // Combine the textView text and the replacement text to
         // create the updated text string

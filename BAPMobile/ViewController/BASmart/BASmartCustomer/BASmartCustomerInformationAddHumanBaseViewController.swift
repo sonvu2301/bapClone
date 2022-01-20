@@ -38,7 +38,7 @@ class BASmartCustomerInformationAddHumanBaseViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        title = "THÊM NGƯỜI ĐẠI DIỆN"
+        title = "THÊM MỚI THÔNG TIN ĐẠI DIỆN"
     }
     
     private func setupView() {
@@ -148,7 +148,7 @@ class BASmartCustomerInformationAddHumanBaseViewController: BaseViewController {
         if isEdit {
             let param = BASmartEditHumanParam(customerId: customerId,
                                               objectId: objectId,
-                                              kind: vc1.viewTarget.id,
+                                              kind: vc1.viewTarget.data.first?.id ?? 0,
                                               name: vc1.viewName.textView.text ?? "",
                                               phone: vc1.viewPhone.textView.text ?? "",
                                               birthDay: vc1.viewDate.textField.text ?? "",
@@ -176,7 +176,7 @@ class BASmartCustomerInformationAddHumanBaseViewController: BaseViewController {
         
         else {
             let param = BASmartAddHumanParam(customerId: customerId,
-                                             kind: vc1.viewTarget.id,
+                                             kind: vc1.viewTarget.data.first?.id ?? 0,
                                              name: vc1.viewName.textView.text ?? "",
                                              phone: vc1.viewPhone.textView.text ?? "",
                                              birthDay: vc1.viewDate.textField.text ?? "",

@@ -123,6 +123,8 @@ class BASmartCustomerMainSellFlowViewController: BaseViewController {
         vc2.appendState()
         vc2.selectModelDelegate = self
         
+        vc4.delegate = self
+        
         self.addChild(vc1)
         self.addChild(vc2)
         self.addChild(vc3)
@@ -371,11 +373,20 @@ extension BASmartCustomerMainSellFlowViewController: CreateOrderDelegate {
         
         let tax = comboDetail.customer?.tax?.count == 0 ? vc4.textFieldUserId.text : comboDetail.customer?.tax
         
-        let customer = BASmartComboSaleCustomerDetailParam(tax: tax,
+//        let customer = BASmartComboSaleCustomerDetailParam(tax: tax,
+//                                                           turcoeff: vc1.count,
+//                                                           liqDate: vc4.textFieldExpiredDate.text?.stringToIntDate(),
+//                                                           user: vc2.textFieldUser.text,
+//                                                           pass: vc2.textFieldPass.text ?? "")
+        
+        let customer = BASmartComboSaleCustomerDetailParam(channelId: 0,
+                                                           tax: "013196213",
                                                            turcoeff: vc1.count,
                                                            liqDate: vc4.textFieldExpiredDate.text?.stringToIntDate(),
+                                                           dealerId: 0,
                                                            user: vc2.textFieldUser.text,
                                                            pass: vc2.textFieldPass.text ?? "")
+        
         let deploy = "\(vc4.textFieldActTime.text ?? "") \(vc4.textFieldActDate.text ?? "")"
         let location = BASmartLocationParam(
             lng: vc4.location?.first?.coords?.first?.lng ?? 0,

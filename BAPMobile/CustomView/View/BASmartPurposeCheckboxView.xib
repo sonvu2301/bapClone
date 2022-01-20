@@ -11,30 +11,67 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BASmartPurposeCheckboxView" customModule="BAPMobile" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="nah-ZU-GCZ" id="AYa-nX-Dcz"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="heC-bP-5AH"/>
+                <outlet property="labelTitle" destination="dWb-dV-fOG" id="7Oy-n5-ePZ"/>
+                <outlet property="tableHeight" destination="4Lh-2G-bdj" id="5XA-8X-SeX"/>
                 <outlet property="tableView" destination="nah-ZU-GCZ" id="I5h-QQ-3p6"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BASmartPurposeCheckboxView" customModule="BAPMobile" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="305" height="183"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nah-ZU-GCZ">
-                    <rect key="frame" x="0.0" y="0.0" width="305" height="183"/>
+                    <rect key="frame" x="107" y="12" width="188" height="16"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="999" constant="40" id="4Lh-2G-bdj"/>
+                    </constraints>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-dV-fOG">
+                    <rect key="frame" x="10" y="12" width="80" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="3I2-B1-MGB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh8-48-RXt">
+                    <rect key="frame" x="95" y="7" width="2" height="26"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="Byp-Iq-GV0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uND-8d-MNh">
+                    <rect key="frame" x="0.0" y="38" width="305" height="2"/>
+                    <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="EUt-hC-tU3"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nah-ZU-GCZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CNo-E4-tpx"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nah-ZU-GCZ" secondAttribute="trailing" id="MpI-ao-2EQ"/>
-                <constraint firstItem="nah-ZU-GCZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="REO-j0-b58"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nah-ZU-GCZ" secondAttribute="bottom" id="jiR-vT-ge0"/>
+                <constraint firstItem="hh8-48-RXt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="5b9-Sq-yy0"/>
+                <constraint firstItem="nah-ZU-GCZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="CNo-E4-tpx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nah-ZU-GCZ" secondAttribute="trailing" constant="10" id="MpI-ao-2EQ"/>
+                <constraint firstItem="dWb-dV-fOG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Rml-hh-EZe"/>
+                <constraint firstItem="nah-ZU-GCZ" firstAttribute="leading" secondItem="hh8-48-RXt" secondAttribute="trailing" constant="10" id="Ubk-Lb-jao"/>
+                <constraint firstAttribute="bottom" secondItem="uND-8d-MNh" secondAttribute="bottom" id="Zcd-n1-hxz"/>
+                <constraint firstAttribute="bottom" secondItem="hh8-48-RXt" secondAttribute="bottom" constant="7" id="bYY-eU-gHL"/>
+                <constraint firstItem="dWb-dV-fOG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="bmM-eW-Dt9"/>
+                <constraint firstItem="uND-8d-MNh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eiY-Mi-2O7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nah-ZU-GCZ" secondAttribute="bottom" constant="12" id="jiR-vT-ge0"/>
+                <constraint firstItem="hh8-48-RXt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pqA-nC-air"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uND-8d-MNh" secondAttribute="trailing" id="wO0-bv-Lhr"/>
+                <constraint firstItem="hh8-48-RXt" firstAttribute="leading" secondItem="dWb-dV-fOG" secondAttribute="trailing" constant="5" id="ydA-o0-Xoe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="31.159420289855074" y="-359.93303571428572"/>
+            <point key="canvasLocation" x="31.159420289855074" y="-407.8125"/>
         </view>
     </objects>
     <resources>

@@ -23,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6D-j0-Pd1">
                     <rect key="frame" x="95" y="7" width="2" height="46"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="2" id="HIg-6s-kKw"/>
                     </constraints>
@@ -39,13 +39,13 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5A-hC-3TN">
                     <rect key="frame" x="0.0" y="58" width="466" height="2"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="Hg4-O9-pQs"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="jnjknjkk" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gix-yF-p8q">
-                    <rect key="frame" x="102" y="7" width="354" height="46"/>
+                    <rect key="frame" x="107" y="7" width="349" height="46"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -61,7 +61,7 @@
                 <constraint firstItem="H1M-Ns-Cw2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Qte-BO-ase"/>
                 <constraint firstItem="P6D-j0-Pd1" firstAttribute="leading" secondItem="H1M-Ns-Cw2" secondAttribute="trailing" constant="5" id="RFB-Cp-bd6"/>
                 <constraint firstAttribute="trailing" secondItem="a5A-hC-3TN" secondAttribute="trailing" id="TTW-8p-ix6"/>
-                <constraint firstItem="gix-yF-p8q" firstAttribute="leading" secondItem="P6D-j0-Pd1" secondAttribute="trailing" constant="5" id="VYQ-2w-5pt"/>
+                <constraint firstItem="gix-yF-p8q" firstAttribute="leading" secondItem="P6D-j0-Pd1" secondAttribute="trailing" constant="10" id="VYQ-2w-5pt"/>
                 <constraint firstItem="H1M-Ns-Cw2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Vay-Y4-H8g"/>
                 <constraint firstItem="gix-yF-p8q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="bdR-Ay-qSu"/>
                 <constraint firstItem="P6D-j0-Pd1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="f5f-Pq-EOj"/>

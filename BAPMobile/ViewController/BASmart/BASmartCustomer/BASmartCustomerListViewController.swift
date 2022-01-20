@@ -186,6 +186,8 @@ class BASmartCustomerListViewController: BaseSideMenuViewController {
         let popover = nav.popoverPresentationController
         popoverContent.preferredContentSize = CGSize(width: view.frame.width - 20, height: 610)
         popoverContent.delegate = self
+        
+        popoverContent.finishDelegate = self
         popover?.sourceView = self.view
         popover?.sourceRect = CGRect(x: 10, y: 400, width: 0, height: 0)
         popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue:0)
@@ -229,4 +231,14 @@ extension BASmartCustomerListViewController: BASmartGetPhoneNumberDelegate {
         }
     }
     
+}
+
+extension BASmartCustomerListViewController: BASmartDoneCreateDelegate {
+    func finishCreate() {
+        let vc1 = self.children[0] as! BASmartCustomerListContentViewController
+        let vc2 = self.children[0] as! BASmartCustomerListContentViewController
+        
+        vc1.getCustomerList(groupId: vc1.kind)
+        vc2.getCustomerList(groupId: vc2.kind)
+    }
 }
