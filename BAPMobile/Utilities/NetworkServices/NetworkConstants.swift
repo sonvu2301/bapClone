@@ -273,7 +273,7 @@ struct NetworkConstants {
     }
     
     static var basmart_combosale_create_order: String {
-        return baseTestInstallMngURL + "task/install/create/bacam"
+        return baseTestInstallMngURL + "tasks/install/create/bacam"
     }
     
     static var basmart_list_seller: String {

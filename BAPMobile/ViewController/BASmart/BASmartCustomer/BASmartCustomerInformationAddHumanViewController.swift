@@ -10,7 +10,7 @@ import UIKit
 class BASmartCustomerInformationAddHumanViewController: UIViewController {
 
     @IBOutlet weak var viewName: BASmartCustomerListDefaultCellView!
-    @IBOutlet weak var viewTarget: BASmartCustomerListDropdownView!
+    @IBOutlet weak var viewTarget: BASmartPurposeCheckboxView!
     @IBOutlet weak var viewPhone: BASmartCustomerListDefaultCellView!
     @IBOutlet weak var viewPosition: BASmartCustomerListDropdownView!
     @IBOutlet weak var viewDate: BASmartCustomerListCalendarView!
@@ -45,40 +45,43 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
         
         //setup data source for dropdown
         let catalog = BASmartCustomerCatalogDetail.shared
-        viewTarget.setupView(title: "Đối tượng",
-                             placeholder: "Chọn đối tượng",
-                             content: catalog.humanKind,
-                             name: "",
-                             id: 0)
+//        viewTarget.setupView(title: "Đối tượng",
+//                             placeholder: "Chọn đối tượng..",
+//                             content: catalog.humanKind,
+//                             name: "",
+//                             id: 0)
+        viewTarget.setupView(catalog: catalog.humanKind,
+                             title: "Đối tượng",
+                             isMultiSelect: false)
         viewPosition.setupView(title: "Chức vụ",
-                               placeholder: "Chọn chức vụ",
+                               placeholder: "Chọn chức vụ..",
                                content: catalog.position,
                                name: "",
                                id: 0)
         viewMarrige.setupView(title: "Hôn nhân",
-                              placeholder: "Chọn tình trạng hôn nhân",
+                              placeholder: "Chọn tình trạng hôn nhân..",
                               content: catalog.marital,
                               name: "",
                               id: 0)
         viewGender.setupView(title: "Giới tính",
-                             placeholder: "Chọn giới tính",
+                             placeholder: "Chọn giới tính..",
                              content: catalog.gender,
                              name: "",
                              id: 0)
         viewReligion.setupView(title: "Tôn giáo",
-                               placeholder: "Chọn tôn giáo",
+                               placeholder: "Chọn tôn giáo..",
                                content: catalog.religion,
                                name: "",
                                id: 0)
         viewEthnic.setupView(title: "Dân tộc",
-                             placeholder: "Chọn dân tộc",
+                             placeholder: "Chọn dân tộc..",
                              content: catalog.ethnic,
                              name: "",
                              id: 0)
         
         //setup name for normal cell
         viewName.setupView(title: "Họ tên",
-                           placeholder: "Nhập họ tên",
+                           placeholder: "Nhập họ tên..",
                            isNumberOnly: false,
                            content: "",
                            isAllowSelect: true,
@@ -86,7 +89,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
                            isUsingLabel: false)
         
         viewPhone.setupView(title: "Điện thoại",
-                            placeholder: "Nhập số điện thoại",
+                            placeholder: "Nhập số điện thoại..",
                             isNumberOnly: true,
                             content: "",
                             isAllowSelect: true,
@@ -94,7 +97,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
                             isUsingLabel: false)
         
         viewEmail.setupView(title: "Email",
-                            placeholder: "Nhập email",
+                            placeholder: "Nhập email..",
                             isNumberOnly: false,
                             content: "",
                             isAllowSelect: true,
@@ -102,7 +105,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
                             isUsingLabel: false)
         
         viewFacebook.setupView(title: "Facebook",
-                               placeholder: "Nhập facebook",
+                               placeholder: "Nhập facebook..",
                                isNumberOnly: false,
                                content: "",
                                isAllowSelect: true,
@@ -111,7 +114,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
         
         viewDate.setupView(title: "Ngày sinh",
                            birth: data.birth ?? "",
-                           placeHolder: "Nhập ngày sinh")
+                           placeHolder: "Nhập ngày sinh..")
         
         if isEdit {
             title = "CẬP NHẬT THÔNG TIN NGƯỜI ĐẠI DIỆN"
@@ -119,7 +122,7 @@ class BASmartCustomerInformationAddHumanViewController: UIViewController {
             viewPhone.textView.text = data.phone
             viewEmail.textView.text = data.email
             viewFacebook.textView.text = data.facebook
-            viewTarget.setupButton(title: data.kind ?? "")
+            viewTarget.data = catalog.humanKind.filter({$0.name == data.kind})
             viewPosition.setupButton(title: data.position ?? "")
             viewMarrige.setupButton(title: data.marriage ?? "")
             viewGender.setupButton(title: data.gender ?? "")

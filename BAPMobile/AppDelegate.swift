@@ -30,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyB3KkvioYia26IQUMG6CPxnAnnewow-gTQ")
         GMSPlacesClient.provideAPIKey("AIzaSyB3KkvioYia26IQUMG6CPxnAnnewow")
         // Override point for customization after application launch.
+        
+        
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = UIColor().defaultColor()
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        
         return true
     }
 

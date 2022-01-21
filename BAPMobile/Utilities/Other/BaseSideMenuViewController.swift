@@ -82,13 +82,6 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
         view.addGestureRecognizer(tap)
     }
     
-    private func blurScreenWhenNotForgeground() {
-        let notiToBackground = NotificationCenter.default
-        notiToBackground.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        let notiToForgeground = NotificationCenter.default
-        notiToForgeground.addObserver(self, selector: #selector(appAppear), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-    
     func showBlurBackground() {
         self.view.addSubview(blurView)
     }
@@ -231,30 +224,16 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
     @objc func checkoutBASmart() {
         let storyBoard = UIStoryboard(name: "BASmart", bundle: nil)
         let popoverContent = storyBoard.instantiateViewController(withIdentifier: "BASmartCheckoutViewController") as! BASmartCheckoutViewController
-        let nav = UINavigationController(rootViewController: popoverContent)
-        nav.modalPresentationStyle = .popover
-        let popover = nav.popoverPresentationController
-        popoverContent.preferredContentSize = CGSize(width: 300, height: 150)
+        popoverContent.modalPresentationStyle = .overCurrentContext
+        
         popoverContent.location = MapLocation(lng: locValue.longitude, lat: locValue.latitude)
         popoverContent.delegate = self
-        popover?.sourceView = self.view
-        popover?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY,width: 0,height: 0)
-        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue:0)
-        popover?.delegate = self
+        
         showBlurBackground()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            self?.present(nav, animated: true, completion: nil)
+            self?.present(popoverContent, animated: false, completion: nil)
         }
     }
-    
-    @objc func appAppear() {
-        view.removeBlurLoader()
-    }
-    
-    @objc func appMovedToBackground() {
-        view.showBlurLoader()
-    }
-    
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
@@ -274,7 +253,7 @@ extension BaseSideMenuViewController {
         SideMenuManager.default.leftMenuNavigationController = leftMenu
         
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController?.navigationBar ?? UINavigationBar())
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController?.view ?? UINavigationBar())
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController?.navigationBar ?? UINavigationBar(), forMenu: .left)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "list")?.resizeImage(targetSize: CGSize(width: 15, height: 15)), style: .plain, target: self, action: #selector(openSideMenu))
         NotificationCenter.default.addObserver(self, selector: #selector(close), name: NSNotification.Name(rawValue: "CloseBASmart"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(checkoutBASmart), name: NSNotification.Name(rawValue: "CheckoutBASmart"), object: nil)

@@ -1400,6 +1400,26 @@ struct BASmartComboSaleCustomerDetail: Codable {
     }
 }
 
+struct BASmartComboSaleCustomerDetailParam: Codable {
+    var channelId: Int?
+    var tax: String?
+    var turcoeff: Int?
+    var liqDate: Int?
+    var dealerId: Int?
+    var user: String?
+    var pass: String
+    
+    enum CodingKeys: String, CodingKey {
+        case channelId = "channelid"
+        case tax = "taxiorid"
+        case turcoeff = "turcoeff"
+        case liqDate = "liqdate"
+        case dealerId = "dealerid"
+        case user = "accountusr"
+        case pass = "accountpwd"
+    }
+}
+
 struct BASmartComboSaleCustomerCommon: Codable {
     var object: Int?
     var name: String?
@@ -1470,7 +1490,7 @@ struct BASmartCreateOrderParam: Codable {
     var paymentId: Int?
     var receiverId: Int?
     var deployId: Int?
-    var customer: [BASmartComboSaleCustomerDetail]?
+    var customer: BASmartComboSaleCustomerDetailParam?
     var contactName: String?
     var contactPhone: String?
     var reportName: String?

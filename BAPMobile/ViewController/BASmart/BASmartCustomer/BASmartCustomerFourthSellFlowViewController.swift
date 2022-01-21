@@ -8,6 +8,20 @@
 import UIKit
 import DKImagePickerController
 
+enum ReceiverType {
+    case cash, transfer
+    
+    var id: Int {
+        switch self {
+        case .cash:
+            return 1
+        case .transfer:
+            return 2
+        }
+    }
+}
+
+
 class BASmartCustomerFourthSellFlowViewController: BaseViewController {
 
     @IBOutlet weak var viewSelectImage: SelectImageView!
@@ -54,7 +68,9 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
     var unselectedImage = UIImage()
     var location: [MapData]?
     var delegate: CreateOrderDelegate?
-    var paymentId: Int?
+    var paymentId = ReceiverType.cash
+    var receiverId = 1
+    var deployId = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +136,8 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
             buttonFirstReceive.setTitle("  Kinh doanh", for: .normal)
             buttonSecondReceive.isHidden = false
             buttonSecondReceive.setImage(selectedImage, for: .normal)
+            paymentId = .cash
+            receiverId = 0
         } else {
             buttonCash.setImage(unselectedImage, for: .normal)
             buttonTransfer.setImage(selectedImage, for: .normal)
@@ -127,6 +145,8 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
             buttonSecondReceive.setImage(unselectedImage, for: .normal)
             buttonFirstReceive.setImage(selectedImage, for: .normal)
             buttonFirstReceive.setTitle("  Chuyển khoản", for: .normal)
+            paymentId = .transfer
+            receiverId = 2
         }
     }
     
@@ -134,9 +154,11 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
         if isBA {
             buttonFirstAct.setImage(selectedImage, for: .normal)
             buttonSecondAct.setImage(unselectedImage, for: .normal)
+            deployId = 1
         } else {
             buttonFirstAct.setImage(unselectedImage, for: .normal)
             buttonSecondAct.setImage(selectedImage, for: .normal)
+            deployId = 2
         }
     }
     
@@ -144,9 +166,11 @@ class BASmartCustomerFourthSellFlowViewController: BaseViewController {
         if isFirstReceiver {
             buttonFirstReceive.setImage(selectedImage, for: .normal)
             buttonSecondReceive.setImage(unselectedImage, for: .normal)
+            receiverId = 1
         } else {
             buttonFirstReceive.setImage(unselectedImage, for: .normal)
             buttonSecondReceive.setImage(selectedImage, for: .normal)
+            receiverId = 2
         }
     }
     

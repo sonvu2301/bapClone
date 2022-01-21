@@ -67,13 +67,6 @@ class BaseViewController: UIViewController, UIPopoverPresentationControllerDeleg
         getCurrentPlace()
     }
     
-    private func blurScreenWhenNotForgeground() {
-        let notiToBackground = NotificationCenter.default
-        notiToBackground.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        let notiToForgeground = NotificationCenter.default
-        notiToForgeground.addObserver(self, selector: #selector(appAppear), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-    
     func getLocationPermission() {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -213,14 +206,6 @@ class BaseViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
-    }
-    
-    @objc func appAppear() {
-        view.removeBlurLoader()
-    }
-    
-    @objc func appMovedToBackground() {
-        view.showBlurLoader()
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

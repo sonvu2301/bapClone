@@ -257,56 +257,73 @@ class BASmartMainViewController: BaseSideMenuViewController {
     private func checkState() {
         view.showBlurLoader()
         Network.shared.BASmartTimeKeepingCheck { [weak self] (data) in
-            SideMenuItems.shared.addSideMenuItems(items: data?.data.menulist ?? [BASmartMenuList]())
-            self?.view.removeBlurLoader()
-            switch data?.data.state {
-            case 0:
-                self?.state = .notStart
-            case 1:
-                self?.state = .notCheckin
-            case 2:
-                self?.state = .outOfWork
-            case 4:
-                self?.state = .wait
-            case 5:
-                self?.state = .checkin
-            case 7:
-                self?.state = .endOfWork
-            default:
-                break
+            if data?.error_code != 0 && data?.error_code != nil {
+                let alert = UIAlertController(title: "Lỗi", message: data?.message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Tải lại", style: .default, handler: { action in
+                    self?.checkState()
+                }))
+                alert.addAction(UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
+            } else {
+                SideMenuItems.shared.addSideMenuItems(items: data?.data.menulist ?? [BASmartMenuList]())
+                self?.view.removeBlurLoader()
+                switch data?.data.state {
+                case 0:
+                    self?.state = .notStart
+                case 1:
+                    self?.state = .notCheckin
+                case 2:
+                    self?.state = .outOfWork
+                case 4:
+                    self?.state = .wait
+                case 5:
+                    self?.state = .checkin
+                case 7:
+                    self?.state = .endOfWork
+                default:
+                    break
+                }
+                
+                self?.timeKeepingState(state: self?.state ?? .wait)
+                
+                switch self?.state {
+                case .notStart, .endOfWork:
+                    self?.isReopen = data?.data.state == 0 ? false : true
+                    self?.setupFirstView(isReopen: self?.isReopen ?? false)
+                case .wait:
+                    self?.waitingView.isHidden = false
+                    self?.labelWait.text = "Đang chờ quản lý duyệt mở lại ngày làm việc"
+                case .checkin:
+                    self?.waitingView.isHidden = false
+                    self?.labelWait.text = "Đang vào điểm tiếp xúc"
+                case .notCheckin:
+                    self?.waitingView.isHidden = true
+                case .outOfWork:
+                    break
+                case .none:
+                    break
+                }
             }
-            
-            self?.timeKeepingState(state: self?.state ?? .wait)
-            
-            switch self?.state {
-            case .notStart, .endOfWork:
-                self?.isReopen = data?.data.state == 0 ? false : true
-                self?.setupFirstView(isReopen: self?.isReopen ?? false)
-            case .wait:
-                self?.waitingView.isHidden = false
-                self?.labelWait.text = "Đang chờ quản lý duyệt mở lại ngày làm việc"
-            case .checkin:
-                self?.waitingView.isHidden = false
-                self?.labelWait.text = "Đang vào điểm tiếp xúc"
-            case .notCheckin:
-                self?.waitingView.isHidden = true
-            case .outOfWork:
-                break
-            case .none:
-                break
-            }
-            
         }
     }
     
     private func checkin() {
         getLocationPermission()
         view.showBlurLoader()
-        Network.shared.BASmartTimeChecking(state: 1, lat: locValue.latitude, long: locValue.longitude, opt: 0) { [weak self] (data) in
-            SideMenuItems.shared.addSideMenuItems(items: data?.menuList ?? [BASmartMenuList]())
-            self?.addSideMenu()
-            self?.checkState()
-            self?.view.removeBlurLoader()
+        Network.shared.BASmartTimeChecking(lat: locValue.latitude, long: locValue.longitude, opt: 0) { [weak self] (data) in
+            if data?.error_code != 0 && data?.error_code != nil {
+                let alert = UIAlertController(title: "Lỗi", message: data?.message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Tải lại", style: .default, handler: { action in
+                    self?.checkin()
+                }))
+                alert.addAction(UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
+            } else {
+                SideMenuItems.shared.addSideMenuItems(items: data?.menuList ?? [BASmartMenuList]())
+                self?.addSideMenu()
+                self?.checkState()
+                self?.view.removeBlurLoader()
+            }
         }
     }
     
@@ -439,6 +456,7 @@ class BASmartMainViewController: BaseSideMenuViewController {
     
     @IBAction func buttonCancelReopenTap(_ sender: Any) {
         reasonView.isHidden = true
+        textViewReopen.text = ""
         blurView.removeFromSuperview()
     }
     

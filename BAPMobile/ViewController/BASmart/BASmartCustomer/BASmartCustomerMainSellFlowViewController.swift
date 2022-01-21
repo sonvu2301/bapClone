@@ -123,6 +123,8 @@ class BASmartCustomerMainSellFlowViewController: BaseViewController {
         vc2.appendState()
         vc2.selectModelDelegate = self
         
+        vc4.delegate = self
+        
         self.addChild(vc1)
         self.addChild(vc2)
         self.addChild(vc3)
@@ -171,6 +173,31 @@ class BASmartCustomerMainSellFlowViewController: BaseViewController {
                 flowButtonState(state: .selected, button: buttonThirdFlow)
                 flowButtonState(state: .unselected, button: buttonFourthFlow)
             } else {
+                let defaultContent = view.frame.width
+                switch scrollView.contentOffset.x {
+                case 0:
+                    flowButtonState(state: .selected, button: buttonFirstFlow)
+                    flowButtonState(state: .unselected, button: buttonSecondFlow)
+                    flowButtonState(state: .unselected, button: buttonThirdFlow)
+                    flowButtonState(state: .unselected, button: buttonFourthFlow)
+                case defaultContent:
+                    firstLineView.backgroundColor = UIColor().defaultColor()
+                    flowButtonState(state: .pass, button: buttonFirstFlow)
+                    flowButtonState(state: .selected, button: buttonSecondFlow)
+                    flowButtonState(state: .unselected, button: buttonThirdFlow)
+                    flowButtonState(state: .unselected, button: buttonFourthFlow)
+                case 3 * defaultContent:
+                    firstLineView.backgroundColor = UIColor().defaultColor()
+                    secondLineView.backgroundColor = UIColor().defaultColor()
+                    thirdLineView.backgroundColor = UIColor().defaultColor()
+                    flowButtonState(state: .pass, button: buttonFirstFlow)
+                    flowButtonState(state: .pass, button: buttonSecondFlow)
+                    flowButtonState(state: .pass, button: buttonThirdFlow)
+                    flowButtonState(state: .selected, button: buttonFourthFlow)
+                default:
+                    break
+                }
+                
                 presentBasicAlert(title: "Hãy chọn mô hình", message: "", buttonTittle: "Đồng ý")
             }
         case .fourth:
@@ -344,29 +371,62 @@ extension BASmartCustomerMainSellFlowViewController: CreateOrderDelegate {
                                                       month: $0.month,
                                                       date: $0.date)})
         
-//        let param = BASmartCreateOrderParam(
-//            customerId: objectId,
-//            comboId: kind,
-//            detail: detailOrder,
-//            vat: vc1.checkboxVAT,
-//            exchange: Int(vc1.textFieldChange.text ?? "0"),
-//            systemId: vc2.viewSystem.id,
-//            modelId: vc2.viewModel.id,
-//            vType: vc2.vtype.map({BASmartVtype(id: $0.id)}),
-//            feature: vc3.listFeature.map({BASmartVtype(id: $0)}),
-//            paymentId: vc4.,
-//            receiverId: <#T##Int?#>,
-//            deployId: <#T##Int?#>,
-//            customer: <#T##[BASmartComboSaleCustomerDetail]?#>,
-//            contactName: <#T##String?#>,
-//            contactPhone: <#T##String?#>,
-//            reportName: <#T##String?#>,
-//            reportPhone: <#T##String?#>,
-//            deployTime: <#T##Int?#>,
-//            address: <#T##String?#>,
-//            location: <#T##BASmartLocationParam?#>,
-//            content: <#T##String?#>,
-//            fileAttach: <#T##[BASmartImageAttach]?#>
-//        )
+        let tax = comboDetail.customer?.tax?.count == 0 ? vc4.textFieldUserId.text : comboDetail.customer?.tax
+        
+//        let customer = BASmartComboSaleCustomerDetailParam(tax: tax,
+//                                                           turcoeff: vc1.count,
+//                                                           liqDate: vc4.textFieldExpiredDate.text?.stringToIntDate(),
+//                                                           user: vc2.textFieldUser.text,
+//                                                           pass: vc2.textFieldPass.text ?? "")
+        
+        let customer = BASmartComboSaleCustomerDetailParam(channelId: 0,
+                                                           tax: "013196213",
+                                                           turcoeff: vc1.count,
+                                                           liqDate: vc4.textFieldExpiredDate.text?.stringToIntDate(),
+                                                           dealerId: 0,
+                                                           user: vc2.textFieldUser.text,
+                                                           pass: vc2.textFieldPass.text ?? "")
+        
+        let deploy = "\(vc4.textFieldActTime.text ?? "") \(vc4.textFieldActDate.text ?? "")"
+        let location = BASmartLocationParam(
+            lng: vc4.location?.first?.coords?.first?.lng ?? 0,
+            lat: vc4.location?.first?.coords?.first?.lat ?? 0,
+            opt: 0)
+        let files = vc4.viewSelectImage.images.map({BASmartImageAttach(imgdata: $0.toBase64())})
+        
+        let param = BASmartCreateOrderParam(
+            customerId: objectId,
+            comboId: kind,
+            detail: detailOrder,
+            vat: vc1.checkboxVAT,
+            exchange: Int(vc1.textFieldChange.text ?? "0"),
+            systemId: vc2.viewSystem.id,
+            modelId: vc2.viewModel.id,
+            vType: vc2.vtype.map({BASmartVtype(id: $0.id)}),
+            feature: vc3.listFeature.map({BASmartVtype(id: $0)}),
+            paymentId: vc4.paymentId.id,
+            receiverId: vc4.receiverId,
+            deployId: vc4.deployId,
+            customer: customer,
+            contactName: vc4.textFieldActorNumber.text,
+            contactPhone: vc4.textFieldActorNumber.text,
+            reportName: vc4.textFieldReporter.text,
+            reportPhone: vc4.textFieldReporterNumber.text,
+            deployTime: deploy.stringHourToIntDate(),
+            address: vc4.labelLocation.text,
+            location: location,
+            content: vc4.textFieldDescription.text,
+            fileAttach: files
+        )
+        
+        self.view.showBlurLoader()
+        Network.shared.BASmartCreateOrder(param: param) { [weak self] isDone in
+            if isDone {
+                
+            } else {
+                
+            }
+            self?.view.removeBlurLoader()
+        }
     }
 }

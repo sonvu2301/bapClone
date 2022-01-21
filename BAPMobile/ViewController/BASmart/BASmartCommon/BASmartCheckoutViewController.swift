@@ -9,6 +9,7 @@ import UIKit
 
 class BASmartCheckoutViewController: BaseViewController {
 
+    @IBOutlet weak var boundView: UIView!
     @IBOutlet weak var buttoncancel: UIButton!
     @IBOutlet weak var buttonAccept: UIButton!
     
@@ -25,6 +26,7 @@ class BASmartCheckoutViewController: BaseViewController {
     private func setupView() {
         buttoncancel.setViewCorner(radius: 5)
         buttonAccept.setViewCorner(radius: 5)
+        boundView.setViewCorner(radius: 5)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,10 +37,14 @@ class BASmartCheckoutViewController: BaseViewController {
         delegate?.hideBlur()
     }
     
+    @IBAction func buttonCloseTap(_ sender: Any) {
+        delegate?.hideBlur()
+        dismiss(animated: false, completion: nil)
+    }
     
     @IBAction func buttonCancelTap(_ sender: Any) {
         delegate?.hideBlur()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func buttonAcceptTap(_ sender: Any) {

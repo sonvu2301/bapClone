@@ -11,7 +11,7 @@ import CoreLocation
 class BASmartCustomerCreateViewController: UIViewController {
 
     @IBOutlet weak var viewCustomerKind: BASmartCustomerListDropdownView!
-    @IBOutlet weak var viewName: BASmartCustomerListDefaultCellView!
+    @IBOutlet weak var viewName: BASmartCustomerListTextviewCellView!
     @IBOutlet weak var viewPhone: BASmartCustomerListDefaultCellView!
     @IBOutlet weak var viewContact: BASmartCustomerListDefaultCellView!
     @IBOutlet weak var viewPersonalId: BASmartCustomerListDefaultCellView!
@@ -25,7 +25,8 @@ class BASmartCustomerCreateViewController: UIViewController {
     
     var location: BASmartLocationParam?
     var delegate: BlurViewDelegate?
-    var descriptionPlaceholder = "Nhập thông tin ghi chú khách hàng"
+    var finishDelegate: BASmartDoneCreateDelegate?
+    var descriptionPlaceholder = "Nhập thông tin ghi chú khách hàng..."
     var addressPlaceholder = "Nhập địa chỉ"
     var locationManager = CLLocationManager()
     
@@ -59,7 +60,7 @@ class BASmartCustomerCreateViewController: UIViewController {
                                    name: "",
                                    id: 0)
         
-        viewPhone.setupView(title: "SĐT",
+        viewPhone.setupView(title: "Điện thoại",
                             placeholder: "Nhập số điện thoại",
                             isNumberOnly: true,
                             content: "",
@@ -69,13 +70,10 @@ class BASmartCustomerCreateViewController: UIViewController {
         
         viewPhone.textView.keyboardType = .numberPad
         viewPhone.textView.delegate = self
-        viewName.setupView(title: "Tên KH",
-                           placeholder: "Nhập tên KH",
-                           isNumberOnly: false,
-                           content: "",
-                           isAllowSelect: true,
-                           isPhone: false,
-                           isUsingLabel: false)
+
+        viewName.setupView(name: "Tên KH",
+                           placeHolder: "Nhập tên KH",
+                           content: "")
         
         viewContact.setupView(title: "Liên hệ",
                               placeholder: "Nhập thông tin người liên hệ",
@@ -87,7 +85,7 @@ class BASmartCustomerCreateViewController: UIViewController {
         
         viewPersonalId.setupView(title: "MST/CMT",
                                  placeholder: "Nhập MST/CMT",
-                                 isNumberOnly: true,
+                                 isNumberOnly: false,
                                  content: "",
                                  isAllowSelect: true,
                                  isPhone: false,
@@ -106,6 +104,7 @@ class BASmartCustomerCreateViewController: UIViewController {
         textViewAddress.isUserInteractionEnabled = false
         
         getLocationPermission()
+        hideKeyboardWhenTappedAround()
         
         getCurrentPlace()
     }
@@ -132,6 +131,16 @@ class BASmartCustomerCreateViewController: UIViewController {
         }
     }
     
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @IBAction func buttonMapTap(_ sender: Any) {
         let vc = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         vc.delegate = self
@@ -148,7 +157,7 @@ class BASmartCustomerCreateViewController: UIViewController {
         let customerDescription = (textFieldDescription.text == descriptionPlaceholder ? "" : textFieldDescription.text) ?? ""
         
         let param = BASmartAddCustomertParam(kind: viewCustomerKind.id,
-                                             name: viewName.textView.text ?? "",
+                                             name: viewName.textView.text == viewName.textViewPlaceholder ? "" : viewName.textView.text,
                                              phone: viewPhone.textView.text ?? "",
                                              contact: viewContact.textView.text ?? "",
                                              tax: viewPersonalId.textView.text ?? "",
@@ -180,6 +189,7 @@ class BASmartCustomerCreateViewController: UIViewController {
     
     private func sendRequest() {
         delegate?.hideBlur()
+        finishDelegate?.finishCreate()
         dismiss(animated: true, completion: nil)
     }
 }
