@@ -82,13 +82,6 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
         view.addGestureRecognizer(tap)
     }
     
-    private func blurScreenWhenNotForgeground() {
-        let notiToBackground = NotificationCenter.default
-        notiToBackground.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        let notiToForgeground = NotificationCenter.default
-        notiToForgeground.addObserver(self, selector: #selector(appAppear), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-    
     func showBlurBackground() {
         self.view.addSubview(blurView)
     }
@@ -241,15 +234,6 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
             self?.present(popoverContent, animated: false, completion: nil)
         }
     }
-    
-    @objc func appAppear() {
-        view.removeBlurLoader()
-    }
-    
-    @objc func appMovedToBackground() {
-        view.showBlurLoader()
-    }
-    
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none

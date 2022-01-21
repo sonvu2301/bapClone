@@ -167,8 +167,8 @@ class BASmartCustomerCreateApproachViewController: BaseViewController {
     private func createApproach() {
         
         let scheme = textViewSuggest.text == textViewPlaceholder ? "" : textViewSuggest.text
-//        let loc = getCurrentLocationParam()
-        let loc = BASmartLocationParam(lng: 105.134512365, lat: 21.47512115, opt: 0)
+        let loc = getCurrentLocationParam()
+//        let loc = BASmartLocationParam(lng: 105.134512365, lat: 21.47512115, opt: 0)
         
         let photos = viewSelectImage.images.map({BASmartDailyWorkingPhotolist(image: $0.resizeImageWithRate().toBase64() ?? "", time: Int(Date().timeIntervalSince1970))})
         
@@ -198,7 +198,9 @@ class BASmartCustomerCreateApproachViewController: BaseViewController {
             if data?.errorCode != 0 {
                 self?.presentBasicAlert(title: "Lỗi", message: data?.message ?? "", buttonTittle: "Đồng ý")
             } else {
-                
+                self?.delegate?.addNew()
+                self?.blurDelegate?.hideBlur()
+                self?.dismiss(animated: true, completion: nil)
             }
         }
     }

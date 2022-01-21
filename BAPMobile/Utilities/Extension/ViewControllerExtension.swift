@@ -31,6 +31,20 @@ extension UIViewController {
         return imagesConvert
     }
     
+    func blurScreenWhenNotForgeground() {
+        let notiToBackground = NotificationCenter.default
+        notiToBackground.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        let notiToForgeground = NotificationCenter.default
+        notiToForgeground.addObserver(self, selector: #selector(appAppear), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func appAppear() {
+        view.removeBlurLoader()
+    }
+    
+    @objc func appMovedToBackground() {
+        view.showBlurLoader()
+    }
     
 }
 
