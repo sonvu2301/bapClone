@@ -10,7 +10,7 @@ import UIKit
 class ContactDetailViewController: BaseViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    //@IBOutlet weak var tableView: UITableView!
     
     var data = GeneralContactListData()
     var sectionList = [String]()
@@ -31,13 +31,13 @@ class ContactDetailViewController: BaseViewController {
             numberOfItems.append(number ?? 0)
         }
         
-        tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactTableViewCell")
-        tableView.separatorStyle = .none
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.allowsSelection = false
-        tableView.estimatedRowHeight = 60
-        tableView.separatorStyle = .none
+//        tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactTableViewCell")
+//        tableView.separatorStyle = .none
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.allowsSelection = false
+//        tableView.estimatedRowHeight = 60
+//        tableView.separatorStyle = .none
     }
 }
 

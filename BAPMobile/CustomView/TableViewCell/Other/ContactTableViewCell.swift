@@ -25,7 +25,7 @@ class ContactTableViewCell: UITableViewCell{
     }
     
     func setupData(data: ContactItem) {
-        let urlImage = URL(string: data.avata ?? "")
+        let urlImage = URL(string: data.avatar ?? "")
         avaImage.kf.setImage(with: urlImage)
         nameLabel.text = data.fullname
         positionLabel.text = data.position

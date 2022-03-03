@@ -7,43 +7,26 @@
 
 import UIKit
 
-enum ContactPlace {
-    case hanoi, haiphong, miennam, mientrung
-    
-    var code: String {
-        switch self {
-        case .hanoi:
-            return "[HN]"
-        case .haiphong:
-            return "[HP]"
-        case .miennam:
-            return "[MN]"
-        case .mientrung:
-            return "[MT]"
-        }
-    }
-}
-
 class ContactViewController: BaseViewController {
     
-    @IBOutlet weak var place1Button: UIButton!
-    @IBOutlet weak var place2Button: UIButton!
-    @IBOutlet weak var place3Button: UIButton!
-    @IBOutlet weak var place4Button: UIButton!
+    @IBOutlet weak var inputSearch: UITextField!
+    @IBOutlet weak var hbranchCollection: UICollectionView!
     
-    @IBOutlet weak var place1Underline: UIView!
-    @IBOutlet weak var place2Underline: UIView!
-    @IBOutlet weak var place3Underline: UIView!
-    @IBOutlet weak var place4Underline: UIView!
+    @IBOutlet weak var tableEmployee: UITableView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBAction func searchText_changing(_ sender: Any) {
+        GenerateDataSearch();
+    }
     var data = [GeneralContactListData]()
+    var dataSearch = [[ContactItem]()]
     
+    
+    var branchSelectIdx : Int = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getData()
+        setupView();
         // Do any additional setup after loading the view.
     }
     
@@ -52,106 +35,134 @@ class ContactViewController: BaseViewController {
     }
     
     private func setupView() {
-        //Setup Child View Controller
-        scrollView.contentSize = CGSize(width: view.frame.width * 4, height: 0)
-        scrollView.isScrollEnabled = false
-        scrollView.isPagingEnabled = true
+        hbranchCollection.delegate = self
+        hbranchCollection.dataSource = self
+        hbranchCollection.register(UINib(nibName: "ContactBranchTableViewCell", bundle: nil), forCellWithReuseIdentifier: "ContactBranchTableViewCell")
         
-        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactDetailViewController") as! ContactDetailViewController
-        let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactDetailViewController") as! ContactDetailViewController
-        let vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactDetailViewController") as! ContactDetailViewController
-        let vc4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactDetailViewController") as! ContactDetailViewController
         
-        vc1.view.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-        vc2.view.frame = CGRect(x: view.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-        vc3.view.frame = CGRect(x: view.frame.width * 2, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-        vc4.view.frame = CGRect(x: view.frame.width * 3, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+        //tableEmployee.separatorStyle = .none
+        tableEmployee.rowHeight = UITableView.automaticDimension
+        tableEmployee.estimatedRowHeight = 160
+        tableEmployee.delegate = self
+        tableEmployee.dataSource = self
+        tableEmployee.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactTableViewCell")
         
-        vc1.data = data.filter({$0.branch?.code == ContactPlace.hanoi.code}).first ?? GeneralContactListData()
-        vc2.data = data.filter({$0.branch?.code == ContactPlace.haiphong.code}).first ?? GeneralContactListData()
-        vc3.data = data.filter({$0.branch?.code == ContactPlace.miennam.code}).first ?? GeneralContactListData()
-        vc4.data = data.filter({$0.branch?.code == ContactPlace.mientrung.code}).first ?? GeneralContactListData()
-        
-        vc1.setupView()
-        vc2.setupView()
-        vc3.setupView()
-        vc4.setupView()
-        
-        //Setup Button
-        DispatchQueue.main.async { [weak self] in
-            self?.place1Button.titleLabel?.textColor = UIColor().defaultColor()
-            self?.place2Button.titleLabel?.textColor = .gray
-            self?.place3Button.titleLabel?.textColor = .gray
-            self?.place4Button.titleLabel?.textColor = .gray
-            self?.place1Underline.backgroundColor = UIColor().defaultColor()
-            self?.place2Underline.backgroundColor = .white
-            self?.place3Underline.backgroundColor = .white
-            self?.place4Underline.backgroundColor = .white
-        }
     }
     
     private func getData() {
         Network.shared.GetContactInfo { [weak self] (data) in
             self?.data = data ?? [GeneralContactListData]()
-            self?.setupView()
+            self?.hbranchCollection.reloadData()
+            self?.GenerateDataSearch()
         }
     }
     
-    @IBAction func place1ButtonTap(_ sender: Any) {
-        placeTap(place: .hanoi)
-    }
-    
-    @IBAction func place2ButtonTap(_ sender: Any) {
-        placeTap(place: .haiphong)
-    }
-    
-    @IBAction func place3ButtonTap(_ sender: Any) {
-        placeTap(place: .miennam)
-    }
-    
-    @IBAction func place4ButtonTap(_ sender: Any) {
-        placeTap(place: .mientrung)
-    }
-    
-    private func placeTap(place: ContactPlace) {
-        let width = view.frame.width
-        DispatchQueue.main.async { [weak self] in
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
-                self?.place1Button.titleLabel?.textColor = .gray
-                self?.place2Button.titleLabel?.textColor = .gray
-                self?.place3Button.titleLabel?.textColor = .gray
-                self?.place4Button.titleLabel?.textColor = .gray
-                self?.place1Underline.backgroundColor = .white
-                self?.place2Underline.backgroundColor = .white
-                self?.place3Underline.backgroundColor = .white
-                self?.place4Underline.backgroundColor = .white
-                
-                switch place {
-                case .hanoi:
-                    self?.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-                    self?.place1Button.titleLabel?.textColor = UIColor().defaultColor()
-                    self?.place1Underline.backgroundColor = UIColor().defaultColor()
-                case .haiphong:
-                    self?.scrollView.setContentOffset(CGPoint(x: width, y: 0), animated: true)
-                    self?.place2Button.titleLabel?.textColor = UIColor().defaultColor()
-                    self?.place2Underline.backgroundColor = UIColor().defaultColor()
-                case .miennam:
-                    self?.scrollView.setContentOffset(CGPoint(x: width * 2, y: 0), animated: true)
-                    self?.place3Button.titleLabel?.textColor = UIColor().defaultColor()
-                    self?.place3Underline.backgroundColor = UIColor().defaultColor()
-                case .mientrung:
-                    self?.scrollView.setContentOffset(CGPoint(x: width * 3, y: 0), animated: true)
-                    self?.place4Button.titleLabel?.textColor = UIColor().defaultColor()
-                    self?.place4Underline.backgroundColor = UIColor().defaultColor()
+    private func GenerateDataSearch(){
+        dataSearch = []
+        var grp = [String : [ContactItem]]();
+        
+        for i in 0..<data.count{
+            // 1. check Chọn nhánh
+            if(branchSelectIdx != -1 && branchSelectIdx != i){
+                continue
+            }
+            if let items = data[i].items{
+                for employee in items {
+                    // 2. check search
+                    if(inputSearch.text != "" && inputSearch.text != nil){
+                        let isFoundName = employee.fullname?.ToEng().lowercased().contains(inputSearch.text?.ToEng().lowercased() ?? "") ?? false
+                        if(!isFoundName)
+                        {
+                            continue
+                        }
+                    }
+                    
+                    guard let str  = employee.department else {continue}
+                    if grp[str] == nil{
+                        grp[str] = [employee]
+                    }
+                    else{
+                        var val : [ContactItem] = (grp[str] ?? [ContactItem]()) as [ContactItem];
+                        val.append(employee)
+                        grp[str] = val;
+                    }
                 }
-            }, completion: nil)
+            }
         }
+        for (_, value) in grp {
+            dataSearch.append(value)
+        }
+        tableEmployee.reloadData();
     }
     
-    @objc func callButtonTap(sender: UIButton) {
-        print(sender.tag)
-        if let url = URL(string: "tel://090909090909"), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
+    
+    //    @objc func callButtonTap(sender: UIButton) {
+    //        print(sender.tag)
+    //        if let url = URL(string: "tel://090909090909"), UIApplication.shared.canOpenURL(url) {
+    //            UIApplication.shared.open(url)
+    //        }
+    //    }
+}
+// coleection view branch
+extension ContactViewController:UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContactBranchTableViewCell", for: indexPath) as! ContactBranchTableViewCell
+        
+        cell.setData(item : data[indexPath.row].branch ?? ContactBranch())
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        branchSelectIdx = indexPath.row
+        if let cell = collectionView.cellForItem(at: indexPath) as? ContactBranchTableViewCell {
+            cell.selectItem();
         }
+        GenerateDataSearch();
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ContactBranchTableViewCell {
+            cell.deSelectItem();
+        }
+    }
+}
+extension ContactViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize{
+        
+        return CGSize(width: UIScreen.main.bounds.width/CGFloat(data.count),height: hbranchCollection.bounds.size.height);
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+}
+// table view employee
+extension ContactViewController:UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return dataSearch[section].count;
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSearch.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataSearch[section].first?.department ?? "";
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
+        let items = dataSearch[indexPath.section]
+        cell.setupData(data: items[indexPath.row])
+        return cell
     }
 }

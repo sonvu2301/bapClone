@@ -1,0 +1,99 @@
+
+/* Class = "UILabel"; text = "Chi nhánh:"; ObjectID = "1VC-fh-zHA"; */
+"1VC-fh-zHA.text" = "Chi nhánh:";
+
+/* Class = "UIButton"; normalTitle = "TẤT CẢ"; ObjectID = "2hL-iQ-qoy"; */
+"2hL-iQ-qoy.normalTitle" = "TẤT CẢ";
+
+/* Class = "UIButton"; normalTitle = "Miền Nam"; ObjectID = "5Hj-in-wUT"; */
+"5Hj-in-wUT.normalTitle" = "Miền Nam";
+
+/* Class = "UILabel"; text = "Tổng thu"; ObjectID = "5hb-oW-hfG"; */
+"5hb-oW-hfG.text" = "Tổng thu";
+
+/* Class = "UILabel"; text = "Tháng 1"; ObjectID = "6JV-Ke-3HR"; */
+"6JV-Ke-3HR.text" = "Tháng 1";
+
+/* Class = "UILabel"; text = "Bảo hiểm"; ObjectID = "9CU-Ki-rd6"; */
+"9CU-Ki-rd6.text" = "Bảo hiểm";
+
+/* Class = "UILabel"; text = "Đăng nhập sinh trắc học"; ObjectID = "BsZ-ql-9WH"; */
+"BsZ-ql-9WH.text" = "Đăng nhập sinh trắc học";
+
+/* Class = "UITextField"; placeholder = "Tên đăng nhập"; ObjectID = "Hs9-Hp-B0C"; */
+"Hs9-Hp-B0C.placeholder" = "Tên đăng nhập";
+
+/* Class = "UIButton"; normalTitle = " Tự động đăng nhập"; ObjectID = "JHM-oN-UlX"; */
+"JHM-oN-UlX.normalTitle" = " Tự động đăng nhập";
+
+/* Class = "UILabel"; text = "Email: "; ObjectID = "K3q-EP-Uut"; */
+"K3q-EP-Uut.text" = "Email: ";
+
+/* Class = "UILabel"; text = "Chưa có mục nào được thêm vào ưa thích"; ObjectID = "Lax-bT-6HR"; */
+"Lax-bT-6HR.text" = "Chưa có mục nào được thêm vào ưa thích";
+
+/* Class = "UILabel"; text = "Tự động bật form xác thực khi lần đầu mở ứng dụng"; ObjectID = "Lj7-GX-bJP"; */
+"Lj7-GX-bJP.text" = "Tự động bật form xác thực khi lần đầu mở ứng dụng";
+
+/* Class = "UIButton"; normalTitle = "Hà Nội"; ObjectID = "SdH-aO-K6s"; */
+"SdH-aO-K6s.normalTitle" = "Hà Nội";
+
+/* Class = "UILabel"; text = "Giảm trừ"; ObjectID = "UMY-pp-cA8"; */
+"UMY-pp-cA8.text" = "Giảm trừ";
+
+/* Class = "UILabel"; text = "Thuế TNCN"; ObjectID = "VS4-Kj-hr7"; */
+"VS4-Kj-hr7.text" = "Thuế TNCN";
+
+/* Class = "UILabel"; text = "Bật xác thực khi mở ứng dụng"; ObjectID = "VkW-H5-7Jk"; */
+"VkW-H5-7Jk.text" = "Bật xác thực khi mở ứng dụng";
+
+/* Class = "UIButton"; normalTitle = "ƯA THÍCH"; ObjectID = "Vr3-Ox-b8Z"; */
+"Vr3-Ox-b8Z.normalTitle" = "ƯA THÍCH";
+
+/* Class = "UILabel"; text = "BA"; ObjectID = "Vse-As-Dp8"; */
+"Vse-As-Dp8.text" = "BA";
+
+/* Class = "UILabel"; text = "Phòng ban:"; ObjectID = "Xbv-Fp-WMC"; */
+"Xbv-Fp-WMC.text" = "Phòng ban:";
+
+/* Class = "UILabel"; text = "Bảo hiểm"; ObjectID = "Y5Y-Uv-L7R"; */
+"Y5Y-Uv-L7R.text" = "Bảo hiểm";
+
+/* Class = "UILabel"; text = "Phiên bản ứng dụng: 2.4.2"; ObjectID = "Yrl-YF-dt4"; */
+"Yrl-YF-dt4.text" = "Phiên bản ứng dụng: 2.4.2";
+
+/* Class = "UILabel"; text = "Vũ Ngọc Sơn"; ObjectID = "fhP-Gf-QT3"; */
+"fhP-Gf-QT3.text" = "Vũ Ngọc Sơn";
+
+/* Class = "UILabel"; text = "14,123,123 đ"; ObjectID = "iA2-Rl-dOP"; */
+"iA2-Rl-dOP.text" = "14,123,123 đ";
+
+/* Class = "UITextField"; placeholder = "............"; ObjectID = "iZY-7q-9fW"; */
+"iZY-7q-9fW.placeholder" = "............";
+
+/* Class = "UILabel"; text = "Ngày công"; ObjectID = "jam-Qy-1ND"; */
+"jam-Qy-1ND.text" = "Ngày công";
+
+/* Class = "UILabel"; text = "Thuế TNCN"; ObjectID = "kBD-SI-b3m"; */
+"kBD-SI-b3m.text" = "Thuế TNCN";
+
+/* Class = "UILabel"; text = "Cấu hình cho phép đăng nhập thông qua xác thực sinh trắc học (Vân tay, Face ID...). Lưu ý: Khi tải lại app hoặc sau khi đổi mật khẩu phải tiến hành đăng nhập và cấu hình lại!"; ObjectID = "kl8-Lx-z8e"; */
+"kl8-Lx-z8e.text" = "Cấu hình cho phép đăng nhập thông qua xác thực sinh trắc học (Vân tay, Face ID...). Lưu ý: Khi tải lại app hoặc sau khi đổi mật khẩu phải tiến hành đăng nhập và cấu hình lại!";
+
+/* Class = "UIButton"; normalTitle = "MIền Trung"; ObjectID = "l9v-Vg-Jjs"; */
+"l9v-Vg-Jjs.normalTitle" = "MIền Trung";
+
+/* Class = "UILabel"; text = "Ngày công"; ObjectID = "ooQ-Cl-GdS"; */
+"ooQ-Cl-GdS.text" = "Ngày công";
+
+/* Class = "UILabel"; text = "Tổng thu"; ObjectID = "vok-iZ-Irj"; */
+"vok-iZ-Irj.text" = "Tổng thu";
+
+/* Class = "UILabel"; text = "Giảm trừ"; ObjectID = "wHi-Ki-Aua"; */
+"wHi-Ki-Aua.text" = "Giảm trừ";
+
+/* Class = "UIButton"; normalTitle = "Hải Phòng"; ObjectID = "x8B-ww-BGd"; */
+"x8B-ww-BGd.normalTitle" = "Hải Phòng";
+
+/* Class = "UILabel"; text = "Di Dộng"; ObjectID = "yXU-d8-A4H"; */
+"yXU-d8-A4H.text" = "Di Dộng";

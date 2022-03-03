@@ -28,10 +28,12 @@ class MainTabBarController: UITabBarController {
         let vc1 = storyBoard.instantiateViewController(withIdentifier: "MainMenuViewController") as! MainMenuViewController
         let vc2 = storyBoard.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
         let vc3 = storyBoard.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
-        
+         
         vc1.tabBarItem = UITabBarItem(title: "Trang chủ", image: UIImage(named: "ic_menu_home")?.resizeImage(targetSize: CGSize(width: 20, height: 30)), tag: 1)
+        
         vc2.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "ic_menu_home")?.resizeImage(targetSize: CGSize(width: 1, height: 1)), tag: 2)
         vc3.tabBarItem = UITabBarItem(title: "Thông báo", image: UIImage(named: "ic_menu_notify")?.resizeImage(targetSize: CGSize(width: 20, height: 30)), tag: 3)
+        
         
         vc1.data = self.data
         vc2.data = self.data?.data.users
