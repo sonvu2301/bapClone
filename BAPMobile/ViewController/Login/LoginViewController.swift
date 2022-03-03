@@ -10,6 +10,8 @@ import CryptoKit
 import CommonCrypto
 import LocalAuthentication
 import Security
+import FSCalendar
+import Kingfisher
 
 struct LoginForm: Codable {
     var user: String
@@ -33,17 +35,18 @@ enum LoginValidate {
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet var ParrentView: UIView!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var buttonBiometric: UIButton!
     @IBOutlet weak var buttonPassword: UIButton!
     @IBOutlet weak var buttonAutoLogin: UIButton!
     
+    @IBOutlet weak var iconAutoLogin: UIImageView!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
     @IBOutlet weak var labelVersion: UILabel!
     @IBOutlet weak var imageUserCheck: UIImageView!
-    
     var isAutoLogin = false
     var isShowPassword = false
     var userDefault = UserDefaults.standard
@@ -51,15 +54,25 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-//        callReq()
+        //        callReq()
         // Do any additional setup after loading the view.
     }
-    
-    private func setupView() {
+   @objc private func imageTapped(sender: UITapGestureRecognizer){
+       autoLogin(isAutoLogin:
+                    !userDefault.bool(forKey: "Save"))
+    }
+    private func setupView(){
+         
+        let tappIconAuto = UITapGestureRecognizer(target: self, action: #selector(imageTapped(sender:)))
+            iconAutoLogin.isUserInteractionEnabled = true
+        iconAutoLogin.addGestureRecognizer(tappIconAuto)
+        
+        ParrentView.backgroundColor = UIColor(hexString: "#26A0D8")
         buttonLogin.setViewCircle()
         buttonPassword.setViewCircle()
         navigationController?.navigationBar.isHidden = true
         isAutoLogin = userDefault.bool(forKey: "Save")
+        //autoLogin(isAutoLogin: isAutoLogin)
         let isBio = userDefault.bool(forKey: "Biomestric")
         
         autoLogin(isAutoLogin: isAutoLogin)
@@ -68,7 +81,7 @@ class LoginViewController: BaseViewController {
         userTextField.text = userDefault.string(forKey: "UserName")
         
         if (userTextField.text?.count ?? 0) > 1 {
-            imageUserCheck.image = UIImage(named: "ic_check_done")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+            imageUserCheck.image = UIImage(named: "ic_check_done");//?.resizeImage(targetSize: CGSize(width: 20, height: 20))
         }
         
         buttonBiometric.isHidden = !isBio
@@ -153,15 +166,18 @@ class LoginViewController: BaseViewController {
     }
     
     private func autoLogin(isAutoLogin: Bool) {
-        let imgCheck = UIImage(named: "ic_check")?.resizeImage(targetSize: CGSize(width: 25, height: 25))
-        let imgUncheck = UIImage(named: "ic_uncheck")?.resizeImage(targetSize: CGSize(width: 25, height: 25))
-        
-        let img = isAutoLogin ? imgCheck : imgUncheck
-        let tintedImage = img?.withRenderingMode(.alwaysTemplate)
-        buttonAutoLogin.setImage(tintedImage, for: .normal)
-        buttonAutoLogin.tintColor = .white
+        iconAutoLogin.setImage(getImageAuto(isAutoLogin:isAutoLogin))
+        iconAutoLogin.tintColor = .white
         userDefault.set(isAutoLogin, forKey: "Save")
     }
+    private func getImageAuto(isAutoLogin: Bool) -> UIImage{
+        let imgCheck = UIImage(named: "ic_check")
+        let imgUncheck = UIImage(named: "ic_uncheck");
+        
+        let img = isAutoLogin ? imgCheck : imgUncheck
+        return img?.withRenderingMode(.alwaysTemplate) ?? UIImage()
+    }
+    
     
     private func saveUser() {
         userDefault.set(userTextField.text, forKey: "UserName")
@@ -216,7 +232,7 @@ class LoginViewController: BaseViewController {
         
         switch state {
         case .userName, .pass:
-            self.presentBasicAlert(title: "Lỗi", message: state.bugNote, buttonTittle: "Đồng ý")
+        self.presentBasicAlert(title: "Lỗi", message: state.bugNote, buttonTittle: "Đồng ý")
         case .success:
             login(userName: userTextField.text ?? "",
                   pass: passTextField.text ?? "")
@@ -255,9 +271,9 @@ extension LoginViewController: UITextFieldDelegate {
             let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
             
             if updatedText.count > 1 {
-                imageUserCheck.image = UIImage(named: "ic_check_done")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+                imageUserCheck.image = UIImage(named: "ic_check_done");//?.resizeImage(targetSize: CGSize(width: 20, height: 20))
             } else {
-                imageUserCheck.image = UIImage(named: "ic_check_off")?.resizeImage(targetSize: CGSize(width: 20, height: 20))
+                imageUserCheck.image = UIImage(named: "ic_check_off");//?.resizeImage(targetSize: CGSize(width: 20, height: 20))
             }
         }
         return true

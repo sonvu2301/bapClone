@@ -131,7 +131,8 @@ enum MenuType {
     var vc: UIViewController {
         switch self {
         case .epl_contact:
-            return UIViewController()
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
+            return vc
         case .tkp_task:
             return UIViewController()
         case .sad_task:

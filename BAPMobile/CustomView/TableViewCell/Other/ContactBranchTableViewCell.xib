@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContactBranchTableViewCell" id="DRH-1B-J3H" customClass="ContactBranchTableViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="271" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vr6-Vh-5aT">
+                <rect key="frame" x="0.0" y="0.0" width="271" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-2X-J9w">
+                        <rect key="frame" x="0.0" y="0.0" width="271" height="122"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label chi nhanh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INt-zk-msO">
+                                <rect key="frame" x="68.5" y="50.5" width="134.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uB-bj-IOk">
+                                <rect key="frame" x="15" y="119" width="240" height="3"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.62745098039215685" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="1OI-sC-Aka"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2uB-bj-IOk" firstAttribute="width" secondItem="VNL-2X-J9w" secondAttribute="width" constant="1" id="2IF-1m-k5I"/>
+                            <constraint firstItem="INt-zk-msO" firstAttribute="centerY" secondItem="VNL-2X-J9w" secondAttribute="centerY" id="6Ad-r1-ZhU"/>
+                            <constraint firstItem="INt-zk-msO" firstAttribute="centerX" secondItem="VNL-2X-J9w" secondAttribute="centerX" id="rXg-bq-hvB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VNL-2X-J9w" firstAttribute="leading" secondItem="vr6-Vh-5aT" secondAttribute="leading" id="0TD-nv-BwA"/>
+                    <constraint firstItem="VNL-2X-J9w" firstAttribute="centerX" secondItem="vr6-Vh-5aT" secondAttribute="centerX" id="87n-lB-nzq"/>
+                    <constraint firstItem="VNL-2X-J9w" firstAttribute="centerY" secondItem="vr6-Vh-5aT" secondAttribute="centerY" id="NWi-iV-ibp"/>
+                    <constraint firstAttribute="bottom" secondItem="2uB-bj-IOk" secondAttribute="bottom" id="bsE-yV-rw5"/>
+                    <constraint firstItem="VNL-2X-J9w" firstAttribute="top" secondItem="vr6-Vh-5aT" secondAttribute="top" id="l6U-IJ-gpM"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="271" height="122"/>
+            <connections>
+                <outlet property="lblBranch" destination="INt-zk-msO" id="6Rk-ob-F2p"/>
+                <outlet property="lineBranch" destination="2uB-bj-IOk" id="TuB-Nn-7jm"/>
+            </connections>
+            <point key="canvasLocation" x="-1192.0289855072465" y="-589.95535714285711"/>
+        </collectionViewCell>
+    </objects>
+</document>

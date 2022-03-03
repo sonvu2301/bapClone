@@ -59,7 +59,7 @@ class BaseViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
         
         hideKeyboardWhenTappedAround()
-        blurScreenWhenNotForgeground()
+        //blurScreenWhenNotForgeground()
         blurView.backgroundColor = .black
         blurView.alpha = 0.5
         blurView.frame = view.bounds

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ContactBrandViewCell.setupData(item:):ContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.collectionView(_:cellForItemAt:):ContactViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.collectionView(_:didSelectItemAt:):ContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblBranch.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.tableView(_:numberOfRowsInSection:):ContactViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ContactViewController.collectionView(_:didDeselectItemAt:):ContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblBranch.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static AppDelegate.$main():AppDelegate.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

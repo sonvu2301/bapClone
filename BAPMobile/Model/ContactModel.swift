@@ -33,7 +33,7 @@ struct ContactBranch: Codable {
 
 struct ContactItem: Codable {
     var online: Bool?
-    var avata: String?
+    var avatar: String?
     var department: String?
     var fullname: String?
     var position: String?

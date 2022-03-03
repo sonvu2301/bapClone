@@ -260,6 +260,9 @@
 		CFFE826D25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE826C25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift */; };
 		CFFE829625BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE829425BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift */; };
 		CFFE829725BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFE829525BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib */; };
+		E270AD5027CF521400EE9B83 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270AD4F27CF521400EE9B83 /* Strings.swift */; };
+		E283B21A27C4753300C19688 /* ContactBranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283B21927C4753300C19688 /* ContactBranchTableViewCell.swift */; };
+		E283B21E27C475BF00C19688 /* ContactBranchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E283B21D27C475BF00C19688 /* ContactBranchTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -519,6 +522,9 @@
 		CFFE826C25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomListGalleryCollectionReusableView.swift; sourceTree = "<group>"; };
 		CFFE829425BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerInformationTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		CFFE829525BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerInformationTimelineTableViewCell.xib; sourceTree = "<group>"; };
+		E270AD4F27CF521400EE9B83 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		E283B21927C4753300C19688 /* ContactBranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBranchTableViewCell.swift; sourceTree = "<group>"; };
+		E283B21D27C475BF00C19688 /* ContactBranchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactBranchTableViewCell.xib; sourceTree = "<group>"; };
 		E91546524E2D05790BB3815D /* Pods_BAPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -812,6 +818,8 @@
 				CF4C27DC27300015008268C8 /* SettingTableViewCell.xib */,
 				CF65FDE02739308700183CBA /* CheckboxTableViewCell.swift */,
 				CF65FDE12739308700183CBA /* CheckboxTableViewCell.xib */,
+				E283B21927C4753300C19688 /* ContactBranchTableViewCell.swift */,
+				E283B21D27C475BF00C19688 /* ContactBranchTableViewCell.xib */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -955,6 +963,7 @@
 				CF5AB17725DE6DEA00B1A9E3 /* Data.swift */,
 				CF2A64DE265F724D00D52675 /* NumberExtension.swift */,
 				CFF2618726FB056A0006DF35 /* Security.swift */,
+				E270AD4F27CF521400EE9B83 /* Strings.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1179,6 +1188,7 @@
 				CF52C9BA273E4E5F00B43C01 /* BASmartSearchEmployeeTableViewCell.xib in Resources */,
 				CF15331725DCF803004667D8 /* Map.storyboard in Resources */,
 				CF735E2B267A0AC5001AEDFF /* BASmartSuggestCustomerCheckinTableViewCell.xib in Resources */,
+				E283B21E27C475BF00C19688 /* ContactBranchTableViewCell.xib in Resources */,
 				CF735E262679E3E6001AEDFF /* BASmartBasicPlanTableViewCell.xib in Resources */,
 				CF65FDE32739308700183CBA /* CheckboxTableViewCell.xib in Resources */,
 				CFFE829725BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib in Resources */,
@@ -1346,6 +1356,7 @@
 				CF042AC026253DFE00A7EDDA /* BASmartCustomerSecondSellFlowViewController.swift in Sources */,
 				CFC346B72689BBE200A0A6B2 /* BASmartPreviewImageViewController.swift in Sources */,
 				CF6903622759DA46007AC1EA /* BASmartCustomerListAddressView.swift in Sources */,
+				E283B21A27C4753300C19688 /* ContactBranchTableViewCell.swift in Sources */,
 				CFA1C98D26084636007DAC38 /* BASmartRequestOpenViewController.swift in Sources */,
 				CF735E3B267C9B29001AEDFF /* BASmartReasonViewController.swift in Sources */,
 				CF69035E2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift in Sources */,
@@ -1405,6 +1416,7 @@
 				CF4C27D9272FFB9D008268C8 /* SettingBiometricViewController.swift in Sources */,
 				CFF2616826D873690006DF35 /* ContactDetailViewController.swift in Sources */,
 				CF4C280A2733C74C008268C8 /* PreviewImageViewController.swift in Sources */,
+				E270AD5027CF521400EE9B83 /* Strings.swift in Sources */,
 				CF5E759D258C45E100B73479 /* CustomerListTableViewCell.swift in Sources */,
 				CF7AD61125C92F8900E5BA25 /* BASmartCustomerListCalendarView.swift in Sources */,
 				CFC346C5268B095400A0A6B2 /* BASmartWarrantyModel.swift in Sources */,
@@ -1622,14 +1634,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQ4F7PFFSM;
+				DEVELOPMENT_TEAM = 67U6T5W299;
 				INFOPLIST_FILE = BAPMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BA.BAPMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.binhanh.bap.mobile2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1643,14 +1655,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQ4F7PFFSM;
+				DEVELOPMENT_TEAM = 67U6T5W299;
 				INFOPLIST_FILE = BAPMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BA.BAPMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.binhanh.bap.mobile2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
