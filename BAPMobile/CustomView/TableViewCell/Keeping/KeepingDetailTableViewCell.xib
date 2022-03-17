@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,10 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="565" height="185"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f0K-j4-Jhl">
-                        <rect key="frame" x="223" y="13" width="110" height="200"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEj-0P-sTw">
                         <rect key="frame" x="0.0" y="0.0" width="565" height="174"/>
                         <subviews>
@@ -157,6 +153,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="orJ-QX-BHA" firstAttribute="leading" secondItem="n1U-Wu-Ac4" secondAttribute="trailing" id="2u8-JT-5ib"/>
+                            <constraint firstAttribute="bottom" secondItem="orJ-QX-BHA" secondAttribute="bottom" constant="55" id="Hc0-9z-As3"/>
                             <constraint firstItem="58u-JT-WhW" firstAttribute="leading" secondItem="n1U-Wu-Ac4" secondAttribute="trailing" id="JZy-Zy-U4w"/>
                             <constraint firstItem="n1U-Wu-Ac4" firstAttribute="top" secondItem="aEj-0P-sTw" secondAttribute="top" id="UG5-uu-aRn"/>
                             <constraint firstItem="58u-JT-WhW" firstAttribute="top" secondItem="E8o-2k-6aV" secondAttribute="bottom" id="ZQN-Fd-UnP"/>
@@ -174,7 +171,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="aEj-0P-sTw" secondAttribute="trailing" id="2oo-dZ-YUM"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aEj-0P-sTw" secondAttribute="bottom" id="KBu-5J-6IM"/>
+                    <constraint firstAttribute="bottom" secondItem="aEj-0P-sTw" secondAttribute="bottom" constant="11" id="Fis-v1-KHY"/>
                     <constraint firstItem="aEj-0P-sTw" firstAttribute="leading" secondItem="8Ew-df-nKy" secondAttribute="leading" id="NzT-qL-EEb"/>
                     <constraint firstItem="aEj-0P-sTw" firstAttribute="top" secondItem="8Ew-df-nKy" secondAttribute="top" id="f6A-Dd-fbd"/>
                 </constraints>

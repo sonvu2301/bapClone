@@ -10,7 +10,7 @@ import Foundation
 struct NetworkConstants {
     
     //MARK: BAP Base Url
-#if !DEBUG
+#if DEBUG
     static var baseWarrantyURL: String {
         return "http://bapm.test.api.binhanh.vn:21605/"
     }
