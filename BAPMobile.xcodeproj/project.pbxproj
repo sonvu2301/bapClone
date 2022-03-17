@@ -232,7 +232,6 @@
 		CFF2614926C5CCB30006DF35 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF2614826C5CCB30006DF35 /* Vehicle.storyboard */; };
 		CFF2614D26C5D0420006DF35 /* VehicleSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2614C26C5D0420006DF35 /* VehicleSearchViewController.swift */; };
 		CFF2616526D86DF20006DF35 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2616426D86DF20006DF35 /* ContactModel.swift */; };
-		CFF2616826D873690006DF35 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2616726D873690006DF35 /* ContactDetailViewController.swift */; };
 		CFF2616C26EF5EB30006DF35 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2616B26EF5EB30006DF35 /* SalaryViewController.swift */; };
 		CFF2617126EF644D0006DF35 /* YearScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF2616F26EF644D0006DF35 /* YearScrollCell.swift */; };
 		CFF2617226EF644D0006DF35 /* YearScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF2617026EF644D0006DF35 /* YearScrollCell.xib */; };
@@ -260,9 +259,46 @@
 		CFFE826D25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE826C25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift */; };
 		CFFE829625BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE829425BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift */; };
 		CFFE829725BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFE829525BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib */; };
+		E2355AAD27D49C71004E8D84 /* MonthScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2355AAC27D49C71004E8D84 /* MonthScrollCell.swift */; };
+		E2355AAF27D49C84004E8D84 /* MonthScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2355AAE27D49C84004E8D84 /* MonthScrollCell.xib */; };
+		E235ACD227E17F4000786459 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235ACD127E17F4000786459 /* LocationManager.swift */; };
+		E235ACD527E190A200786459 /* RadioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235ACD427E190A200786459 /* RadioItem.swift */; };
+		E235ACD727E1DAC000786459 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235ACD627E1DAC000786459 /* RadioView.swift */; };
+		E235ACDA27E1F1C500786459 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235ACD927E1F1C500786459 /* DropdownView.swift */; };
+		E245E2A327DAF476009121E6 /* CustomUITabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245E2A227DAF476009121E6 /* CustomUITabar.swift */; };
+		E253B4B727DEB51600CCFBF6 /* SalarySadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4B627DEB51600CCFBF6 /* SalarySadViewController.swift */; };
+		E253B4BA27DEB76500CCFBF6 /* SalarySadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4B927DEB76500CCFBF6 /* SalarySadTableViewCell.swift */; };
+		E253B4BC27DEB77200CCFBF6 /* SalarySadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E253B4BB27DEB77200CCFBF6 /* SalarySadTableViewCell.xib */; };
+		E253B4BE27DEF83500CCFBF6 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4BD27DEF83500CCFBF6 /* Decimal.swift */; };
+		E253B4C127DF256D00CCFBF6 /* TimeKeepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4C027DF256D00CCFBF6 /* TimeKeepingViewController.swift */; };
+		E253B4C427DF2A5A00CCFBF6 /* KeepingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4C327DF2A5A00CCFBF6 /* KeepingTableViewCell.swift */; };
+		E253B4C627DF2A6700CCFBF6 /* KeepingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E253B4C527DF2A6700CCFBF6 /* KeepingTableViewCell.xib */; };
+		E253B4C827DF478E00CCFBF6 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253B4C727DF478E00CCFBF6 /* Int.swift */; };
 		E270AD5027CF521400EE9B83 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E270AD4F27CF521400EE9B83 /* Strings.swift */; };
 		E283B21A27C4753300C19688 /* ContactBranchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283B21927C4753300C19688 /* ContactBranchTableViewCell.swift */; };
 		E283B21E27C475BF00C19688 /* ContactBranchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E283B21D27C475BF00C19688 /* ContactBranchTableViewCell.xib */; };
+		E2C0848827D1A21100CAE653 /* DateHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0848727D1A21000CAE653 /* DateHorizontal.swift */; };
+		E2C0848A27D1A22400CAE653 /* DateHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C0848927D1A22400CAE653 /* DateHorizontal.xib */; };
+		E2CDCEEE27E04E10009E4EB7 /* CheckInCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CDCEED27E04E10009E4EB7 /* CheckInCheckoutViewController.swift */; };
+		E2E844BB27D995940055968E /* SalaryTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E844BA27D995940055968E /* SalaryTotalView.swift */; };
+		E2E844BF27D997300055968E /* SalaryTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E844BE27D997300055968E /* SalaryTotalView.xib */; };
+		E2E844C127D9BC940055968E /* SalaryDetailCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E844C027D9BC940055968E /* SalaryDetailCellLabel.swift */; };
+		E2E844C327D9BCA00055968E /* SalaryDetailCellLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E844C227D9BCA00055968E /* SalaryDetailCellLabel.xib */; };
+		E2E844C527D9F13D0055968E /* SalaryDetailTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E844C427D9F13C0055968E /* SalaryDetailTaxCell.swift */; };
+		E2E844C727D9F14D0055968E /* SalaryDetailTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E844C627D9F14D0055968E /* SalaryDetailTaxCell.xib */; };
+		E2EDA0F727E2E9B80081A45F /* KeepingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA0F627E2E9B80081A45F /* KeepingDetailViewController.swift */; };
+		E2EDA0F927E31A290081A45F /* KeepingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA0F827E31A290081A45F /* KeepingDetailTableViewCell.swift */; };
+		E2EDA0FB27E31A3E0081A45F /* KeepingDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EDA0FA27E31A3E0081A45F /* KeepingDetailTableViewCell.xib */; };
+		E2F8806527D8890600BB38A5 /* SalaryDetailKeepingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8806427D8890600BB38A5 /* SalaryDetailKeepingCollectionViewCell.swift */; };
+		E2F8806727D8892600BB38A5 /* SalaryDetailKeepingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F8806627D8892600BB38A5 /* SalaryDetailKeepingCollectionViewCell.xib */; };
+		E2F8806927D8894500BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8806827D8894500BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.swift */; };
+		E2F8806B27D8895700BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F8806A27D8895700BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.xib */; };
+		E2F8806D27D88A7E00BB38A5 /* SalaryDetailTaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8806C27D88A7E00BB38A5 /* SalaryDetailTaxCollectionViewCell.swift */; };
+		E2F8806F27D88A9C00BB38A5 /* SalaryDetailTaxCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F8806E27D88A9C00BB38A5 /* SalaryDetailTaxCollectionViewCell.xib */; };
+		E2F8807127D88ADF00BB38A5 /* SalaryDetailSafetyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8807027D88ADF00BB38A5 /* SalaryDetailSafetyCollectionViewCell.swift */; };
+		E2F8807327D88AED00BB38A5 /* SalaryDetailSafetyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F8807227D88AED00BB38A5 /* SalaryDetailSafetyCollectionViewCell.xib */; };
+		E2F8807527D88B2100BB38A5 /* SalaryDetailReduceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8807427D88B2100BB38A5 /* SalaryDetailReduceCollectionViewCell.swift */; };
+		E2F8807727D88B2C00BB38A5 /* SalaryDetailReduceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F8807627D88B2C00BB38A5 /* SalaryDetailReduceCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -494,7 +530,6 @@
 		CFF2614826C5CCB30006DF35 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
 		CFF2614C26C5D0420006DF35 /* VehicleSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchViewController.swift; sourceTree = "<group>"; };
 		CFF2616426D86DF20006DF35 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
-		CFF2616726D873690006DF35 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		CFF2616B26EF5EB30006DF35 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		CFF2616F26EF644D0006DF35 /* YearScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearScrollCell.swift; sourceTree = "<group>"; };
 		CFF2617026EF644D0006DF35 /* YearScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearScrollCell.xib; sourceTree = "<group>"; };
@@ -522,9 +557,46 @@
 		CFFE826C25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomListGalleryCollectionReusableView.swift; sourceTree = "<group>"; };
 		CFFE829425BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASmartCustomerInformationTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		CFFE829525BFA88B00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BASmartCustomerInformationTimelineTableViewCell.xib; sourceTree = "<group>"; };
+		E2355AAC27D49C71004E8D84 /* MonthScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthScrollCell.swift; sourceTree = "<group>"; };
+		E2355AAE27D49C84004E8D84 /* MonthScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthScrollCell.xib; sourceTree = "<group>"; };
+		E235ACD127E17F4000786459 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E235ACD427E190A200786459 /* RadioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItem.swift; sourceTree = "<group>"; };
+		E235ACD627E1DAC000786459 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		E235ACD927E1F1C500786459 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		E245E2A227DAF476009121E6 /* CustomUITabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITabar.swift; sourceTree = "<group>"; };
+		E253B4B627DEB51600CCFBF6 /* SalarySadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalarySadViewController.swift; sourceTree = "<group>"; };
+		E253B4B927DEB76500CCFBF6 /* SalarySadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalarySadTableViewCell.swift; sourceTree = "<group>"; };
+		E253B4BB27DEB77200CCFBF6 /* SalarySadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalarySadTableViewCell.xib; sourceTree = "<group>"; };
+		E253B4BD27DEF83500CCFBF6 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		E253B4C027DF256D00CCFBF6 /* TimeKeepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeKeepingViewController.swift; sourceTree = "<group>"; };
+		E253B4C327DF2A5A00CCFBF6 /* KeepingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepingTableViewCell.swift; sourceTree = "<group>"; };
+		E253B4C527DF2A6700CCFBF6 /* KeepingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepingTableViewCell.xib; sourceTree = "<group>"; };
+		E253B4C727DF478E00CCFBF6 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		E270AD4F27CF521400EE9B83 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E283B21927C4753300C19688 /* ContactBranchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBranchTableViewCell.swift; sourceTree = "<group>"; };
 		E283B21D27C475BF00C19688 /* ContactBranchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactBranchTableViewCell.xib; sourceTree = "<group>"; };
+		E2C0848727D1A21000CAE653 /* DateHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHorizontal.swift; sourceTree = "<group>"; };
+		E2C0848927D1A22400CAE653 /* DateHorizontal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateHorizontal.xib; sourceTree = "<group>"; };
+		E2CDCEED27E04E10009E4EB7 /* CheckInCheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCheckoutViewController.swift; sourceTree = "<group>"; };
+		E2E844BA27D995940055968E /* SalaryTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryTotalView.swift; sourceTree = "<group>"; };
+		E2E844BE27D997300055968E /* SalaryTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SalaryTotalView.xib; sourceTree = "<group>"; };
+		E2E844C027D9BC940055968E /* SalaryDetailCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailCellLabel.swift; sourceTree = "<group>"; };
+		E2E844C227D9BCA00055968E /* SalaryDetailCellLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailCellLabel.xib; sourceTree = "<group>"; };
+		E2E844C427D9F13C0055968E /* SalaryDetailTaxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailTaxCell.swift; sourceTree = "<group>"; };
+		E2E844C627D9F14D0055968E /* SalaryDetailTaxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailTaxCell.xib; sourceTree = "<group>"; };
+		E2EDA0F627E2E9B80081A45F /* KeepingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepingDetailViewController.swift; sourceTree = "<group>"; };
+		E2EDA0F827E31A290081A45F /* KeepingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepingDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E2EDA0FA27E31A3E0081A45F /* KeepingDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeepingDetailTableViewCell.xib; sourceTree = "<group>"; };
+		E2F8806427D8890600BB38A5 /* SalaryDetailKeepingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailKeepingCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8806627D8892600BB38A5 /* SalaryDetailKeepingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailKeepingCollectionViewCell.xib; sourceTree = "<group>"; };
+		E2F8806827D8894500BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailTotalMoneyCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8806A27D8895700BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailTotalMoneyCollectionViewCell.xib; sourceTree = "<group>"; };
+		E2F8806C27D88A7E00BB38A5 /* SalaryDetailTaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailTaxCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8806E27D88A9C00BB38A5 /* SalaryDetailTaxCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailTaxCollectionViewCell.xib; sourceTree = "<group>"; };
+		E2F8807027D88ADF00BB38A5 /* SalaryDetailSafetyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailSafetyCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8807227D88AED00BB38A5 /* SalaryDetailSafetyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailSafetyCollectionViewCell.xib; sourceTree = "<group>"; };
+		E2F8807427D88B2100BB38A5 /* SalaryDetailReduceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryDetailReduceCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8807627D88B2C00BB38A5 /* SalaryDetailReduceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryDetailReduceCollectionViewCell.xib; sourceTree = "<group>"; };
 		E91546524E2D05790BB3815D /* Pods_BAPMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAPMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -742,6 +814,9 @@
 		CF2A64A6265673FB00D52675 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E235ACD827E1F0B600786459 /* Droppdown */,
+				E235ACD327E1908100786459 /* Radio */,
+				E2E844B927D995480055968E /* Salary */,
 				CF0884D0259B133500DE4FB7 /* BASmartMainSmallCustomView.swift */,
 				CF0884D3259B134C00DE4FB7 /* BASmartMainSmallCustomView.xib */,
 				CFFE823525B01A5C00B45958 /* BASmartCustomerListDefaultCellView.swift */,
@@ -762,12 +837,13 @@
 				CF2A64ED2666123300D52675 /* DropDownSearchTextFieldView.xib */,
 				CF910F2326773ED900046221 /* SelectImageView.swift */,
 				CF910F2626773EE900046221 /* SelectImageView.xib */,
-				CFF2618126F33B360006DF35 /* SalaryDefaultCustomView.swift */,
-				CFF2618426F33B6B0006DF35 /* SalaryDefaultCustomView.xib */,
 				CF65FDD82739275500183CBA /* BASmartPurposeCheckboxView.swift */,
 				CF65FDDA2739276300183CBA /* BASmartPurposeCheckboxView.xib */,
 				CF65FDE8273B649D00183CBA /* ListCheckboxView.swift */,
 				CF65FDE6273B648200183CBA /* ListCheckboxView.xib */,
+				E2C0848727D1A21000CAE653 /* DateHorizontal.swift */,
+				E2C0848927D1A22400CAE653 /* DateHorizontal.xib */,
+				E245E2A227DAF476009121E6 /* CustomUITabar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -775,6 +851,7 @@
 		CF2A64A72656741600D52675 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E296585E27D8745C00F79466 /* SalaryDetail */,
 				CF6D1546257E15A800D27BD1 /* SlideImageCollectionViewCell.swift */,
 				CF6D154A257E2BF000D27BD1 /* MenuCollectionViewCell.swift */,
 				CF6D154B257E2BF000D27BD1 /* MenuCollectionViewCell.xib */,
@@ -783,6 +860,8 @@
 				CFFE826C25BAD63700B45958 /* BASmartCustomListGalleryCollectionReusableView.swift */,
 				CF5AB19825EDEFCB00B1A9E3 /* DateScrollCell.swift */,
 				CF5AB19925EDEFCB00B1A9E3 /* DateScrollCell.xib */,
+				E2355AAC27D49C71004E8D84 /* MonthScrollCell.swift */,
+				E2355AAE27D49C84004E8D84 /* MonthScrollCell.xib */,
 				CFF2616F26EF644D0006DF35 /* YearScrollCell.swift */,
 				CFF2617026EF644D0006DF35 /* YearScrollCell.xib */,
 				CF2A64FB266A0B7200D52675 /* BASmartSellCollectionViewCell.swift */,
@@ -812,8 +891,6 @@
 				CFE8BDBF25D10F7A00BBA956 /* BasicDropdownTableViewCell.xib */,
 				CF2A64E52664C91300D52675 /* DropdownSearchHistoryTableViewCell.swift */,
 				CF2A64E62664C91300D52675 /* DropdownSearchHistoryTableViewCell.xib */,
-				CFF2617C26F3360D0006DF35 /* SalaryInfoTableViewCell.swift */,
-				CFF2617D26F3360D0006DF35 /* SalaryInfoTableViewCell.xib */,
 				CF4C27DB27300015008268C8 /* SettingTableViewCell.swift */,
 				CF4C27DC27300015008268C8 /* SettingTableViewCell.xib */,
 				CF65FDE02739308700183CBA /* CheckboxTableViewCell.swift */,
@@ -835,6 +912,7 @@
 				CF2A64AF2656756C00D52675 /* MainMenu */,
 				CF4C27D3272FFAF5008268C8 /* Setting */,
 				CFF2616A26EF5E8E0006DF35 /* Salary */,
+				E253B4BF27DF251E00CCFBF6 /* Keeping */,
 				CF2A64AB265674E600D52675 /* Map */,
 				CFF2614B26C5D0270006DF35 /* Vehicle */,
 				CF2A64AC2656750600D52675 /* Notification */,
@@ -865,7 +943,6 @@
 			isa = PBXGroup;
 			children = (
 				CF953077258747E40018B94F /* ContactViewController.swift */,
-				CFF2616726D873690006DF35 /* ContactDetailViewController.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -964,6 +1041,9 @@
 				CF2A64DE265F724D00D52675 /* NumberExtension.swift */,
 				CFF2618726FB056A0006DF35 /* Security.swift */,
 				E270AD4F27CF521400EE9B83 /* Strings.swift */,
+				E253B4BD27DEF83500CCFBF6 /* Decimal.swift */,
+				E253B4C727DF478E00CCFBF6 /* Int.swift */,
+				E235ACD127E17F4000786459 /* LocationManager.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1011,6 +1091,8 @@
 		CF6D155C2581D1E800D27BD1 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				E253B4B827DEB70600CCFBF6 /* SalaryDetail */,
+				E253B4C227DF2A3100CCFBF6 /* Keeping */,
 				CF2A64A82656743D00D52675 /* Other */,
 				CF22723F25AEDC4F00363561 /* BASmartCustomCell */,
 			);
@@ -1098,6 +1180,88 @@
 			children = (
 				CFF2616B26EF5EB30006DF35 /* SalaryViewController.swift */,
 				CFF261B0270705D10006DF35 /* SalaryDetailViewController.swift */,
+				E253B4B627DEB51600CCFBF6 /* SalarySadViewController.swift */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
+		E235ACD327E1908100786459 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				E235ACD427E190A200786459 /* RadioItem.swift */,
+				E235ACD627E1DAC000786459 /* RadioView.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		E235ACD827E1F0B600786459 /* Droppdown */ = {
+			isa = PBXGroup;
+			children = (
+				E235ACD927E1F1C500786459 /* DropdownView.swift */,
+			);
+			path = Droppdown;
+			sourceTree = "<group>";
+		};
+		E253B4B827DEB70600CCFBF6 /* SalaryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CFF2617C26F3360D0006DF35 /* SalaryInfoTableViewCell.swift */,
+				CFF2617D26F3360D0006DF35 /* SalaryInfoTableViewCell.xib */,
+				E2E844C027D9BC940055968E /* SalaryDetailCellLabel.swift */,
+				E2E844C227D9BCA00055968E /* SalaryDetailCellLabel.xib */,
+				E2E844C427D9F13C0055968E /* SalaryDetailTaxCell.swift */,
+				E2E844C627D9F14D0055968E /* SalaryDetailTaxCell.xib */,
+				E253B4B927DEB76500CCFBF6 /* SalarySadTableViewCell.swift */,
+				E253B4BB27DEB77200CCFBF6 /* SalarySadTableViewCell.xib */,
+			);
+			path = SalaryDetail;
+			sourceTree = "<group>";
+		};
+		E253B4BF27DF251E00CCFBF6 /* Keeping */ = {
+			isa = PBXGroup;
+			children = (
+				E253B4C027DF256D00CCFBF6 /* TimeKeepingViewController.swift */,
+				E2CDCEED27E04E10009E4EB7 /* CheckInCheckoutViewController.swift */,
+				E2EDA0F627E2E9B80081A45F /* KeepingDetailViewController.swift */,
+			);
+			path = Keeping;
+			sourceTree = "<group>";
+		};
+		E253B4C227DF2A3100CCFBF6 /* Keeping */ = {
+			isa = PBXGroup;
+			children = (
+				E253B4C327DF2A5A00CCFBF6 /* KeepingTableViewCell.swift */,
+				E253B4C527DF2A6700CCFBF6 /* KeepingTableViewCell.xib */,
+				E2EDA0F827E31A290081A45F /* KeepingDetailTableViewCell.swift */,
+				E2EDA0FA27E31A3E0081A45F /* KeepingDetailTableViewCell.xib */,
+			);
+			path = Keeping;
+			sourceTree = "<group>";
+		};
+		E296585E27D8745C00F79466 /* SalaryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E2F8806427D8890600BB38A5 /* SalaryDetailKeepingCollectionViewCell.swift */,
+				E2F8806627D8892600BB38A5 /* SalaryDetailKeepingCollectionViewCell.xib */,
+				E2F8806827D8894500BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.swift */,
+				E2F8806A27D8895700BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.xib */,
+				E2F8806C27D88A7E00BB38A5 /* SalaryDetailTaxCollectionViewCell.swift */,
+				E2F8806E27D88A9C00BB38A5 /* SalaryDetailTaxCollectionViewCell.xib */,
+				E2F8807027D88ADF00BB38A5 /* SalaryDetailSafetyCollectionViewCell.swift */,
+				E2F8807227D88AED00BB38A5 /* SalaryDetailSafetyCollectionViewCell.xib */,
+				E2F8807427D88B2100BB38A5 /* SalaryDetailReduceCollectionViewCell.swift */,
+				E2F8807627D88B2C00BB38A5 /* SalaryDetailReduceCollectionViewCell.xib */,
+			);
+			path = SalaryDetail;
+			sourceTree = "<group>";
+		};
+		E2E844B927D995480055968E /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				E2E844BE27D997300055968E /* SalaryTotalView.xib */,
+				CFF2618126F33B360006DF35 /* SalaryDefaultCustomView.swift */,
+				CFF2618426F33B6B0006DF35 /* SalaryDefaultCustomView.xib */,
+				E2E844BA27D995940055968E /* SalaryTotalView.swift */,
 			);
 			path = Salary;
 			sourceTree = "<group>";
@@ -1173,34 +1337,44 @@
 				CF4C27DE27300015008268C8 /* SettingTableViewCell.xib in Resources */,
 				CF735E40268081E9001AEDFF /* BASmartWarranty.storyboard in Resources */,
 				CFE7C62F26539EA5005A2BBD /* BASmartShowPhoneNumberViewControllerTableViewCell.xib in Resources */,
+				E2355AAF27D49C84004E8D84 /* MonthScrollCell.xib in Resources */,
 				CFD8026225935365001CEAE2 /* BASmart.storyboard in Resources */,
 				CF6D15602581D21900D27BD1 /* NotificationTableViewCell.xib in Resources */,
+				E2F8807327D88AED00BB38A5 /* SalaryDetailSafetyCollectionViewCell.xib in Resources */,
 				CF22724525AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.xib in Resources */,
 				CF7AD60E25C9295E00E5BA25 /* BASmartCustomerListDropdownView.xib in Resources */,
 				CF042ACB26268D1200A7EDDA /* BASmartCustomerSellFirstFlowTableViewCell.xib in Resources */,
 				CFF2614926C5CCB30006DF35 /* Vehicle.storyboard in Resources */,
 				CFF2617226EF644D0006DF35 /* YearScrollCell.xib in Resources */,
+				E2F8806B27D8895700BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.xib in Resources */,
+				E2E844C727D9F14D0055968E /* SalaryDetailTaxCell.xib in Resources */,
 				CFA1C9852604779E007DAC38 /* BASmartCallHistoryTableViewCell.xib in Resources */,
+				E2E844BF27D997300055968E /* SalaryTotalView.xib in Resources */,
 				CF0AA7E42746601000548E98 /* BASmartInventoryDetailTableViewCell.xib in Resources */,
 				CFFE826A25BAAB1B00B45958 /* BASmartCustomListGalleryCollectionViewCell.xib in Resources */,
+				E2E844C327D9BCA00055968E /* SalaryDetailCellLabel.xib in Resources */,
 				CF7AD5FF25C3F90E00E5BA25 /* BASmartCustomerTimelineSection.xib in Resources */,
 				CF042ADA26396BA200A7EDDA /* BASmartCustomerSellOptionTableViewCell.xib in Resources */,
+				E2F8806F27D88A9C00BB38A5 /* SalaryDetailTaxCollectionViewCell.xib in Resources */,
 				CF52C9BA273E4E5F00B43C01 /* BASmartSearchEmployeeTableViewCell.xib in Resources */,
 				CF15331725DCF803004667D8 /* Map.storyboard in Resources */,
 				CF735E2B267A0AC5001AEDFF /* BASmartSuggestCustomerCheckinTableViewCell.xib in Resources */,
 				E283B21E27C475BF00C19688 /* ContactBranchTableViewCell.xib in Resources */,
 				CF735E262679E3E6001AEDFF /* BASmartBasicPlanTableViewCell.xib in Resources */,
 				CF65FDE32739308700183CBA /* CheckboxTableViewCell.xib in Resources */,
+				E253B4BC27DEB77200CCFBF6 /* SalarySadTableViewCell.xib in Resources */,
 				CFFE829725BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.xib in Resources */,
 				CF65FDE7273B648200183CBA /* ListCheckboxView.xib in Resources */,
 				CFC346C12689BDF300A0A6B2 /* PreviewImageCollectionViewCell.xib in Resources */,
 				CF6D14D92579F22600D27BD1 /* LaunchScreen.storyboard in Resources */,
 				CF5E758E258C448500B73479 /* CustomerList.storyboard in Resources */,
 				CF4C27C5271EBB1A008268C8 /* BASmartSelectCustomerModelTableViewCell.xib in Resources */,
+				E2C0848A27D1A22400CAE653 /* DateHorizontal.xib in Resources */,
 				CF042AED2643D2DB00A7EDDA /* BASmartComboFeatureTableViewCell.xib in Resources */,
 				CF6903642759DA4F007AC1EA /* BASmartCustomerListAddressView.xib in Resources */,
 				CF910F2726773EE900046221 /* SelectImageView.xib in Resources */,
 				CF042ADF263A9BD200A7EDDA /* BASmartSelectVTypeTableViewCell.xib in Resources */,
+				E2EDA0FB27E31A3E0081A45F /* KeepingDetailTableViewCell.xib in Resources */,
 				CF894F952755D40A001CE61A /* BASmartWarehouseCustomerListTableViewCell.xib in Resources */,
 				CFFE823325B0198900B45958 /* BASmartCustomerListHumanTableViewCell.xib in Resources */,
 				CF5AB19B25EDEFCB00B1A9E3 /* DateScrollCell.xib in Resources */,
@@ -1208,6 +1382,7 @@
 				CF65FDDB2739276300183CBA /* BASmartPurposeCheckboxView.xib in Resources */,
 				CF6D14D42579F22300D27BD1 /* Main.storyboard in Resources */,
 				CFFE823E25B1A38E00B45958 /* BASmartCustomerListCompetitorTableViewCell.xib in Resources */,
+				E2F8807727D88B2C00BB38A5 /* SalaryDetailReduceCollectionViewCell.xib in Resources */,
 				CF22724B25AEF6F000363561 /* BASmartCustomerListPhoneTableViewCell.xib in Resources */,
 				CF22725025AEF8A000363561 /* BASmartCustomerListDescriptionTableViewCell.xib in Resources */,
 				CF6D154D257E2BF000D27BD1 /* MenuCollectionViewCell.xib in Resources */,
@@ -1221,6 +1396,8 @@
 				CF910F2C267756E200046221 /* SelectImageCollectionViewCell.xib in Resources */,
 				CF0884EA259C3B8800DE4FB7 /* BASmartWarningTableViewCell.xib in Resources */,
 				CF7AD61525C92F9400E5BA25 /* BASmartCustomerListCalendarView.xib in Resources */,
+				E2F8806727D8892600BB38A5 /* SalaryDetailKeepingCollectionViewCell.xib in Resources */,
+				E253B4C627DF2A6700CCFBF6 /* KeepingTableViewCell.xib in Resources */,
 				CF5E759E258C45E100B73479 /* CustomerListTableViewCell.xib in Resources */,
 				CF042AD02632C16B00A7EDDA /* BASmartSelectComboTableViewCell.xib in Resources */,
 				CFA1C98A260836BC007DAC38 /* BASmartRequestOpenTableViewCell.xib in Resources */,
@@ -1304,6 +1481,7 @@
 			files = (
 				CFF2616C26EF5EB30006DF35 /* SalaryViewController.swift in Sources */,
 				CF7AD60B25C9295200E5BA25 /* BASmartCustomerListDropdownView.swift in Sources */,
+				E2F8807527D88B2100BB38A5 /* SalaryDetailReduceCollectionViewCell.swift in Sources */,
 				CFA1A9A025A4198100D4C093 /* BASmartCustomerListContentTableViewCell.swift in Sources */,
 				CF22724A25AEF6F000363561 /* BASmartCustomerListPhoneTableViewCell.swift in Sources */,
 				CF5E75A6258C91F600B73479 /* CustomerCarListTableViewCell.swift in Sources */,
@@ -1319,19 +1497,23 @@
 				CF65FDE22739308700183CBA /* CheckboxTableViewCell.swift in Sources */,
 				CF894F912755D254001CE61A /* BASmartWarehouseCustomerListViewController.swift in Sources */,
 				CFFE823D25B1A38E00B45958 /* BASmartCustomerListCompetitorTableViewCell.swift in Sources */,
+				E235ACD227E17F4000786459 /* LocationManager.swift in Sources */,
 				CF042ACA26268D1200A7EDDA /* BASmartCustomerSellFirstFlowTableViewCell.swift in Sources */,
 				CF65FDE5273B588200183CBA /* BASmartCustomerCreateApproachViewController.swift in Sources */,
 				CF6D1501257A0AE900D27BD1 /* NotificationViewController.swift in Sources */,
 				CF4C27C0271EB006008268C8 /* BASmartSelectCustomerModelViewController.swift in Sources */,
 				CF6D1505257A0B2200D27BD1 /* UserViewController.swift in Sources */,
 				CF7AD5F225C299D500E5BA25 /* Textview.swift in Sources */,
+				E235ACDA27E1F1C500786459 /* DropdownView.swift in Sources */,
 				CF0884E9259C3B8800DE4FB7 /* BASmartWarningTableViewCell.swift in Sources */,
 				CF65FDD92739275500183CBA /* BASmartPurposeCheckboxView.swift in Sources */,
 				CFA1A9B125AD81F500D4C093 /* BASmartCustomerInformationCompetitorViewController.swift in Sources */,
+				E253B4BE27DEF83500CCFBF6 /* Decimal.swift in Sources */,
 				CFFE823225B0198900B45958 /* BASmartCustomerListHumanTableViewCell.swift in Sources */,
 				CFD80265259425BD001CEAE2 /* SideMenuViewController.swift in Sources */,
 				CF5E7584258A101400B73479 /* LoginViewController.swift in Sources */,
 				CF5AB17B25E642BD00B1A9E3 /* BASmartCustomerCreateViewController.swift in Sources */,
+				E253B4B727DEB51600CCFBF6 /* SalarySadViewController.swift in Sources */,
 				CF042ABD26253DEE00A7EDDA /* BASmartCustomerFirstSellFlowViewController.swift in Sources */,
 				CF735E252679E3E6001AEDFF /* BASmartBasicPlanTableViewCell.swift in Sources */,
 				CFE61BDE2743C27A00640A56 /* BASmartInventoryViewController.swift in Sources */,
@@ -1346,9 +1528,12 @@
 				CF953078258747E40018B94F /* ContactViewController.swift in Sources */,
 				CF5E758B258C41AC00B73479 /* Date.swift in Sources */,
 				CFBC349B2692EB4F00C396F1 /* CoreDataManager.swift in Sources */,
+				E253B4C827DF478E00CCFBF6 /* Int.swift in Sources */,
+				E253B4C127DF256D00CCFBF6 /* TimeKeepingViewController.swift in Sources */,
 				CF2A64FD266A0B7300D52675 /* BASmartSellCollectionViewCell.swift in Sources */,
 				CFF2618826FB056A0006DF35 /* Security.swift in Sources */,
 				CF52C9B6273E4C1B00B43C01 /* BASmartSearchEmployeeViewController.swift in Sources */,
+				E2F8806927D8894500BB38A5 /* SalaryDetailTotalMoneyCollectionViewCell.swift in Sources */,
 				CF2A64F1266767B300D52675 /* BASmartApproachViewController.swift in Sources */,
 				CFFE826225B98DE800B45958 /* BASmartCustomerListTimelineViewController.swift in Sources */,
 				CFE3629926AF5B72005E3FEB /* BASmartWarrantySavedImagesViewController.swift in Sources */,
@@ -1357,11 +1542,13 @@
 				CFC346B72689BBE200A0A6B2 /* BASmartPreviewImageViewController.swift in Sources */,
 				CF6903622759DA46007AC1EA /* BASmartCustomerListAddressView.swift in Sources */,
 				E283B21A27C4753300C19688 /* ContactBranchTableViewCell.swift in Sources */,
+				E2EDA0F927E31A290081A45F /* KeepingDetailTableViewCell.swift in Sources */,
 				CFA1C98D26084636007DAC38 /* BASmartRequestOpenViewController.swift in Sources */,
 				CF735E3B267C9B29001AEDFF /* BASmartReasonViewController.swift in Sources */,
 				CF69035E2758B6FF007AC1EA /* BASmartCustomerListCatalogView.swift in Sources */,
 				CFACCEDD278EB9A7007DCA29 /* BASmartCustomerListTextviewCellView.swift in Sources */,
 				CF5AB17F25EDCA0400B1A9E3 /* BASmartPlanViewController.swift in Sources */,
+				E2F8807127D88ADF00BB38A5 /* SalaryDetailSafetyCollectionViewCell.swift in Sources */,
 				CFA1A9B425AD823B00D4C093 /* BASmartCustomerInformationApproachViewController.swift in Sources */,
 				CF15331B25DCF84A004667D8 /* MapViewController.swift in Sources */,
 				CF2A64B62657A16800D52675 /* InfoModel.swift in Sources */,
@@ -1375,6 +1562,7 @@
 				CFF261B1270705D20006DF35 /* SalaryDetailViewController.swift in Sources */,
 				CF9530802587714D0018B94F /* BaseViewController.swift in Sources */,
 				CF4439392685B18F00B97434 /* BASmartVehicleTableViewCell.swift in Sources */,
+				E245E2A327DAF476009121E6 /* CustomUITabar.swift in Sources */,
 				CF894F9727562F60001CE61A /* BASmartAddCustomerWarehouseViewController.swift in Sources */,
 				CF4C27C4271EBB1A008268C8 /* BASmartSelectCustomerModelTableViewCell.swift in Sources */,
 				CF910F2426773ED900046221 /* SelectImageView.swift in Sources */,
@@ -1389,18 +1577,22 @@
 				CF22724425AEDC9300363561 /* BASmartCustomerDetailDefaultTableViewCell.swift in Sources */,
 				CF894F9B27563047001CE61A /* BASmartAddCustomerWarehouseSecondFlowViewController.swift in Sources */,
 				CF65FDE9273B649D00183CBA /* ListCheckboxView.swift in Sources */,
+				E2F8806527D8890600BB38A5 /* SalaryDetailKeepingCollectionViewCell.swift in Sources */,
 				CF735E5B2681F6A5001AEDFF /* BASmartTechnicalCarListTableViewCell.swift in Sources */,
 				CFE61BE02743C28C00640A56 /* BASmartInventoryDetailViewController.swift in Sources */,
 				CF042AFA264E221100A7EDDA /* BASmartPlanSearchCustomerViewController.swift in Sources */,
 				CF042AF6264CCC5700A7EDDA /* ViewControllerExtension.swift in Sources */,
+				E2F8806D27D88A7E00BB38A5 /* SalaryDetailTaxCollectionViewCell.swift in Sources */,
 				CFE8BDC025D10F7A00BBA956 /* BasicDropdownTableViewCell.swift in Sources */,
 				CF2A64B2265799F100D52675 /* BASmartCustomerListEditDetailViewController.swift in Sources */,
 				CF042ADE263A9BD200A7EDDA /* BASmartSelectVTypeTableViewCell.swift in Sources */,
 				CFBC349F2692EB9C00C396F1 /* CoreDataService.swift in Sources */,
+				E2EDA0F727E2E9B80081A45F /* KeepingDetailViewController.swift in Sources */,
 				CFF2616526D86DF20006DF35 /* ContactModel.swift in Sources */,
 				CFD0B3D3274F4A4A00589882 /* AlertConfirmViewController.swift in Sources */,
 				CF7AD60325C79AC800E5BA25 /* TableView.swift in Sources */,
 				CF735E4E2681C25E001AEDFF /* BASmartWarrantyRequestViewController.swift in Sources */,
+				E253B4BA27DEB76500CCFBF6 /* SalarySadTableViewCell.swift in Sources */,
 				CFFE829625BFA88C00B45958 /* BASmartCustomerInformationTimelineTableViewCell.swift in Sources */,
 				CF042AE82641011A00A7EDDA /* BASmartSuggestCustomerViewController.swift in Sources */,
 				CF6D14FD257A0ACD00D27BD1 /* MainMenuViewController.swift in Sources */,
@@ -1410,19 +1602,22 @@
 				CFA1A9A425AD4E4700D4C093 /* SideMenuItem.swift in Sources */,
 				CF67493C2761E4D00077D544 /* BASmartSearchSellerViewController.swift in Sources */,
 				CF042ACF2632C16B00A7EDDA /* BASmartSelectComboTableViewCell.swift in Sources */,
+				E235ACD727E1DAC000786459 /* RadioView.swift in Sources */,
 				CF5AB1AD25F89AB200B1A9E3 /* BASmartPlanListCellTableViewCell.swift in Sources */,
 				CF042AE52641010B00A7EDDA /* BASmartSuggestPlanViewController.swift in Sources */,
 				CFFE826925BAAB1B00B45958 /* BASmartCustomListGalleryCollectionViewCell.swift in Sources */,
 				CF4C27D9272FFB9D008268C8 /* SettingBiometricViewController.swift in Sources */,
-				CFF2616826D873690006DF35 /* ContactDetailViewController.swift in Sources */,
+				E253B4C427DF2A5A00CCFBF6 /* KeepingTableViewCell.swift in Sources */,
 				CF4C280A2733C74C008268C8 /* PreviewImageViewController.swift in Sources */,
 				E270AD5027CF521400EE9B83 /* Strings.swift in Sources */,
 				CF5E759D258C45E100B73479 /* CustomerListTableViewCell.swift in Sources */,
 				CF7AD61125C92F8900E5BA25 /* BASmartCustomerListCalendarView.swift in Sources */,
+				E2E844C127D9BC940055968E /* SalaryDetailCellLabel.swift in Sources */,
 				CFC346C5268B095400A0A6B2 /* BASmartWarrantyModel.swift in Sources */,
 				CFA1A99825A412F400D4C093 /* BASmartCustomerListViewController.swift in Sources */,
 				CF2A64EB2666121C00D52675 /* DropDownSearchTextFieldView.swift in Sources */,
 				CF042B0A26539B3F00A7EDDA /* BASmartShowPhoneNumberViewController.swift in Sources */,
+				E2355AAD27D49C71004E8D84 /* MonthScrollCell.swift in Sources */,
 				CFA1C989260836BC007DAC38 /* BASmartRequestOpenTableViewCell.swift in Sources */,
 				CFF2618226F33B360006DF35 /* SalaryDefaultCustomView.swift in Sources */,
 				CF52C9B9273E4E5F00B43C01 /* BASmartSearchEmployeeTableViewCell.swift in Sources */,
@@ -1445,13 +1640,16 @@
 				CF6D15642581E13000D27BD1 /* Image.swift in Sources */,
 				CF6D14CD2579F22300D27BD1 /* AppDelegate.swift in Sources */,
 				CF735E4426808383001AEDFF /* BASmartWarrantyListViewController.swift in Sources */,
+				E2CDCEEE27E04E10009E4EB7 /* CheckInCheckoutViewController.swift in Sources */,
 				CF4C27D5272FFB0E008268C8 /* SettingViewController.swift in Sources */,
 				CFF2617A26F330AD0006DF35 /* SalaryModel.swift in Sources */,
 				CF735E542681C57E001AEDFF /* BASmartWarrantyNoteViewController.swift in Sources */,
+				E2C0848827D1A21100CAE653 /* DateHorizontal.swift in Sources */,
 				CFF2617E26F3360D0006DF35 /* SalaryInfoTableViewCell.swift in Sources */,
 				CF6D1509257A15AE00D27BD1 /* View.swift in Sources */,
 				CF5E7588258B659D00B73479 /* NotificationModel.swift in Sources */,
 				CFF2617126EF644D0006DF35 /* YearScrollCell.swift in Sources */,
+				E2E844C527D9F13D0055968E /* SalaryDetailTaxCell.swift in Sources */,
 				CF0884D1259B133500DE4FB7 /* BASmartMainSmallCustomView.swift in Sources */,
 				CF5E75A2258C589100B73479 /* CustomerModel.swift in Sources */,
 				CFD8026C25943B36001CEAE2 /* SideMenuTableViewCell.swift in Sources */,
@@ -1466,6 +1664,7 @@
 				CFAF6AA026982D0E00E92E90 /* BASmartVehiclePreviewImageSecondViewController.swift in Sources */,
 				CF5E757F258A0AF800B73479 /* UserManager.swift in Sources */,
 				CF735E2A267A0AC5001AEDFF /* BASmartSuggestCustomerCheckinTableViewCell.swift in Sources */,
+				E235ACD527E190A200786459 /* RadioItem.swift in Sources */,
 				CF2A64E22664C23300D52675 /* BASmartSearchByPhoneViewController.swift in Sources */,
 				CF4C27CC2727B658008268C8 /* BASmartCustomerInformationAddHumanBaseViewController.swift in Sources */,
 				CF22724F25AEF8A000363561 /* BASmartCustomerListDescriptionTableViewCell.swift in Sources */,
@@ -1482,6 +1681,7 @@
 				CF042AB926253DDA00A7EDDA /* BASmartCustomerMainSellFlowViewController.swift in Sources */,
 				CF894F9927563034001CE61A /* BASmartAddCustomerWarehouseFirstFlowViewController.swift in Sources */,
 				CF735E512681C570001AEDFF /* BASmartWarrantyCarListViewController.swift in Sources */,
+				E2E844BB27D995940055968E /* SalaryTotalView.swift in Sources */,
 				CF735E572681C58F001AEDFF /* BASmartWarrantyAttachViewController.swift in Sources */,
 				CFFE825725B910E500B45958 /* BASmartCustomerListMenuActionViewController.swift in Sources */,
 				CF735E4826808456001AEDFF /* BASmartWarrantyListTableViewCell.swift in Sources */,

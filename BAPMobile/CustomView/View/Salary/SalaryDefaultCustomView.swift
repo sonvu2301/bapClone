@@ -26,7 +26,7 @@ class SalaryDefaultCustomView: UIView {
     }
     
     private func commonInit(){
-        Bundle.main.loadNibNamed("BASmartMainSmallCustomView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("SalaryDefaultCustomView", owner: self, options: nil)
         addSubview(contentView)
         iconView.setViewCircle()
         contentView.frame = self.bounds

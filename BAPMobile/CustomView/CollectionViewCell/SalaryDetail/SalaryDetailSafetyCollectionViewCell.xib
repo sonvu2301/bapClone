@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SalaryDetailSafetyCollectionViewCell" reuseIdentifier="SalaryDetailSafetyCollectionViewCell" id="yRB-QO-rGt" customClass="SalaryDetailSafetyCollectionViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="583" height="333"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bảo hiểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gum-3h-KWL">
+                    <rect key="frame" x="0.0" y="0.0" width="583" height="40"/>
+                    <color key="backgroundColor" red="0.062745098039215685" green="0.68235294117647061" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="RGj-el-agw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArI-ys-ORw" userLabel="TaxPichart" customClass="PieChartView" customModule="Charts">
+                    <rect key="frame" x="0.0" y="40" width="583" height="188"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-ld-BoN" userLabel="TaxDetailTable">
+                    <rect key="frame" x="0.0" y="228" width="583" height="105"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="105" id="e5b-XU-7dc"/>
+                    </constraints>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Vrf-Pz-k7J"/>
+            <constraints>
+                <constraint firstItem="FcF-ld-BoN" firstAttribute="top" secondItem="ArI-ys-ORw" secondAttribute="bottom" id="A5A-VA-exS"/>
+                <constraint firstAttribute="trailing" secondItem="gum-3h-KWL" secondAttribute="trailing" id="HJF-IO-9a6"/>
+                <constraint firstItem="gum-3h-KWL" firstAttribute="leading" secondItem="yRB-QO-rGt" secondAttribute="leading" id="Ltr-Yk-V97"/>
+                <constraint firstItem="gum-3h-KWL" firstAttribute="top" secondItem="yRB-QO-rGt" secondAttribute="top" id="Mhz-lJ-jul"/>
+                <constraint firstItem="ArI-ys-ORw" firstAttribute="top" secondItem="gum-3h-KWL" secondAttribute="bottom" id="POt-7e-nrg"/>
+                <constraint firstItem="ArI-ys-ORw" firstAttribute="leading" secondItem="yRB-QO-rGt" secondAttribute="leading" id="VKq-eU-cSI"/>
+                <constraint firstAttribute="trailing" secondItem="ArI-ys-ORw" secondAttribute="trailing" id="VOC-Yh-uax"/>
+                <constraint firstItem="FcF-ld-BoN" firstAttribute="leading" secondItem="Vrf-Pz-k7J" secondAttribute="leading" id="b70-Wf-PYY"/>
+                <constraint firstAttribute="bottom" secondItem="FcF-ld-BoN" secondAttribute="bottom" id="cjk-Xs-sg5"/>
+                <constraint firstItem="FcF-ld-BoN" firstAttribute="trailing" secondItem="Vrf-Pz-k7J" secondAttribute="trailing" id="hTD-Z0-LSZ"/>
+            </constraints>
+            <connections>
+                <outlet property="taxDetailTable" destination="FcF-ld-BoN" id="InG-55-iC2"/>
+                <outlet property="taxPiechartView" destination="ArI-ys-ORw" id="aPF-GX-dah"/>
+            </connections>
+            <point key="canvasLocation" x="260.14492753623188" y="189.84375"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

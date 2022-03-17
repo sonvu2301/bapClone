@@ -114,7 +114,6 @@ class BaseSideMenuViewController: UIViewController, UIPopoverPresentationControl
                                   lat: currentLocation.coordinate.latitude)
         }
         return current
-        
     }
     
     func hideLeftBarButton() {

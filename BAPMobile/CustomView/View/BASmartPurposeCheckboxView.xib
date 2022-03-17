@@ -71,7 +71,7 @@
                 <constraint firstItem="hh8-48-RXt" firstAttribute="leading" secondItem="dWb-dV-fOG" secondAttribute="trailing" constant="5" id="ydA-o0-Xoe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="31.159420289855074" y="-407.8125"/>
+            <point key="canvasLocation" x="31" y="-464"/>
         </view>
     </objects>
     <resources>

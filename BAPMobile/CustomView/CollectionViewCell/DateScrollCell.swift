@@ -41,6 +41,31 @@ class DateScrollCell: UICollectionViewCell {
             sideCell()
         }
     }
+    func setupData(list: [DateObject], idx: Int){
+        let obj = list[idx]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM"
+        labelDate.text = dateFormatter.string(from: obj.date)
+        labelWeekDay.text = obj.date.dayOfWeek()
+        
+        //trường hợp được active
+        if(obj.isActive){
+            labelDate.font = labelDate.font.withSize(14)
+            labelDate.textColor = UIColor().defaultColor()
+            labelWeekDay.font = labelWeekDay.font.withSize(18)
+            labelWeekDay.textColor = UIColor().defaultColor()
+        }
+        //trường hợp không được active
+        let idxActive = Int( list.firstIndex(where: {$0.isActive == true}) ?? 0)
+        if idx == (idxActive - 1) ||
+            idx == (idxActive + 1){
+            labelDate.font = labelDate.font.withSize(15)
+            labelDate.textColor = .systemGray
+            
+            labelWeekDay.font = labelWeekDay.font.withSize(15)
+            labelWeekDay.textColor = .systemGray
+        }
+    }
     
     func selectedCell() {
         labelWeekDay.font = labelWeekDay.font.withSize(16)

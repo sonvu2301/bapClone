@@ -8,29 +8,11 @@
 import Foundation
 
 struct NetworkConstants {
+    
     //MARK: BAP Base Url
-    static var baseURL: String {
-        return "http://bapm.api.binhanh.vn:21600/"
-    }
-    
-    static var baseStockURL: String {
-        return "http://bapm.api.binhanh.vn:21602/"
-    }
-    
-    static var baseInstallMngURL: String {
-        return "http://bapm.api.binhanh.vn:21603/"
-    }
-    
+#if !DEBUG
     static var baseWarrantyURL: String {
-        return "http://bapm.api.binhanh.vn:21605/"
-    }
-    
-    static var baseChargeMngURL: String {
-        return "http://bapm.test.binhanh.vn:21609/"
-    }
-    
-    static var baseMarketingMngURL: String {
-        return "http://bapm.test.binhanh.vn:21614/"
+        return "http://bapm.test.api.binhanh.vn:21605/"
     }
 
     static var baseTestURL: String {
@@ -56,10 +38,41 @@ struct NetworkConstants {
     static var baseTestBASmartMngURL: String {
         return "http://bapm.test.binhanh.vn:21614/"
     }
-    
     static var baseHrmURL: String {
         return "http://bapm.test.binhanh.vn:21601/"
     }
+#else
+    static var baseWarrantyURL: String {
+        return "http://bapm.api.binhanh.vn:21605/"
+    }
+
+    static var baseTestURL: String {
+        return "http://bapm.api.binhanh.vn:21600/"
+    }
+    
+    static var baseTestStockURL: String {
+        return "http://bapm.api.binhanh.vn:21602/"
+    }
+    
+    static var baseTestInstallMngURL: String {
+        return "http://bapm.api.binhanh.vn:21603/"
+    }
+    
+    static var baseTestWarrantyURL: String {
+        return "http://bapm.api.binhanh.vn:21605/"
+    }
+    
+    static var baseTestChargeMngURL: String {
+        return "http://bapm.api.binhanh.vn:21609/"
+    }
+    
+    static var baseTestBASmartMngURL: String {
+        return "http://bapm.api.binhanh.vn:21614/"
+    }
+    static var baseHrmURL: String {
+        return "http://bapm.api.binhanh.vn:21601/"
+    }
+#endif
     
     static var clientReg: String {
         return baseTestURL + "ClientReg"
@@ -378,14 +391,23 @@ struct NetworkConstants {
     
     //MARK: Salary
     static var salary_info: String {
-        return baseTestChargeMngURL + "SMTTaskGet"
+        return baseHrmURL + "SMTTaskGet"
     }
     
     static var salary_detail: String {
-        return baseTestChargeMngURL + "SMTDetailGet"
+        return baseHrmURL + "SMTDetailGet"
     }
-    
-    
+    static var salary_sad: String{
+        return baseHrmURL + "SADTaskGet"
+    }
+    // MARK: Timekeeping
+    static var timekeeping: String{
+        return baseHrmURL + "tasks/timekeeping/search"
+    }
+    //"tasks/timekeeping/catalog"
+    static var keepingCatalog: String{
+        return baseHrmURL + "tasks/timekeeping/catalog"
+    }
     //MARK: General Info
     static var contact_list: String {
         return baseHrmURL + "EPLContactGet"

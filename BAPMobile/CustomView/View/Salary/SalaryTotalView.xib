@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SalaryTotalView" customModule="BAPMobile" customModuleProvider="target">
+            <connections>
+                <outlet property="labelMonth" destination="EYK-My-i4X" id="uZm-0Z-1ZR"/>
+                <outlet property="labelTotal" destination="olK-k0-YlP" id="GTh-4G-cnS"/>
+                <outlet property="salaryTotalView" destination="cM4-Bz-Lzd" id="LtL-gp-OkJ"/>
+                <outlet property="totalMoney" destination="Jtu-NQ-Lo4" id="Qg0-x9-fPg"/>
+                <outlet property="viewAdvance" destination="kk8-ZI-Chu" id="XXn-mk-FnU"/>
+                <outlet property="viewChartPie" destination="9UP-M8-VK3" id="d1g-1b-A23"/>
+                <outlet property="viewReduceOther" destination="O87-dB-kf4" id="nsq-Hz-Vpd"/>
+                <outlet property="viewReduceSafety" destination="zmi-sP-nXK" id="76f-e5-9K8"/>
+                <outlet property="viewTax" destination="dWm-j9-Ii7" id="7Za-9u-RTV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cM4-Bz-Lzd" userLabel="SalaryTotalView">
+            <rect key="frame" x="0.0" y="0.0" width="478" height="228"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTF-16-elY" userLabel="SumaryView">
+                    <rect key="frame" x="0.0" y="0.0" width="478" height="228"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9UP-M8-VK3" customClass="PieChartView" customModule="Charts">
+                            <rect key="frame" x="3" y="3" width="142" height="142"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="142" id="5aH-UB-pxJ"/>
+                                <constraint firstAttribute="height" constant="142" id="wz0-bx-kKF"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tháng 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYK-My-i4X">
+                            <rect key="frame" x="24" y="148" width="100" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="QHD-zX-n5K"/>
+                                <constraint firstAttribute="height" constant="20" id="aaG-mN-GBd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.1450980392" green="0.62745098040000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-fL-0iH">
+                            <rect key="frame" x="150" y="3" width="325" height="130"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtu-NQ-Lo4" userLabel="TotalMoney" customClass="SalaryDefaultCustomView" customModule="BAPMobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="325" height="24.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-j9-Ii7" userLabel="Tax" customClass="SalaryDefaultCustomView" customModule="BAPMobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="26.5" width="325" height="24.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmi-sP-nXK" userLabel="Satefy" customClass="SalaryDefaultCustomView" customModule="BAPMobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="53" width="325" height="24"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O87-dB-kf4" userLabel="Reduce" customClass="SalaryDefaultCustomView" customModule="BAPMobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="79" width="325" height="24.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kk8-ZI-Chu" userLabel="Advance" customClass="SalaryDefaultCustomView" customModule="BAPMobile" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="105.5" width="325" height="24.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Jtu-NQ-Lo4" firstAttribute="height" secondItem="dWm-j9-Ii7" secondAttribute="height" id="DUA-CF-Dze"/>
+                                <constraint firstItem="O87-dB-kf4" firstAttribute="height" secondItem="kk8-ZI-Chu" secondAttribute="height" id="fi3-lU-Pg2"/>
+                                <constraint firstAttribute="height" constant="130" id="h1c-1Z-CUM"/>
+                                <constraint firstItem="dWm-j9-Ii7" firstAttribute="height" secondItem="zmi-sP-nXK" secondAttribute="height" id="ntQ-0K-rQm"/>
+                                <constraint firstItem="zmi-sP-nXK" firstAttribute="height" secondItem="O87-dB-kf4" secondAttribute="height" id="uNy-U8-JKF"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NW-cU-zsd" userLabel="LineTotal">
+                            <rect key="frame" x="388" y="143" width="87" height="2"/>
+                            <color key="backgroundColor" red="0.1450980392" green="0.62745098040000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="aWE-am-R9J"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14,123,123 đ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olK-k0-YlP" userLabel="TotalLabel">
+                            <rect key="frame" x="388" y="150" width="87" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="9Gt-cZ-7Cq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.1450980392" green="0.62745098040000002" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="EYK-My-i4X" firstAttribute="centerX" secondItem="9UP-M8-VK3" secondAttribute="centerX" id="Bwu-XP-j2W"/>
+                        <constraint firstAttribute="trailing" secondItem="olK-k0-YlP" secondAttribute="trailing" constant="3" id="DR1-e2-5Li"/>
+                        <constraint firstItem="olK-k0-YlP" firstAttribute="top" secondItem="8NW-cU-zsd" secondAttribute="bottom" constant="5" id="KCK-Oe-hV4"/>
+                        <constraint firstItem="cjz-fL-0iH" firstAttribute="leading" secondItem="9UP-M8-VK3" secondAttribute="trailing" constant="5" id="NdM-IW-65g"/>
+                        <constraint firstItem="9UP-M8-VK3" firstAttribute="leading" secondItem="YTF-16-elY" secondAttribute="leading" constant="3" id="UgN-7p-jzE"/>
+                        <constraint firstItem="8NW-cU-zsd" firstAttribute="top" secondItem="cjz-fL-0iH" secondAttribute="bottom" constant="10" id="anR-hb-Mro"/>
+                        <constraint firstAttribute="trailing" secondItem="8NW-cU-zsd" secondAttribute="trailing" constant="3" id="d6o-AI-LFa"/>
+                        <constraint firstItem="8NW-cU-zsd" firstAttribute="width" secondItem="olK-k0-YlP" secondAttribute="width" id="dcH-b4-WwC"/>
+                        <constraint firstAttribute="trailing" secondItem="cjz-fL-0iH" secondAttribute="trailing" constant="3" id="nCb-Zo-fv3"/>
+                        <constraint firstItem="9UP-M8-VK3" firstAttribute="top" secondItem="YTF-16-elY" secondAttribute="top" constant="3" id="o6l-xs-DvF"/>
+                        <constraint firstItem="cjz-fL-0iH" firstAttribute="top" secondItem="YTF-16-elY" secondAttribute="top" constant="3" id="qRP-z4-h95"/>
+                        <constraint firstItem="EYK-My-i4X" firstAttribute="top" secondItem="9UP-M8-VK3" secondAttribute="bottom" constant="3" id="qvg-DN-Rea"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="5Ya-XI-94C"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YTF-16-elY" secondAttribute="trailing" id="SAr-36-hgm"/>
+                <constraint firstItem="YTF-16-elY" firstAttribute="leading" secondItem="cM4-Bz-Lzd" secondAttribute="leading" id="bMp-xr-Twa"/>
+                <constraint firstAttribute="bottom" secondItem="YTF-16-elY" secondAttribute="bottom" id="kRF-5B-nui"/>
+                <constraint firstItem="YTF-16-elY" firstAttribute="top" secondItem="cM4-Bz-Lzd" secondAttribute="top" id="vRQ-yy-hTo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="178.2608695652174" y="-502.90178571428567"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SalaryDetailKeepingCollectionViewCell" reuseIdentifier="SalaryDetailKeepingCollectionViewCell" id="UTI-2y-z0k" customClass="SalaryDetailKeepingCollectionViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="562" height="332"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chấm công" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywP-za-Yr5">
+                    <rect key="frame" x="0.0" y="0.0" width="562" height="40"/>
+                    <color key="backgroundColor" red="0.062745098039215685" green="0.68235294117647061" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="uOu-Aj-y37"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-A8-bbs" userLabel="keepingTable">
+                    <rect key="frame" x="0.0" y="40" width="562" height="292"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="bks-Le-7gY"/>
+            <constraints>
+                <constraint firstItem="3GR-A8-bbs" firstAttribute="top" secondItem="ywP-za-Yr5" secondAttribute="bottom" id="GdC-G2-Qbd"/>
+                <constraint firstAttribute="trailing" secondItem="3GR-A8-bbs" secondAttribute="trailing" id="Mj9-p0-KPh"/>
+                <constraint firstItem="ywP-za-Yr5" firstAttribute="leading" secondItem="UTI-2y-z0k" secondAttribute="leading" id="WAH-d8-ZHe"/>
+                <constraint firstItem="ywP-za-Yr5" firstAttribute="top" secondItem="UTI-2y-z0k" secondAttribute="top" id="YTP-9m-AuQ"/>
+                <constraint firstItem="3GR-A8-bbs" firstAttribute="leading" secondItem="UTI-2y-z0k" secondAttribute="leading" id="al9-GY-zvQ"/>
+                <constraint firstAttribute="bottom" secondItem="3GR-A8-bbs" secondAttribute="bottom" id="bur-De-rUZ"/>
+                <constraint firstAttribute="trailing" secondItem="ywP-za-Yr5" secondAttribute="trailing" id="mPT-Qe-chL"/>
+            </constraints>
+            <connections>
+                <outlet property="keepingTable" destination="3GR-A8-bbs" id="wfH-qW-EK3"/>
+            </connections>
+            <point key="canvasLocation" x="-534.78260869565224" y="-277.23214285714283"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

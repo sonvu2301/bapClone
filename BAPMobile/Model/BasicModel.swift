@@ -20,3 +20,16 @@ struct BasicModel: Codable {
         case data = "data"
     }
 }
+struct Catalog: Codable{
+    var id: Int?
+    var name: String?
+    var state: Bool?
+    var def: Bool?
+    
+//    enum CodingKeys: String, CodingKey {
+//        case id = "id"
+//        case name = "name"
+//        case state = "state"
+//        case def = "def"
+//    }
+}

@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct YearCell {
+    var year: Int
+    var isSelect: Bool
+    var isSide: Bool
+}
+
 class YearScrollCell: UICollectionViewCell {
 
     @IBOutlet weak var yearLabel: UILabel!
@@ -22,6 +28,8 @@ class YearScrollCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         yearLabel.text = ""
+        yearLabel.textColor = UIColor(hexString: "B4B4B4")
+        yearLabel.font = yearLabel.font.withSize(14)
     }
     
     func setupData(data: YearCell) {
@@ -33,8 +41,23 @@ class YearScrollCell: UICollectionViewCell {
             sideCell()
         }
     }
-    
-    
+    func setupData(list: [DateObject], idx: Int){
+        let obj = list[idx]
+        yearLabel.text = String(obj.date.getComponents().year ?? 0)
+        //trường hợp được active
+        if(obj.isActive){
+            yearLabel.font = yearLabel.font.withSize(18)
+            yearLabel.textColor = UIColor().defaultColor()
+        }
+        //trường hợp không được active
+        
+        let idxActive = Int( list.firstIndex(where: {$0.isActive == true}) ?? 0)
+        if idx == (idxActive - 1) ||
+        idx == (idxActive + 1){
+            yearLabel.font = yearLabel.font.withSize(16)
+            yearLabel.textColor = UIColor(hexString: "B4B4B4")
+        }
+    }
     
     func selectedCell() {
         yearLabel.font = yearLabel.font.withSize(16)
@@ -42,7 +65,7 @@ class YearScrollCell: UICollectionViewCell {
     }
     
     func sideCell() {
-        yearLabel.font = yearLabel.font.withSize(15)
+        yearLabel.font = yearLabel.font.withSize(14)
         yearLabel.textColor = UIColor(hexString: "B4B4B4")
     }
 }

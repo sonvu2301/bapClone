@@ -84,6 +84,7 @@ extension BASmartPurposeCheckboxView: UITableViewDelegate, UITableViewDataSource
 }
 
 extension BASmartPurposeCheckboxView: CheckboxStateDelegate {
+    
     func checkbox(isCheck: Bool, id: Int) {
         guard let item = catalog.filter({$0.id == id}).first else { return }
         if isCheck {

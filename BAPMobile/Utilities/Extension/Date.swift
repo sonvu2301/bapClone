@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 extension Date {
-    
+    func toDateFormat(format: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
     func millisecToDate(time: Int) -> String {
         let dateVar = Date.init(timeIntervalSince1970: Double(time - TimeZone.vn.number))
         let dateFormatter = DateFormatter()
@@ -119,6 +123,9 @@ extension Date {
             return ""
         }
     }
+    func dayOfWeek() -> String{
+        return dayOfWeek(date: self)
+    }
     
     func getDates(from fromDate: Date, to toDate: Date) -> [Date] {
         var dates: [Date] = []
@@ -146,13 +153,27 @@ extension Date {
             return dates
         }
     }
-    
+    func getComponents() -> DateComponents{
+        return Calendar.current.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: self)
+    }
+    func add7() -> Date{
+       return Calendar.current.date(byAdding: DateComponents(year: 0, month: 0, day: 0, hour: 7), to: self)!
+    }
     func getYear(start: Int, end: Int) -> [Int] {
         var years = [Int]()
         for i in start...end {
             years.append(i)
         }
         return years
+    }
+    func toDate(monthIndex: Int) -> Date{
+        let y = monthIndex / 12;
+        let m = monthIndex - y * 12;
+        var components = DateComponents();
+        components.year = y
+        components.month = m
+        components.day = 1
+        return Calendar.current.date(from: components) ?? Date()
     }
 }
 

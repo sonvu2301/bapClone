@@ -215,6 +215,9 @@ class BaseViewController: UIViewController, UIPopoverPresentationControllerDeleg
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         hideBlurBackground()
     }
+    func hideBottom(){
+        hidesBottomBarWhenPushed = true
+    }
 }
 
 extension BaseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -230,7 +233,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, UINavigationContr
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+    func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
         //Check is source type available
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             

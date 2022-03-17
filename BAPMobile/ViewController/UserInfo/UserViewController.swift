@@ -8,12 +8,16 @@
 import UIKit
 import AVFoundation
 import Toaster
+import Kingfisher
 
 class UserViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    
+    @IBOutlet weak var barcodeView: UIView!
+    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -73,9 +77,9 @@ class UserViewController: BaseViewController, AVCaptureMetadataOutputObjectsDele
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = CGRect(x: 0, y: headerView.frame.size.height, width: view.frame.size.width, height: view.frame.size.height - headerView.frame.size.height - (tabBarController?.tabBar.frame.size.height ?? 0))
+        previewLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        barcodeView.layer.addSublayer(previewLayer)
 
         captureSession.startRunning()
     }

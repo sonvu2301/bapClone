@@ -1828,23 +1828,29 @@ extension Network {
 
 //MARK: Salary
 extension Network {
-    func GetSalaryInfo(year: Int, completion: @escaping (SalaryModel?) -> Void) {
+    func GetSalaryInfo(year: Int, completion: @escaping (SalaryModelData?) -> Void) {
         let headers = self.getHeaders()
         let param = ["yearindex": String(year)]
         
         AF.request(NetworkConstants.salary_info, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
             do {
+                if let stCode =  response.response?.statusCode{
+                    if stCode != 200{
+                        Toast(text: "Không tìm thấy api", duration: Delay.long).show()
+                    }
+                }
                 guard let json = response.data else {
                     print(response.error as Any)
                     completion(nil)
                     return
                 }
+                
                 let data = try JSONDecoder().decode(SalaryModel.self, from: json)
                 
                 if data.error_code != 0 && data.error_code != nil {
                     Toast(text: "Lỗi", duration: Delay.long).show()
                 }
-                completion(data)
+                completion(data.data)
             } catch {
                 print(error)
                 completion(nil)
@@ -1869,6 +1875,79 @@ extension Network {
                     Toast(text: "Lỗi", duration: Delay.long).show()
                 }
                 completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    func GetSalarySad(yearIndex: Int, completion: @escaping (SalarySadModel?) -> Void) {
+        let headers = self.getHeaders()
+        let param = ["yearindex": yearIndex]
+        
+        AF.request(NetworkConstants.salary_sad, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(SalarySadModel.self, from: json)
+                
+                if data.error_code != 0 && data.error_code != nil {
+                    Toast(text: "Lỗi", duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+}
+
+//MARK: TimeKeeping
+extension Network{
+    func getTimekeeping(monthStart: Int, monthEnd: Int, completion: @escaping (TimekeepingModel?) -> Void) {
+        let headers = self.getHeaders()
+        let param = ["monthstart": monthStart, "monthend": monthEnd]
+        
+        AF.request(NetworkConstants.timekeeping, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(TimekeepingModel.self, from: json)
+                
+                if data.error_code != 0 && data.error_code != nil {
+                    Toast(text: "Lỗi", duration: Delay.long).show()
+                }
+                completion(data)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    func getTimeKeepingCatalog(location: MapLocation, completion: @escaping (KeepingCatalogData?) -> Void){
+        let headers = self.getHeaders()
+        let param = ["location": location]
+        
+        AF.request(NetworkConstants.keepingCatalog, method: .post, parameters: param, encoder: encoder, headers: headers).response { response in
+            do {
+                guard let json = response.data else {
+                    print(response.error as Any)
+                    completion(nil)
+                    return
+                }
+                let data = try JSONDecoder().decode(KeepingCatalogModel.self, from: json)
+
+                if data.error_code != 0 && data.error_code != nil {
+                    Toast(text: "Lỗi", duration: Delay.long).show()
+                }
+                completion(data.data)
             } catch {
                 print(error)
                 completion(nil)

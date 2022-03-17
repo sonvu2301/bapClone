@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SalaryDetailTotalMoneyCollectionViewCell" reuseIdentifier="SalaryDetailTotalMoneyCollectionViewCell" id="muA-fm-jyJ" customClass="SalaryDetailTotalMoneyCollectionViewCell" customModule="BAPMobile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="584" height="261"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjl-kC-uMy">
+                    <rect key="frame" x="0.0" y="0.0" width="584" height="40"/>
+                    <color key="backgroundColor" red="0.062745098039215685" green="0.68235294117647061" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6zW-Bn-Bc5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dgh-5h-cnA" userLabel="TotalCollectTable">
+                    <rect key="frame" x="0.0" y="40" width="584" height="221"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="QY9-O2-iTD"/>
+            <constraints>
+                <constraint firstItem="bjl-kC-uMy" firstAttribute="top" secondItem="muA-fm-jyJ" secondAttribute="top" id="9wp-ch-FK2"/>
+                <constraint firstItem="bjl-kC-uMy" firstAttribute="leading" secondItem="muA-fm-jyJ" secondAttribute="leading" id="GNh-bB-3Si"/>
+                <constraint firstItem="dgh-5h-cnA" firstAttribute="top" secondItem="bjl-kC-uMy" secondAttribute="bottom" id="PLm-n0-NcL"/>
+                <constraint firstItem="dgh-5h-cnA" firstAttribute="leading" secondItem="muA-fm-jyJ" secondAttribute="leading" id="gVS-p0-7S4"/>
+                <constraint firstAttribute="trailing" secondItem="bjl-kC-uMy" secondAttribute="trailing" id="k7c-7B-9jU"/>
+                <constraint firstAttribute="trailing" secondItem="dgh-5h-cnA" secondAttribute="trailing" id="tEH-oD-PQX"/>
+                <constraint firstAttribute="bottom" secondItem="dgh-5h-cnA" secondAttribute="bottom" id="viH-Um-09j"/>
+            </constraints>
+            <connections>
+                <outlet property="totalCollectTable" destination="dgh-5h-cnA" id="loh-KE-dJP"/>
+            </connections>
+            <point key="canvasLocation" x="263.768115942029" y="18.415178571428569"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

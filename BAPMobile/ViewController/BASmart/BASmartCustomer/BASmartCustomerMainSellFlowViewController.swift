@@ -371,7 +371,7 @@ extension BASmartCustomerMainSellFlowViewController: CreateOrderDelegate {
                                                       month: $0.month,
                                                       date: $0.date)})
         
-        let tax = comboDetail.customer?.tax?.count == 0 ? vc4.textFieldUserId.text : comboDetail.customer?.tax
+        _ = comboDetail.customer?.tax?.count == 0 ? vc4.textFieldUserId.text : comboDetail.customer?.tax
         
 //        let customer = BASmartComboSaleCustomerDetailParam(tax: tax,
 //                                                           turcoeff: vc1.count,
